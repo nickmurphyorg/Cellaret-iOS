@@ -9,7 +9,7 @@
 import UIKit
 
 class MenuTableViewController: UITableViewController {
-    var menu = Menu()
+    
     var menuSelection: Int = 0
     var delegate: MenuSelectionDelegate?
 
@@ -27,13 +27,13 @@ class MenuTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return menu.options.count
+        return Menu.shared.options.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "menuCell", for: indexPath)
 
-        cell.textLabel?.text = menu.options[indexPath.row]
+        cell.textLabel?.text = Menu.shared.options[indexPath.row]
         if indexPath.row == menuSelection {
             cell.accessoryType = .checkmark
         } else {
@@ -53,16 +53,4 @@ class MenuTableViewController: UITableViewController {
     @IBAction func closeMenu(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

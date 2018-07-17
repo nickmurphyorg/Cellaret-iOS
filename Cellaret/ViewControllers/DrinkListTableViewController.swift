@@ -10,12 +10,14 @@ import UIKit
 
 class DrinkListTableViewController: UITableViewController {
     
-    var menu = Menu()
-    var menuSelection: Int = 1
+    var modelController = ModelController()
+    var selectedDrinks = [Drink]()
+    var menuSelection: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
         updateTitle()
+        selectedDrinks = modelController.filterDrinks(category: menuSelection)
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,24 +30,19 @@ class DrinkListTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 1
+        return selectedDrinks.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "drinkCell", for: indexPath)
 
-        // Configure the cell...
+        cell.textLabel?.text = selectedDrinks[indexPath.row].name
 
         return cell
     }
 
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
-    }
-    
-    func updateTitle() {
-        self.navigationItem.title = menu.selectionName(selection: menuSelection)
     }
 
     /*
@@ -69,15 +66,24 @@ class DrinkListTableViewController: UITableViewController {
             let destinationViewController = navigationController?.childViewControllers.first as! MenuTableViewController
             destinationViewController.delegate = self
             destinationViewController.menuSelection = self.menuSelection
+        } else if segue.identifier == "DrinkDetail" {
+            let destinationViewController = segue.destination as! DrinkDetailViewController
+            let indexPath = tableView.indexPathForSelectedRow!
+            destinationViewController.drinkSelection = selectedDrinks[indexPath.row]
         }
     }
 }
 
 extension DrinkListTableViewController: MenuSelectionDelegate {
     func menuSelectionMade(selection: Int) {
-        print("Data received.")
         guard menuSelection != selection else { return }
         self.menuSelection = selection
         updateTitle()
+        selectedDrinks = modelController.filterDrinks(category: menuSelection)
+        tableView.reloadData()
+    }
+    
+    func updateTitle() {
+        self.navigationItem.title = Menu.shared.selectionName(selection: menuSelection)
     }
 }

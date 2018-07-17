@@ -9,10 +9,16 @@
 import Foundation
 
 struct Menu {
-    let options: [String] = ["All", "Water", "Wine", "Whiskey"]
+    static let shared = Menu()
+    let options: [String] = ["All", "Beer", "Water", "Wine", "Whiskey", "Vodka"]
     
     func selectionName(selection: Int) -> String {
         let name = options[selection]
         return name
+    }
+    
+    func categoryOptions() -> [String] {
+        let categoryOptions = options.filter { $0 != "All" }
+        return categoryOptions
     }
 }
