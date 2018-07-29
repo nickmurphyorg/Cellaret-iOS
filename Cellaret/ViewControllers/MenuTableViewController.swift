@@ -12,6 +12,8 @@ class MenuTableViewController: UITableViewController {
     
     var menuSelection: Int = 0
     var delegate: MenuSelectionDelegate?
+    
+    let impact = UIImpactFeedbackGenerator()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,13 +29,13 @@ class MenuTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Menu.shared.options.count
+        return Menu.shared.menuOptions().count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "menuCell", for: indexPath)
 
-        cell.textLabel?.text = Menu.shared.options[indexPath.row]
+        cell.textLabel?.text = Menu.shared.menuOptions()[indexPath.row]
         if indexPath.row == menuSelection {
             cell.accessoryType = .checkmark
         } else {
@@ -44,6 +46,8 @@ class MenuTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        impact.impactOccurred()
+        
         tableView.deselectRow(at: indexPath, animated: true)
         menuSelection = indexPath.row
         delegate?.menuSelectionMade(selection: menuSelection)

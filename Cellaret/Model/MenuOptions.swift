@@ -10,7 +10,11 @@ import Foundation
 
 struct Menu {
     static let shared = Menu()
-    let options: [String] = ["All", "Beer", "Water", "Wine", "Whiskey", "Vodka"]
+    private let options: [String] = ["All", "American Whiskey", "Beer", "Bourbon", "Brandy", "Canadian Whiskey", "Energy Drink", "Gin", "Red Wine", "Rum", "Scotch", "Soda", "Tequila", "Water", "Whiskey", "White Wine", "Vodka"]
+    
+    func menuOptions() -> [String] {
+        return options
+    }
     
     func selectionName(selection: Int) -> String {
         let name = options[selection]

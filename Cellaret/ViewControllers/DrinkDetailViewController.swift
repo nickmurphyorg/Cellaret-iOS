@@ -17,7 +17,10 @@ class DrinkDetailViewController: UIViewController {
     @IBOutlet weak var drinkVolumeLabel: UILabel!
     
     var drinkSelection: Drink?
+    var editDrinkDelegate: EditDrinkDelegate?
     var unwind = false
+    
+    let favoriteStar = UIImage(named: "Star-Black")
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -37,19 +40,15 @@ class DrinkDetailViewController: UIViewController {
 
         let editDrinkButton = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(editDrink(_:)))
         self.navigationItem.rightBarButtonItem = editDrinkButton
+        
         if let drinkSelection = drinkSelection {
-            drinkNameLabel.text = drinkSelection.name
-            drinkCategoryLabel.text = Menu.shared.selectionName(selection: drinkSelection.category)
-            if drinkSelection.alcoholVolume != nil {
-                drinkVolumeLabel.text = String(drinkSelection.alcoholVolume!)
-            }
+            updateView(withDrink: drinkSelection)
         }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
 }
 
 // MARK: - Navigation
@@ -60,6 +59,8 @@ extension DrinkDetailViewController{
             let navigationController = segue.destination as? UINavigationController
             let destinationViewController = navigationController?.childViewControllers.first as! EditDrinkTableViewController
             destinationViewController.editDrink = drinkSelection
+            destinationViewController.editDrinkDelegate = editDrinkDelegate
+            destinationViewController.drinkViewDelegate = self
         }
     }
 }
@@ -71,11 +72,40 @@ extension DrinkDetailViewController {
         self.performSegue(withIdentifier: "EditDrink", sender: nil)
     }
     
-    @IBAction func saveDrink(segue: UIStoryboardSegue) {
-        
-    }
-    
     @IBAction func unwindToDrinkList(segue: UIStoryboardSegue) {
         unwind = true
+    }
+}
+
+extension DrinkDetailViewController: DrinkViewDelegate {
+    
+    func updateView(editedDrink: Drink) {
+        drinkSelection = editedDrink
+        
+        if let updatedDrink = drinkSelection {
+            updateView(withDrink: updatedDrink)
+        }
+    }
+    
+    func updateView(withDrink: Drink) {
+        let drinkImage = withDrink.image
+        
+        if let drinkImage = drinkImage {
+            drinkImageView.image = drinkImage
+        }
+        
+        drinkNameLabel.text = withDrink.name
+        
+        if withDrink.favorite == true {
+            favoriteImageView.image = favoriteStar
+        } else {
+            favoriteImageView.image = nil
+        }
+        
+        drinkCategoryLabel.text = Menu.shared.selectionName(selection: withDrink.category)
+        
+        if withDrink.alcoholVolume != nil {
+            drinkVolumeLabel.text = String(withDrink.alcoholVolume!)
+        }
     }
 }

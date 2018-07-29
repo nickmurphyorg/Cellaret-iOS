@@ -7,13 +7,16 @@
 //
 
 import Foundation
+import UIKit
 
 class ModelController {
+    static let shared = ModelController()
+    
     private var drinks = [Drink]()
     
-    init() {
-        let drink1 = Drink(name: "Voss", favorite: true, category: 2, alcoholVolume: 0)
-        let drink2 = Drink(name: "Modelo", favorite: false, category: 1, alcoholVolume: 5)
+    private init() {
+        let drink1 = Drink(image: UIImage(named: "Voss"), name: "Voss", favorite: true, category: 2, alcoholVolume: 0.0)
+        let drink2 = Drink(image: UIImage(named: "Modelo"), name: "Modelo", favorite: false, category: 1, alcoholVolume: 5.0)
         
         drinks = [drink1, drink2]
     }
@@ -31,12 +34,23 @@ class ModelController {
         }
     }
     
-    func saveDrink(drink: Drink, index: Int) {
-        
+    func saveDrink(oldDrink: Drink?, newDrink: Drink) {
+        if let oldDrink = oldDrink {
+            let index = findDrink(drink: oldDrink)
+            drinks[index] = newDrink
+        } else {
+            addDrink(drink: newDrink)
+        }
     }
     
     func findDrink(drink: Drink) -> Int {
-        if let index = drinks.index(where: {$0.name == drink.name}) {
+        if let index = drinks.index(where: {
+            $0.name == drink.name
+                &&
+            $0.category == drink.category
+                &&
+            $0.favorite == drink.favorite
+        }) {
             return index
         } else {
             return drinks.count + 1
@@ -45,5 +59,10 @@ class ModelController {
     
     func addDrink(drink: Drink) {
         drinks += [drink]
+    }
+    
+    func deleteDrink(drink: Drink) {
+        let index = findDrink(drink: drink)
+        drinks.remove(at: index)
     }
 }

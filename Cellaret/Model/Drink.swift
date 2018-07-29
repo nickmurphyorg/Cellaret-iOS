@@ -7,10 +7,12 @@
 //
 
 import Foundation
+import UIKit
 
 struct Drink {
-    typealias percent = Int
+    typealias percent = Double
     
+    var image: UIImage?
     var name: String
     var favorite: Bool
     var category: Int

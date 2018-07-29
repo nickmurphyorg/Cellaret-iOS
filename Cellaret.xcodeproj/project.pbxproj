@@ -19,6 +19,9 @@
 		D14A259120F155CF0022D9F7 /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14A259020F155CF0022D9F7 /* ModelController.swift */; };
 		D14A259320F19E8A0022D9F7 /* MenuSelectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14A259220F19E8A0022D9F7 /* MenuSelectionDelegate.swift */; };
 		D14A25B820F2BA5F0022D9F7 /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14A25B720F2BA5F0022D9F7 /* Drink.swift */; };
+		D1565A1F2102D08C00A8E5C1 /* EditDrinkDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1565A1E2102D08C00A8E5C1 /* EditDrinkDelegate.swift */; };
+		D1A31DBF210570FB00A3B0E6 /* DrinkViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A31DBE210570FB00A3B0E6 /* DrinkViewDelegate.swift */; };
+		D1A31DC4210C123600A3B0E6 /* DrinkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A31DC3210C123600A3B0E6 /* DrinkTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,9 @@
 		D14A259020F155CF0022D9F7 /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
 		D14A259220F19E8A0022D9F7 /* MenuSelectionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSelectionDelegate.swift; sourceTree = "<group>"; };
 		D14A25B720F2BA5F0022D9F7 /* Drink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drink.swift; sourceTree = "<group>"; };
+		D1565A1E2102D08C00A8E5C1 /* EditDrinkDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDrinkDelegate.swift; sourceTree = "<group>"; };
+		D1A31DBE210570FB00A3B0E6 /* DrinkViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkViewDelegate.swift; sourceTree = "<group>"; };
+		D1A31DC3210C123600A3B0E6 /* DrinkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,9 +76,10 @@
 			children = (
 				D14A257220EEB1A40022D9F7 /* AppDelegate.swift */,
 				D14A258D20EEBE0D0022D9F7 /* Model */,
-				D14A25B620F286BA0022D9F7 /* Delegates */,
+				D14A25B620F286BA0022D9F7 /* Protocols */,
 				D14A257620EEB1A40022D9F7 /* Main.storyboard */,
 				D14A258A20EEBCFC0022D9F7 /* ViewControllers */,
+				D1A31DC0210C0FA500A3B0E6 /* Cells */,
 				D14A257920EEB1A50022D9F7 /* Assets.xcassets */,
 				D14A257B20EEB1A50022D9F7 /* LaunchScreen.storyboard */,
 				D14A257E20EEB1A50022D9F7 /* Info.plist */,
@@ -94,19 +101,29 @@
 		D14A258D20EEBE0D0022D9F7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D14A258E20EECA590022D9F7 /* MenuOptions.swift */,
 				D14A259020F155CF0022D9F7 /* ModelController.swift */,
+				D14A258E20EECA590022D9F7 /* MenuOptions.swift */,
 				D14A25B720F2BA5F0022D9F7 /* Drink.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		D14A25B620F286BA0022D9F7 /* Delegates */ = {
+		D14A25B620F286BA0022D9F7 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
 				D14A259220F19E8A0022D9F7 /* MenuSelectionDelegate.swift */,
+				D1565A1E2102D08C00A8E5C1 /* EditDrinkDelegate.swift */,
+				D1A31DBE210570FB00A3B0E6 /* DrinkViewDelegate.swift */,
 			);
-			path = Delegates;
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		D1A31DC0210C0FA500A3B0E6 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D1A31DC3210C123600A3B0E6 /* DrinkTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,12 +199,15 @@
 			files = (
 				D14A258920EEBC9D0022D9F7 /* MenuTableViewController.swift in Sources */,
 				D14A25B820F2BA5F0022D9F7 /* Drink.swift in Sources */,
+				D1A31DBF210570FB00A3B0E6 /* DrinkViewDelegate.swift in Sources */,
 				D14A258520EEBC130022D9F7 /* DrinkDetailViewController.swift in Sources */,
 				D14A257320EEB1A40022D9F7 /* AppDelegate.swift in Sources */,
 				D14A258F20EECA590022D9F7 /* MenuOptions.swift in Sources */,
 				D14A259320F19E8A0022D9F7 /* MenuSelectionDelegate.swift in Sources */,
 				D14A258C20EEBD420022D9F7 /* EditDrinkTableViewController.swift in Sources */,
+				D1565A1F2102D08C00A8E5C1 /* EditDrinkDelegate.swift in Sources */,
 				D14A259120F155CF0022D9F7 /* ModelController.swift in Sources */,
+				D1A31DC4210C123600A3B0E6 /* DrinkTableViewCell.swift in Sources */,
 				D14A258720EEBC6D0022D9F7 /* DrinkListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -333,6 +353,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Cellaret/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -351,6 +372,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Cellaret/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
