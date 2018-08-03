@@ -16,13 +16,10 @@ class ModelController {
     
     private init() {
         let drink1 = Drink(image: UIImage(named: "Voss"), name: "Voss", favorite: true, category: 2, alcoholVolume: 0.0)
-        let drink2 = Drink(image: UIImage(named: "Modelo"), name: "Modelo", favorite: false, category: 1, alcoholVolume: 5.0)
+        let drink2 = Drink(image: nil, name: "Modelo", favorite: false, category: 1, alcoholVolume: 5.0)
+        let drink3 = Drink(image: nil, name: "Stella Artois", favorite: true, category: 3, alcoholVolume: 4.4)
         
-        drinks = [drink1, drink2]
-    }
-    
-    func loadDrinks() -> [Drink] {
-        return drinks
+        drinks = [drink1, drink2, drink3]
     }
     
     func filterDrinks(category: Int) -> [Drink] {

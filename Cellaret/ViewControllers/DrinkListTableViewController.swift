@@ -15,11 +15,12 @@ class DrinkListTableViewController: UITableViewController {
     var menuSelection: Int = 0
     
     let cellIdentifier = "drinkCell"
-    let placeholderDrinkImage = UIImage(named: "Drink Placeholder")
+    //let placeholderDrinkImage = UIImage(named: "Drink Placeholder")
     let favoriteStar = UIImage(named: "Star-White")
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        menuSelection = UserPreferences.shared.getMenuSelection()
         updateTitle()
         selectedDrinks = ModelController.shared.filterDrinks(category: menuSelection)
     }
@@ -41,22 +42,17 @@ extension DrinkListTableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? DrinkTableViewCell else {
             fatalError("Drink cell could not be created.")
         }
         
-        let drinkImage = { () -> UIImage? in
-            if let drinkImage = self.selectedDrinks[indexPath.row].image {
-                return drinkImage
-            } else {
-                return self.placeholderDrinkImage
-            }
+        let drinkFavorite = { [weak self] () -> UIImage? in
+            return self?.selectedDrinks[indexPath.row].favorite == true ? self?.favoriteStar : nil
         }
         
-        let drinkFavorite = { () -> UIImage? in
-            if self.selectedDrinks[indexPath.row].favorite == true {
-                return self.favoriteStar
+        let drinkImage = { [weak self] () -> UIImage? in
+            if let drinkImage = self?.selectedDrinks[indexPath.row].image {
+                return drinkImage
             } else {
                 return nil
             }
@@ -81,21 +77,24 @@ extension DrinkListTableViewController {
 extension DrinkListTableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "MenuOptions" {
+        switch segue.identifier {
+        case "MenuOptions":
             let navigationController = segue.destination as? UINavigationController
             let destinationViewController = navigationController?.childViewControllers.first as! MenuTableViewController
             destinationViewController.delegate = self
             destinationViewController.menuSelection = self.menuSelection
-        } else if segue.identifier == "DrinkDetail" {
+        case "DrinkDetail":
             let destinationViewController = segue.destination as! DrinkDetailViewController
             let indexPath = tableView.indexPathForSelectedRow!
             destinationViewController.drinkSelection = selectedDrinks[indexPath.row]
             destinationViewController.editDrinkDelegate = self
-        } else if segue.identifier == "AddNewDrink" {
+        case "AddNewDrink":
             let navigationController = segue.destination as? UINavigationController
             let destinationViewController = navigationController?.childViewControllers.first as! EditDrinkTableViewController
             destinationViewController.editDrinkDelegate = self
             tappedDrink = nil
+        default:
+            return
         }
     }
 }
@@ -105,6 +104,7 @@ extension DrinkListTableViewController: MenuSelectionDelegate {
     
     func menuSelectionMade(selection: Int) {
         guard menuSelection != selection else { return }
+        UserPreferences.shared.updateMenuSelection(selection: selection)
         self.menuSelection = selection
         updateTitle()
         selectedDrinks = ModelController.shared.filterDrinks(category: menuSelection)

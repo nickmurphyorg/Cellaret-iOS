@@ -29,6 +29,7 @@ class EditDrinkTableViewController: UITableViewController {
     var editDrink: Drink?
     var editDrinkDelegate: EditDrinkDelegate?
     var drinkViewDelegate: DrinkViewDelegate?
+    weak var vc: EditDrinkTableViewController!
     
     let addImagePlaceholder = UIImage(named: "Add Image Placeholder")
     let categoryToggleLabel = "Select"
@@ -50,6 +51,8 @@ class EditDrinkTableViewController: UITableViewController {
             
             if let drinkImage = drinkImage {
                 drinkImageView.image = drinkImage
+            } else {
+                drinkImageView.image = addImagePlaceholder
             }
             
             drinkNameField.text = editDrink.name
@@ -106,18 +109,19 @@ extension EditDrinkTableViewController {
     
     @IBAction func deleteDrink(_ sender: UIButton) {
         
-        impact.impactOccurred()
-        
         let alert = UIAlertController.init(title: nil, message: nil, preferredStyle: .actionSheet)
-            alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: { action in
-                alert.dismiss(animated: true, completion: nil)
-            }))
-            alert.addAction(UIAlertAction.init(title: "Delete", style: .destructive, handler: { action in
-                alert.dismiss(animated: true, completion: nil)
-                self.editDrinkDelegate?.editDrink(drink: self.editDrink!, action: editAction.delete)
-                self.performSegue(withIdentifier: "BackToDrinkList", sender: self)
-            }))
-        self.present(alert, animated: true, completion: nil)
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: (nil))
+        let delete = UIAlertAction(title: "Delete", style: .default, handler: { [weak self] action in
+            self?.editDrinkDelegate?.editDrink(drink: (self?.editDrink!)!, action: editAction.delete)
+            self?.performSegue(withIdentifier: "BackToDrinkList", sender: self)
+        })
+        
+        alert.addAction(cancel)
+        alert.addAction(delete)
+        
+        present(alert, animated: true, completion: nil)
+        impact.impactOccurred()
     }
 }
 
@@ -138,22 +142,22 @@ extension EditDrinkTableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         switch (indexPath.section, indexPath.row) {
-        case (uiPickerCell.section, uiPickerCell.row):
-            return togglePicker()
-        default:
-            return UITableViewAutomaticDimension
+            case (uiPickerCell.section, uiPickerCell.row):
+                return togglePicker()
+            default:
+                return UITableViewAutomaticDimension
         }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         switch indexPath {
-        case [uiPickerCell.section, uiPickerCell.row - 1]:
-            tableView.deselectRow(at: indexPath, animated: true)
-            tableView.beginUpdates()
-            tableView.endUpdates()
-        default:
-            return
+            case [uiPickerCell.section, uiPickerCell.row - 1]:
+                tableView.deselectRow(at: indexPath, animated: true)
+                tableView.beginUpdates()
+                tableView.endUpdates()
+            default:
+                return
         }
         
         self.view.endEditing(true)
@@ -191,23 +195,18 @@ extension EditDrinkTableViewController {
     }
     
     func createDrink() -> Drink {
-        
-        let drinkImage = { () -> UIImage? in
-            if self.drinkImageView.image == self.addImagePlaceholder {
-                return nil
-            } else {
-                return self.drinkImageView.image
-            }
-        }
-        
         let newDrink = Drink(
-            image: drinkImage(),
+            image: checkImage(drinkImage: drinkImageView.image!),
             name: drinkNameField.text!,
             favorite: favoriteSwitch.isOn,
             category: categoryPickerView.selectedRow(inComponent: 0),
             alcoholVolume: checkVolume()
         )
         return newDrink
+    }
+    
+    func checkImage(drinkImage: UIImage) -> UIImage? {
+        return drinkImage == addImagePlaceholder ? nil : drinkImageView.image
     }
 
     func checkVolume() -> Double {
@@ -224,37 +223,41 @@ extension EditDrinkTableViewController {
 extension EditDrinkTableViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBAction func addImage(sender: UITapGestureRecognizer) {
+        
         let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        
-        impact.impactOccurred()
-        
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
+        let cameraOption = UIAlertAction(title: "Camera", style: .default, handler: { [weak self] action in
+            imagePicker.sourceType = .camera
+            self?.present(imagePicker, animated: true, completion: nil)
+        })
+        
+        let photosOption = UIAlertAction(title: "Photos", style: .default, handler: { [weak self] action in
+            imagePicker.sourceType = .photoLibrary
+            self?.present(imagePicker, animated: true, completion: nil)
+        })
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: (nil))
+        
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { action in
-                imagePicker.sourceType = .camera
-                self.present(imagePicker, animated: true, completion: nil)
-            }))
+            alert.addAction(cameraOption)
         }
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-            alert.addAction(UIAlertAction(title: "Photos", style: .default, handler: { action in
-                imagePicker.sourceType = .photoLibrary
-                self.present(imagePicker, animated: true, completion: nil)
-            }))
+            alert.addAction(photosOption)
         }
         
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { action in
-            alert.dismiss(animated: true, completion: nil)
-        }))
+        alert.addAction(cancel)
         
-        self.present(alert, animated: true, completion: nil)
+        imagePicker.delegate = self
+        impact.impactOccurred()
+        present(alert, animated: true, completion: nil)
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let capturedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             drinkImageView.image = capturedImage
             dismiss(animated: true, completion: nil)
         }
     }
+    
 }
