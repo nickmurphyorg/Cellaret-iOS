@@ -59,12 +59,10 @@ class EditDrinkTableViewController: UITableViewController {
             categoryCell.detailTextLabel?.text = Menu.shared.selectionName(selection: editDrink.category)
             categoryPickerView.selectRow(editDrink.category, inComponent: 0, animated: false)
             favoriteSwitch.setOn(editDrink.favorite, animated: false)
+            drinkVolumeField.text = String(editDrink.alcoholVolume)
             
             print("Favorite: \(editDrink.favorite)")
             
-            if editDrink.alcoholVolume != nil {
-                drinkVolumeField.text = String(editDrink.alcoholVolume!)
-            }
         } else {
             drinkImageView.image = addImagePlaceholder
             saveButton.isEnabled = false

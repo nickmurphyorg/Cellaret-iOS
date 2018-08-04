@@ -23,6 +23,7 @@
 		D1A31DBF210570FB00A3B0E6 /* DrinkViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A31DBE210570FB00A3B0E6 /* DrinkViewDelegate.swift */; };
 		D1A31DC4210C123600A3B0E6 /* DrinkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A31DC3210C123600A3B0E6 /* DrinkTableViewCell.swift */; };
 		D1A31DF9210FEF7C00A3B0E6 /* UserPreferencesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A31DF8210FEF7C00A3B0E6 /* UserPreferencesController.swift */; };
+		D1F696E52114DDF50085266E /* Cellaret.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D1F696E32114DDF50085266E /* Cellaret.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		D1A31DBE210570FB00A3B0E6 /* DrinkViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkViewDelegate.swift; sourceTree = "<group>"; };
 		D1A31DC3210C123600A3B0E6 /* DrinkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkTableViewCell.swift; sourceTree = "<group>"; };
 		D1A31DF8210FEF7C00A3B0E6 /* UserPreferencesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferencesController.swift; sourceTree = "<group>"; };
+		D1F696E42114DDF50085266E /* Cellaret.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Cellaret.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				D14A258A20EEBCFC0022D9F7 /* ViewControllers */,
 				D1A31DC0210C0FA500A3B0E6 /* Cells */,
 				D14A257920EEB1A50022D9F7 /* Assets.xcassets */,
+				D1F696E32114DDF50085266E /* Cellaret.xcdatamodeld */,
 				D14A257B20EEB1A50022D9F7 /* LaunchScreen.storyboard */,
 				D14A257E20EEB1A50022D9F7 /* Info.plist */,
 			);
@@ -211,6 +214,7 @@
 				D14A258920EEBC9D0022D9F7 /* MenuTableViewController.swift in Sources */,
 				D14A25B820F2BA5F0022D9F7 /* Drink.swift in Sources */,
 				D1A31DBF210570FB00A3B0E6 /* DrinkViewDelegate.swift in Sources */,
+				D1F696E52114DDF50085266E /* Cellaret.xcdatamodeld in Sources */,
 				D14A258520EEBC130022D9F7 /* DrinkDetailViewController.swift in Sources */,
 				D14A257320EEB1A40022D9F7 /* AppDelegate.swift in Sources */,
 				D1A31DF9210FEF7C00A3B0E6 /* UserPreferencesController.swift in Sources */,
@@ -420,6 +424,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D1F696E32114DDF50085266E /* Cellaret.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D1F696E42114DDF50085266E /* Cellaret.xcdatamodel */,
+			);
+			currentVersion = D1F696E42114DDF50085266E /* Cellaret.xcdatamodel */;
+			path = Cellaret.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D14A256720EEB1A40022D9F7 /* Project object */;
 }

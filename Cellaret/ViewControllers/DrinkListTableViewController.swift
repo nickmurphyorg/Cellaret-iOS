@@ -15,7 +15,6 @@ class DrinkListTableViewController: UITableViewController {
     var menuSelection: Int = 0
     
     let cellIdentifier = "drinkCell"
-    //let placeholderDrinkImage = UIImage(named: "Drink Placeholder")
     let favoriteStar = UIImage(named: "Star-White")
 
     override func viewDidLoad() {

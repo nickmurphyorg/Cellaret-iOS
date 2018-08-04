@@ -103,9 +103,6 @@ extension DrinkDetailViewController: DrinkViewDelegate {
         }
         
         drinkCategoryLabel.text = Menu.shared.selectionName(selection: withDrink.category)
-        
-        if withDrink.alcoholVolume != nil {
-            drinkVolumeLabel.text = String(withDrink.alcoholVolume!)
-        }
+        drinkVolumeLabel.text = String(withDrink.alcoholVolume)
     }
 }
