@@ -27,6 +27,7 @@ class EditDrinkTableViewController: UITableViewController {
     var pickerState = pickerCell.open
     var menuOptions = [String]()
     var editDrink: Drink?
+    var imageID: String?
     var editDrinkDelegate: EditDrinkDelegate?
     var drinkViewDelegate: DrinkViewDelegate?
     weak var vc: EditDrinkTableViewController!
@@ -90,6 +91,10 @@ class EditDrinkTableViewController: UITableViewController {
 extension EditDrinkTableViewController {
     
     @IBAction func dismissEditScreen(_ sender: UIBarButtonItem) {
+        if let imageID = imageID {
+            ImageController.shared.deleteImage(imageID: imageID)
+        }
+        
         dismiss(animated: true, completion: nil)
     }
     
@@ -111,7 +116,12 @@ extension EditDrinkTableViewController {
         
         let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: (nil))
         let delete = UIAlertAction(title: "Delete", style: .default, handler: { [weak self] action in
-            self?.editDrinkDelegate?.editDrink(drink: (self?.editDrink!)!, action: editAction.delete)
+            self?.editDrinkDelegate?.editDrink(drink: (self?.editDrink)!, action: editAction.delete)
+            
+            if let imageID = self?.imageID {
+                ImageController.shared.deleteImage(imageID: imageID)
+            }
+            
             self?.performSegue(withIdentifier: "BackToDrinkList", sender: self)
         })
         
@@ -194,6 +204,7 @@ extension EditDrinkTableViewController {
     
     func createDrink() -> Drink {
         let newDrink = Drink(
+            imageId: imageID,
             image: checkImage(drinkImage: drinkImageView.image!),
             name: drinkNameField.text!,
             favorite: favoriteSwitch.isOn,
@@ -253,7 +264,12 @@ extension EditDrinkTableViewController: UIImagePickerControllerDelegate, UINavig
     
     @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let capturedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            drinkImageView.image = capturedImage
+            let thumbnail = ImageController.shared.createThumbnail(originalImage: capturedImage)
+            let createImageId = ImageController.shared.saveImage(drinkImage: capturedImage)
+            
+            drinkImageView.image = thumbnail
+            imageID = createImageId
+            
             dismiss(animated: true, completion: nil)
         }
     }

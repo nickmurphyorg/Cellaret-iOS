@@ -15,14 +15,16 @@
 		D14A258720EEBC6D0022D9F7 /* DrinkListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14A258620EEBC6D0022D9F7 /* DrinkListTableViewController.swift */; };
 		D14A258920EEBC9D0022D9F7 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14A258820EEBC9D0022D9F7 /* MenuTableViewController.swift */; };
 		D14A258C20EEBD420022D9F7 /* EditDrinkTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14A258B20EEBD420022D9F7 /* EditDrinkTableViewController.swift */; };
-		D14A258F20EECA590022D9F7 /* MenuOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14A258E20EECA590022D9F7 /* MenuOptions.swift */; };
+		D14A258F20EECA590022D9F7 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14A258E20EECA590022D9F7 /* MenuController.swift */; };
 		D14A259120F155CF0022D9F7 /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14A259020F155CF0022D9F7 /* ModelController.swift */; };
 		D14A259320F19E8A0022D9F7 /* MenuSelectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14A259220F19E8A0022D9F7 /* MenuSelectionDelegate.swift */; };
 		D14A25B820F2BA5F0022D9F7 /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14A25B720F2BA5F0022D9F7 /* Drink.swift */; };
 		D1565A1F2102D08C00A8E5C1 /* EditDrinkDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1565A1E2102D08C00A8E5C1 /* EditDrinkDelegate.swift */; };
+		D17C7A6521250A4200986A52 /* ImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17C7A6421250A4200986A52 /* ImageController.swift */; };
 		D1A31DBF210570FB00A3B0E6 /* DrinkViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A31DBE210570FB00A3B0E6 /* DrinkViewDelegate.swift */; };
 		D1A31DC4210C123600A3B0E6 /* DrinkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A31DC3210C123600A3B0E6 /* DrinkTableViewCell.swift */; };
 		D1A31DF9210FEF7C00A3B0E6 /* UserPreferencesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A31DF8210FEF7C00A3B0E6 /* UserPreferencesController.swift */; };
+		D1B44A2A2128CBDF00F00604 /* ImageObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B44A292128CBDF00F00604 /* ImageObject.swift */; };
 		D1F696E52114DDF50085266E /* Cellaret.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D1F696E32114DDF50085266E /* Cellaret.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
@@ -37,14 +39,16 @@
 		D14A258620EEBC6D0022D9F7 /* DrinkListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkListTableViewController.swift; sourceTree = "<group>"; };
 		D14A258820EEBC9D0022D9F7 /* MenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		D14A258B20EEBD420022D9F7 /* EditDrinkTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDrinkTableViewController.swift; sourceTree = "<group>"; };
-		D14A258E20EECA590022D9F7 /* MenuOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOptions.swift; sourceTree = "<group>"; };
+		D14A258E20EECA590022D9F7 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		D14A259020F155CF0022D9F7 /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
 		D14A259220F19E8A0022D9F7 /* MenuSelectionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSelectionDelegate.swift; sourceTree = "<group>"; };
 		D14A25B720F2BA5F0022D9F7 /* Drink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drink.swift; sourceTree = "<group>"; };
 		D1565A1E2102D08C00A8E5C1 /* EditDrinkDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDrinkDelegate.swift; sourceTree = "<group>"; };
+		D17C7A6421250A4200986A52 /* ImageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageController.swift; sourceTree = "<group>"; };
 		D1A31DBE210570FB00A3B0E6 /* DrinkViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkViewDelegate.swift; sourceTree = "<group>"; };
 		D1A31DC3210C123600A3B0E6 /* DrinkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkTableViewCell.swift; sourceTree = "<group>"; };
 		D1A31DF8210FEF7C00A3B0E6 /* UserPreferencesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferencesController.swift; sourceTree = "<group>"; };
+		D1B44A292128CBDF00F00604 /* ImageObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageObject.swift; sourceTree = "<group>"; };
 		D1F696E42114DDF50085266E /* Cellaret.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Cellaret.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,8 +111,8 @@
 		D14A258D20EEBE0D0022D9F7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D14A258E20EECA590022D9F7 /* MenuOptions.swift */,
 				D14A25B720F2BA5F0022D9F7 /* Drink.swift */,
+				D1B44A292128CBDF00F00604 /* ImageObject.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -134,8 +138,10 @@
 		D1A31DF7210FEF4600A3B0E6 /* Other Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D14A258E20EECA590022D9F7 /* MenuController.swift */,
 				D14A259020F155CF0022D9F7 /* ModelController.swift */,
 				D1A31DF8210FEF7C00A3B0E6 /* UserPreferencesController.swift */,
+				D17C7A6421250A4200986A52 /* ImageController.swift */,
 			);
 			path = "Other Controllers";
 			sourceTree = "<group>";
@@ -216,9 +222,11 @@
 				D1A31DBF210570FB00A3B0E6 /* DrinkViewDelegate.swift in Sources */,
 				D1F696E52114DDF50085266E /* Cellaret.xcdatamodeld in Sources */,
 				D14A258520EEBC130022D9F7 /* DrinkDetailViewController.swift in Sources */,
+				D17C7A6521250A4200986A52 /* ImageController.swift in Sources */,
+				D1B44A2A2128CBDF00F00604 /* ImageObject.swift in Sources */,
 				D14A257320EEB1A40022D9F7 /* AppDelegate.swift in Sources */,
 				D1A31DF9210FEF7C00A3B0E6 /* UserPreferencesController.swift in Sources */,
-				D14A258F20EECA590022D9F7 /* MenuOptions.swift in Sources */,
+				D14A258F20EECA590022D9F7 /* MenuController.swift in Sources */,
 				D14A259320F19E8A0022D9F7 /* MenuSelectionDelegate.swift in Sources */,
 				D14A258C20EEBD420022D9F7 /* EditDrinkTableViewController.swift in Sources */,
 				D1565A1F2102D08C00A8E5C1 /* EditDrinkDelegate.swift in Sources */,

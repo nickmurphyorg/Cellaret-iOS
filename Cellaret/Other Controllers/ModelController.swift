@@ -47,28 +47,41 @@ class ModelController {
     
     func saveDrink(oldDrink: Drink?, newDrink: Drink) {
         
-        if let oldDrink = oldDrink {
-            let index = findDrinkLocally(drink: oldDrink)
-            let drinkManagedObject = findDrinkRemote(drink: oldDrink)
+        guard let oldDrink = oldDrink else {
+            addDrink(drink: newDrink)
+            return
+        }
+        
+        let index = findDrinkLocally(drink: oldDrink)
+        let drinkManagedObject = findDrinkRemote(drink: oldDrink)
+        let imageId: String? = newDrink.imageId != nil ? newDrink.imageId! : oldDrink.imageId
+        
+        drinks[index] = newDrink
+        
+        if let drinkManagedObject = drinkManagedObject {
+            print("Managed object exists")
             
-            drinks[index] = newDrink
+            drinkManagedObject.setValuesForKeys([
+                "imageId": imageId as Any,
+                "name": newDrink.name,
+                "favorite": newDrink.favorite,
+                "category": newDrink.category,
+                "alcoholVolume": newDrink.alcoholVolume
+            ])
             
-            if let drinkManagedObject = drinkManagedObject {
-                drinkManagedObject.setValuesForKeys([
-                    "name": newDrink.name,
-                    "favorite": newDrink.favorite,
-                    "category": newDrink.category,
-                    "alcoholVolume": newDrink.alcoholVolume
-                ])
-                
-                do {
-                    try managedContext.save()
-                } catch let error as NSError {
-                    print("Could not save: \(error)\n \(error.userInfo)")
-                }
+            do {
+                try managedContext.save()
+            } catch let error as NSError {
+                print("Could not save: \(error)\n \(error.userInfo)")
             }
         } else {
-            addDrink(drink: newDrink)
+            print("Managed object does not exist")
+        }
+        
+        guard newDrink.imageId != nil else { return }
+        
+        if let oldImageId = oldDrink.imageId {
+            ImageController.shared.deleteImage(imageID: oldImageId)
         }
     }
     
@@ -77,8 +90,10 @@ class ModelController {
         
         let entity = NSEntityDescription.entity(forEntityName: "DrinkEntity", in: managedContext)
         let drinkEntity = NSManagedObject(entity: entity!, insertInto: managedContext)
+        let imageId: String? = drink.imageId != nil ? drink.imageId! : nil
         
         drinkEntity.setValuesForKeys([
+            "imageId": imageId as Any,
             "name": drink.name,
             "favorite": drink.favorite,
             "category": drink.category,
@@ -94,10 +109,17 @@ class ModelController {
     
     func deleteDrink(drink: Drink) {
         let index = findDrinkLocally(drink: drink)
-        drinks.remove(at: index)
-        
         let drinkToDelete = findDrinkRemote(drink: drink)
         
+        // Delete Images From Documents Folder
+        if let imageID = drink.imageId {
+            ImageController.shared.deleteImage(imageID: imageID)
+        }
+        
+        // Delete Locally
+        drinks.remove(at: index)
+        
+        // Delete In Database
         do {
             if let drinkToDelete = drinkToDelete {
                 managedContext.delete(drinkToDelete)
@@ -139,7 +161,7 @@ class ModelController {
             let returnedDrinks: [NSManagedObject] = try managedContext.fetch(drinkFetch)
             return returnedDrinks.first
         } catch let error as NSError {
-            print("Could not find the drink: \(error)\n \(error.userInfo)")
+            print("Could not return the drink: \(error)\n \(error.userInfo)")
             return nil
         }
     }
