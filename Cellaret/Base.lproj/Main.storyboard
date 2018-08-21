@@ -175,7 +175,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Sj-I7-Eaa">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NZf-Ye-nPC">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NZf-Ye-nPC">
                                         <rect key="frame" x="16" y="16" width="343" height="228"/>
                                         <color key="backgroundColor" red="0.93344534589999995" green="0.93344534589999995" blue="0.93344534589999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -566,6 +566,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="kIv-5x-jZy"/>
+        <segue reference="5b9-Dy-qSo"/>
     </inferredMetricsTieBreakers>
 </document>
