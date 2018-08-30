@@ -30,6 +30,7 @@ class EditDrinkTableViewController: UITableViewController {
     var imageID: String?
     var editDrinkDelegate: EditDrinkDelegate?
     var drinkViewDelegate: DrinkViewDelegate?
+    
     weak var vc: EditDrinkTableViewController!
     
     let addImagePlaceholder = UIImage(named: "Add Image Placeholder")
@@ -115,6 +116,7 @@ extension EditDrinkTableViewController {
         let alert = UIAlertController.init(title: nil, message: nil, preferredStyle: .actionSheet)
         
         let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: (nil))
+        
         let delete = UIAlertAction(title: "Delete", style: .default, handler: { [weak self] action in
             self?.editDrinkDelegate?.editDrink(drink: (self?.editDrink)!, action: editAction.delete)
             

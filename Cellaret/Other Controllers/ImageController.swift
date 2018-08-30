@@ -17,7 +17,9 @@ class ImageController {
     let screenWidth = UIScreen.main.bounds.width
     let pixelScale: CGFloat = 0.0
     
-    init() {
+    private let imageQueue = DispatchQueue(label: "org.nickmurphy.Cellaret.imageQueue", qos: .background)
+    
+    private init() {
         let documentPath = documentsPath.path
         do {
             let files = try fileManager.contentsOfDirectory(atPath: "\(documentPath)")
@@ -34,30 +36,37 @@ class ImageController {
         let imageID = date.replacingOccurrences(of: ".", with: "-")
         let thumbnailImage = createThumbnail(originalImage: drinkImage)
         
-        var images = [ImageObject]()
-        
-        if let originalImageData = UIImagePNGRepresentation(drinkImage) {
-            let originalImageObject = ImageObject(imageName: "\(imageID).png", imageData: originalImageData)
-            images.append(originalImageObject)
-        } else {
-            print("Could not create png from original image.")
-        }
-        
-        if let thumbnailImageData = UIImagePNGRepresentation(thumbnailImage) {
-            let thumbnailImageObject = ImageObject(imageName: "\(imageID)-small.png", imageData: thumbnailImageData)
-            images.append(thumbnailImageObject)
-        } else {
-            print("Could not create png from thumbnail image.")
-        }
-        
-        do {
-            for imageObject in images {
-                let filePath = documentsPath.appendingPathComponent("\(imageObject.imageName)")
-                try imageObject.imageData.write(to: filePath, options: .atomic)
-                print("\(imageObject.imageName) saved.")
+        imageQueue.async { [weak self] in
+            
+            guard let weakSelf = self else { return }
+            
+            var images = [ImageObject]()
+            
+            if let originalImageData = UIImagePNGRepresentation(drinkImage) {
+                let originalImageObject = ImageObject(imageName: "\(imageID).png", imageData: originalImageData)
+                images.append(originalImageObject)
+            } else {
+                print("Could not create png from original image.")
             }
-        } catch {
-            print("Image could not be saved: \n\(error)")
+            
+            if let thumbnailImageData = UIImagePNGRepresentation(thumbnailImage) {
+                let thumbnailImageObject = ImageObject(imageName: "\(imageID)-small.png", imageData: thumbnailImageData)
+                images.append(thumbnailImageObject)
+            } else {
+                print("Could not create png from thumbnail image.")
+            }
+            
+            do {
+                for imageObject in images {
+                    let filePath = weakSelf.documentsPath.appendingPathComponent("\(imageObject.imageName)")
+                    
+                    try imageObject.imageData.write(to: filePath, options: .atomic)
+                    
+                    print("\(imageObject.imageName) saved.")
+                }
+            } catch {
+                print("Image could not be saved: \n\(error)")
+            }
         }
         
         return imageID
@@ -80,13 +89,20 @@ class ImageController {
     
     func deleteImage(imageID: String) {
         let images = ["\(imageID).png", "\(imageID)-small.png"]
-        do {
-            for image in images {
-                try fileManager.removeItem(at: documentsPath.appendingPathComponent(image))
-                print("Removed: \(image)")
+        
+        imageQueue.async { [weak self] in
+            
+            guard let weakSelf = self else { return }
+            
+            do {
+                for image in images {
+                    try weakSelf.fileManager.removeItem(at: weakSelf.documentsPath.appendingPathComponent(image) )
+                    
+                    print("Removed: \(image)")
+                }
+            } catch {
+                print("Image with ID \(imageID) could not be deleted.\n\(error)")
             }
-        } catch {
-            print("Image with ID \(imageID) could not be deleted.\n\(error)")
         }
     }
     

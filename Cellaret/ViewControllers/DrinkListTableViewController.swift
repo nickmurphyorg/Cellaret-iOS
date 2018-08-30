@@ -103,10 +103,14 @@ extension DrinkListTableViewController: MenuSelectionDelegate {
     
     func menuSelectionMade(selection: Int) {
         guard menuSelection != selection else { return }
+        
         UserPreferences.shared.updateMenuSelection(selection: selection)
         self.menuSelection = selection
+        
         updateTitle()
+        
         selectedDrinks = ModelController.shared.filterDrinks(category: menuSelection)
+        
         tableView.reloadData()
     }
     
