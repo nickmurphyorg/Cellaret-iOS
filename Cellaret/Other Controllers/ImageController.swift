@@ -20,12 +20,12 @@ class ImageController {
     private let imageQueue = DispatchQueue(label: "org.nickmurphy.Cellaret.imageQueue", qos: .background)
     
     private init() {
+        // For Debugging Purposes
+
         let documentPath = documentsPath.path
         do {
             let files = try fileManager.contentsOfDirectory(atPath: "\(documentPath)")
-            for file in files {
-                print("File name: \(file)")
-            }
+            print("Number of files in Documents: \(files.count)")
         } catch {
             print("Could not find Documents.")
         }

@@ -63,9 +63,8 @@ class EditDrinkTableViewController: UITableViewController {
             favoriteSwitch.setOn(editDrink.favorite, animated: false)
             drinkVolumeField.text = String(editDrink.alcoholVolume)
             
-            print("Favorite: \(editDrink.favorite)")
-            
         } else {
+            
             drinkImageView.image = addImagePlaceholder
             saveButton.isEnabled = false
             categoryCell.detailTextLabel?.text = categoryToggleLabel
@@ -105,10 +104,6 @@ extension EditDrinkTableViewController {
     
     @IBAction func nameTextReturned(_ sender: UITextField) {
         drinkNameField.resignFirstResponder()
-    }
-    
-    @IBAction func closeKeyboard(_ sender: UIPanGestureRecognizer) {
-        self.view.endEditing(true)
     }
     
     @IBAction func deleteDrink(_ sender: UIButton) {

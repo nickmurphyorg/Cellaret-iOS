@@ -103,6 +103,6 @@ extension DrinkDetailViewController: DrinkViewDelegate {
         }
         
         drinkCategoryLabel.text = Menu.shared.selectionName(selection: withDrink.category)
-        drinkVolumeLabel.text = String(withDrink.alcoholVolume)
+        drinkVolumeLabel.text = String(withDrink.alcoholVolume) + "%"
     }
 }

@@ -24,7 +24,6 @@ struct Drink {
 extension Drink{
     init(drinkEntity: NSManagedObject) {
         if let imageId = drinkEntity.value(forKey: "imageId") {
-            print("\(drinkEntity.value(forKey: "name") as! String) has an image ID: \(imageId)")
             self.image = ImageController.shared.fetchImage(imageID: imageId as! String)
         } else {
             self.image = nil
