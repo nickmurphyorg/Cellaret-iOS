@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 import UIKit
 
-struct Drink {
+struct Drink: Equatable {
     typealias percent = Double
     
     var imageId: String?

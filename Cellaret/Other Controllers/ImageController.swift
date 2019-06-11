@@ -42,14 +42,14 @@ class ImageController {
             
             var images = [ImageObject]()
             
-            if let originalImageData = UIImagePNGRepresentation(drinkImage) {
+            if let originalImageData = drinkImage.pngData() {
                 let originalImageObject = ImageObject(imageName: "\(imageID).png", imageData: originalImageData)
                 images.append(originalImageObject)
             } else {
                 print("Could not create png from original image.")
             }
             
-            if let thumbnailImageData = UIImagePNGRepresentation(thumbnailImage) {
+            if let thumbnailImageData = thumbnailImage.pngData() {
                 let thumbnailImageObject = ImageObject(imageName: "\(imageID)-small.png", imageData: thumbnailImageData)
                 images.append(thumbnailImageObject)
             } else {

@@ -57,7 +57,7 @@ extension DrinkDetailViewController{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "EditDrink" {
             let navigationController = segue.destination as? UINavigationController
-            let destinationViewController = navigationController?.childViewControllers.first as! EditDrinkTableViewController
+            let destinationViewController = navigationController?.children.first as! EditDrinkTableViewController
             destinationViewController.editDrink = drinkSelection
             destinationViewController.editDrinkDelegate = editDrinkDelegate
             destinationViewController.drinkViewDelegate = self

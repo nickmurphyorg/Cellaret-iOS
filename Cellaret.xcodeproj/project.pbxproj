@@ -21,12 +21,24 @@
 		D14A25B820F2BA5F0022D9F7 /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14A25B720F2BA5F0022D9F7 /* Drink.swift */; };
 		D1565A1F2102D08C00A8E5C1 /* EditDrinkDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1565A1E2102D08C00A8E5C1 /* EditDrinkDelegate.swift */; };
 		D17C7A6521250A4200986A52 /* ImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17C7A6421250A4200986A52 /* ImageController.swift */; };
+		D184CBBB2170372B00ADD1B1 /* CellaretTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D184CBBA2170372B00ADD1B1 /* CellaretTests.swift */; };
+		D184CBC32172AC5900ADD1B1 /* ModelControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D184CBC22172AC5900ADD1B1 /* ModelControllerTests.swift */; };
 		D1A31DBF210570FB00A3B0E6 /* DrinkViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A31DBE210570FB00A3B0E6 /* DrinkViewDelegate.swift */; };
 		D1A31DC4210C123600A3B0E6 /* DrinkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A31DC3210C123600A3B0E6 /* DrinkTableViewCell.swift */; };
 		D1A31DF9210FEF7C00A3B0E6 /* UserPreferencesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A31DF8210FEF7C00A3B0E6 /* UserPreferencesController.swift */; };
 		D1B44A2A2128CBDF00F00604 /* ImageObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B44A292128CBDF00F00604 /* ImageObject.swift */; };
 		D1F696E52114DDF50085266E /* Cellaret.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D1F696E32114DDF50085266E /* Cellaret.xcdatamodeld */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D184CBBD2170372B00ADD1B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D14A256720EEB1A40022D9F7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D14A256E20EEB1A40022D9F7;
+			remoteInfo = Cellaret;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		D14A256F20EEB1A40022D9F7 /* Cellaret.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cellaret.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,6 +57,10 @@
 		D14A25B720F2BA5F0022D9F7 /* Drink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drink.swift; sourceTree = "<group>"; };
 		D1565A1E2102D08C00A8E5C1 /* EditDrinkDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDrinkDelegate.swift; sourceTree = "<group>"; };
 		D17C7A6421250A4200986A52 /* ImageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageController.swift; sourceTree = "<group>"; };
+		D184CBB82170372B00ADD1B1 /* CellaretTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CellaretTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D184CBBA2170372B00ADD1B1 /* CellaretTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellaretTests.swift; sourceTree = "<group>"; };
+		D184CBBC2170372B00ADD1B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D184CBC22172AC5900ADD1B1 /* ModelControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelControllerTests.swift; sourceTree = "<group>"; };
 		D1A31DBE210570FB00A3B0E6 /* DrinkViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkViewDelegate.swift; sourceTree = "<group>"; };
 		D1A31DC3210C123600A3B0E6 /* DrinkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkTableViewCell.swift; sourceTree = "<group>"; };
 		D1A31DF8210FEF7C00A3B0E6 /* UserPreferencesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferencesController.swift; sourceTree = "<group>"; };
@@ -60,6 +76,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D184CBB52170372B00ADD1B1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -67,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				D14A257120EEB1A40022D9F7 /* Cellaret */,
+				D184CBB92170372B00ADD1B1 /* CellaretTests */,
 				D14A257020EEB1A40022D9F7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -75,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				D14A256F20EEB1A40022D9F7 /* Cellaret.app */,
+				D184CBB82170372B00ADD1B1 /* CellaretTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -127,6 +152,16 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		D184CBB92170372B00ADD1B1 /* CellaretTests */ = {
+			isa = PBXGroup;
+			children = (
+				D184CBC22172AC5900ADD1B1 /* ModelControllerTests.swift */,
+				D184CBBA2170372B00ADD1B1 /* CellaretTests.swift */,
+				D184CBBC2170372B00ADD1B1 /* Info.plist */,
+			);
+			path = CellaretTests;
+			sourceTree = "<group>";
+		};
 		D1A31DC0210C0FA500A3B0E6 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -166,18 +201,42 @@
 			productReference = D14A256F20EEB1A40022D9F7 /* Cellaret.app */;
 			productType = "com.apple.product-type.application";
 		};
+		D184CBB72170372B00ADD1B1 /* CellaretTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D184CBBF2170372B00ADD1B1 /* Build configuration list for PBXNativeTarget "CellaretTests" */;
+			buildPhases = (
+				D184CBB42170372B00ADD1B1 /* Sources */,
+				D184CBB52170372B00ADD1B1 /* Frameworks */,
+				D184CBB62170372B00ADD1B1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D184CBBE2170372B00ADD1B1 /* PBXTargetDependency */,
+			);
+			name = CellaretTests;
+			productName = CellaretTests;
+			productReference = D184CBB82170372B00ADD1B1 /* CellaretTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		D14A256720EEB1A40022D9F7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0940;
+				LastSwiftUpdateCheck = 1000;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Nick Murphy";
 				TargetAttributes = {
 					D14A256E20EEB1A40022D9F7 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1020;
+					};
+					D184CBB72170372B00ADD1B1 = {
+						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1020;
+						TestTargetID = D14A256E20EEB1A40022D9F7;
 					};
 				};
 			};
@@ -195,6 +254,7 @@
 			projectRoot = "";
 			targets = (
 				D14A256E20EEB1A40022D9F7 /* Cellaret */,
+				D184CBB72170372B00ADD1B1 /* CellaretTests */,
 			);
 		};
 /* End PBXProject section */
@@ -207,6 +267,13 @@
 				D14A257D20EEB1A50022D9F7 /* LaunchScreen.storyboard in Resources */,
 				D14A257A20EEB1A50022D9F7 /* Assets.xcassets in Resources */,
 				D14A257820EEB1A40022D9F7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D184CBB62170372B00ADD1B1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,7 +303,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D184CBB42170372B00ADD1B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D184CBC32172AC5900ADD1B1 /* ModelControllerTests.swift in Sources */,
+				D184CBBB2170372B00ADD1B1 /* CellaretTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D184CBBE2170372B00ADD1B1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D14A256E20EEB1A40022D9F7 /* Cellaret */;
+			targetProxy = D184CBBD2170372B00ADD1B1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D14A257620EEB1A40022D9F7 /* Main.storyboard */ = {
@@ -386,7 +470,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.nickmurphy.Cellaret;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -405,8 +489,51 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.nickmurphy.Cellaret;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		D184CBC02170372B00ADD1B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CellaretTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = org.nickmurphy.CellaretTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cellaret.app/Cellaret";
+			};
+			name = Debug;
+		};
+		D184CBC12170372B00ADD1B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CellaretTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = org.nickmurphy.CellaretTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cellaret.app/Cellaret";
 			};
 			name = Release;
 		};
@@ -427,6 +554,15 @@
 			buildConfigurations = (
 				D14A258220EEB1A50022D9F7 /* Debug */,
 				D14A258320EEB1A50022D9F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D184CBBF2170372B00ADD1B1 /* Build configuration list for PBXNativeTarget "CellaretTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D184CBC02170372B00ADD1B1 /* Debug */,
+				D184CBC12170372B00ADD1B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

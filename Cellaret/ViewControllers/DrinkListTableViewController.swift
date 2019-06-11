@@ -79,7 +79,7 @@ extension DrinkListTableViewController {
         switch segue.identifier {
         case "MenuOptions":
             let navigationController = segue.destination as? UINavigationController
-            let destinationViewController = navigationController?.childViewControllers.first as! MenuTableViewController
+            let destinationViewController = navigationController?.children.first as! MenuTableViewController
             destinationViewController.delegate = self
             destinationViewController.menuSelection = self.menuSelection
         case "DrinkDetail":
@@ -89,7 +89,7 @@ extension DrinkListTableViewController {
             destinationViewController.editDrinkDelegate = self
         case "AddNewDrink":
             let navigationController = segue.destination as? UINavigationController
-            let destinationViewController = navigationController?.childViewControllers.first as! EditDrinkTableViewController
+            let destinationViewController = navigationController?.children.first as! EditDrinkTableViewController
             destinationViewController.editDrinkDelegate = self
             tappedDrink = nil
         default:

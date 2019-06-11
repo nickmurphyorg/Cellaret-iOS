@@ -131,7 +131,7 @@ class ModelController {
     }
     
     func findDrinkLocally(drink: Drink) -> Int {
-        if let index = drinks.index(where: {
+        if let index = drinks.firstIndex(where: {
             $0.name == drink.name
                 &&
                 $0.category == drink.category
