@@ -62,11 +62,11 @@ class ModelController {
             print("Managed object exists")
             
             drinkManagedObject.setValuesForKeys([
-                "imageId": imageId as Any,
-                "name": newDrink.name,
-                "favorite": newDrink.favorite,
-                "category": newDrink.category,
-                "alcoholVolume": newDrink.alcoholVolume
+                modelKey.imageId.rawValue: imageId as Any,
+                modelKey.name.rawValue: newDrink.name,
+                modelKey.favorite.rawValue: newDrink.favorite,
+                modelKey.category.rawValue: newDrink.category,
+                modelKey.alcoholVolume.rawValue: newDrink.alcoholVolume
             ])
             
             do {
@@ -93,11 +93,11 @@ class ModelController {
         let imageId: String? = drink.imageId != nil ? drink.imageId! : nil
         
         drinkEntity.setValuesForKeys([
-            "imageId": imageId as Any,
-            "name": drink.name,
-            "favorite": drink.favorite,
-            "category": drink.category,
-            "alcoholVolume": drink.alcoholVolume
+            modelKey.imageId.rawValue: imageId as Any,
+            modelKey.name.rawValue: drink.name,
+            modelKey.favorite.rawValue: drink.favorite,
+            modelKey.category.rawValue: drink.category,
+            modelKey.alcoholVolume.rawValue: drink.alcoholVolume
         ])
         
         do {

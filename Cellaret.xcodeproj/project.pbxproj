@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D10CC86F22AF36D20028ABAC /* ModelKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10CC86E22AF36D20028ABAC /* ModelKeys.swift */; };
 		D14A257320EEB1A40022D9F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14A257220EEB1A40022D9F7 /* AppDelegate.swift */; };
 		D14A257820EEB1A40022D9F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D14A257620EEB1A40022D9F7 /* Main.storyboard */; };
 		D14A257A20EEB1A50022D9F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D14A257920EEB1A50022D9F7 /* Assets.xcassets */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D10CC86E22AF36D20028ABAC /* ModelKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelKeys.swift; sourceTree = "<group>"; };
 		D14A256F20EEB1A40022D9F7 /* Cellaret.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cellaret.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D14A257220EEB1A40022D9F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D14A257720EEB1A40022D9F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -86,6 +88,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D10CC87022AF36DD0028ABAC /* Enumerations */ = {
+			isa = PBXGroup;
+			children = (
+				D10CC86E22AF36D20028ABAC /* ModelKeys.swift */,
+			);
+			path = Enumerations;
+			sourceTree = "<group>";
+		};
 		D14A256620EEB1A40022D9F7 = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +128,7 @@
 				D1F696E32114DDF50085266E /* Cellaret.xcdatamodeld */,
 				D14A257B20EEB1A50022D9F7 /* LaunchScreen.storyboard */,
 				D14A257E20EEB1A50022D9F7 /* Info.plist */,
+				D10CC87022AF36DD0028ABAC /* Enumerations */,
 			);
 			path = Cellaret;
 			sourceTree = "<group>";
@@ -290,6 +301,7 @@
 				D1F696E52114DDF50085266E /* Cellaret.xcdatamodeld in Sources */,
 				D14A258520EEBC130022D9F7 /* DrinkDetailViewController.swift in Sources */,
 				D17C7A6521250A4200986A52 /* ImageController.swift in Sources */,
+				D10CC86F22AF36D20028ABAC /* ModelKeys.swift in Sources */,
 				D1B44A2A2128CBDF00F00604 /* ImageObject.swift in Sources */,
 				D14A257320EEB1A40022D9F7 /* AppDelegate.swift in Sources */,
 				D1A31DF9210FEF7C00A3B0E6 /* UserPreferencesController.swift in Sources */,

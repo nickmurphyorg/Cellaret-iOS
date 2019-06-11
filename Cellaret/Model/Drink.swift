@@ -23,15 +23,15 @@ struct Drink: Equatable {
 
 extension Drink{
     init(drinkEntity: NSManagedObject) {
-        if let imageId = drinkEntity.value(forKey: "imageId") {
+        if let imageId = drinkEntity.value(forKey: modelKey.imageId.rawValue) {
             self.image = ImageController.shared.fetchImage(imageID: imageId as! String)
         } else {
             self.image = nil
         }
-        self.imageId = drinkEntity.value(forKey: "imageId") as? String
-        self.name = drinkEntity.value(forKey: "name") as! String
-        self.favorite = drinkEntity.value(forKey: "favorite") as! Bool
-        self.category = drinkEntity.value(forKey: "category") as! Int
-        self.alcoholVolume = drinkEntity.value(forKey: "alcoholVolume") as! Double
+        self.imageId = drinkEntity.value(forKey: modelKey.imageId.rawValue) as? String
+        self.name = drinkEntity.value(forKey: modelKey.name.rawValue) as! String
+        self.favorite = drinkEntity.value(forKey: modelKey.favorite.rawValue) as! Bool
+        self.category = drinkEntity.value(forKey: modelKey.category.rawValue) as! Int
+        self.alcoholVolume = drinkEntity.value(forKey: modelKey.alcoholVolume.rawValue) as! Double
     }
 }
