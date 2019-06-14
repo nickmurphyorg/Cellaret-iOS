@@ -8,11 +8,6 @@
 
 import Foundation
 
-enum editAction {
-    case save
-    case delete
-}
-
 protocol EditDrinkDelegate {
     func editDrink(drink: Drink, action: editAction)
 }

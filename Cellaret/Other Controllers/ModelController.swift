@@ -13,92 +13,80 @@ import UIKit
 class ModelController {
     static let shared = ModelController()
     
-    private var drinks = [Drink]()
+    private let drinkEntityName = "DrinkEntity"
+    
     private var managedContext: NSManagedObjectContext!
     
     private init() {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
-        managedContext = appDelegate.persistentContainer.viewContext
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         
-        let drinkRequest = NSFetchRequest<NSManagedObject>(entityName: "DrinkEntity")
+        managedContext = appDelegate.persistentContainer.viewContext
+    }
+    
+    func returnDrinksIn(category: Int) -> [Drink] {
+        let drinkRequest = NSFetchRequest<NSManagedObject>(entityName: drinkEntityName)
+        if category != 0 {
+            drinkRequest.predicate = NSPredicate(format: "\(modelKey.category.rawValue) == %i", category)
+        }
+        
+        var drinks = [Drink]()
         
         do {
             let returnedDrinks: [NSManagedObject] = try managedContext.fetch(drinkRequest)
             
-            print("Database returned \(returnedDrinks.count) drinks.")
+            print("Coredata returned \(returnedDrinks.count) drinks.")
             
             for drink in returnedDrinks {
                 let drinkObject = Drink.init(drinkEntity: drink)
+                
                 drinks.append(drinkObject)
             }
         } catch let error as NSError {
             print("Drinks could not be retrieved: \(error)\n \(error.userInfo).")
         }
-    }
-    
-    func filterDrinks(category: Int) -> [Drink] {
-        if category == 0 {
-            return drinks
-        } else {
-            let filteredDrinks = drinks.filter { $0.category == category }
-            return filteredDrinks
-        }
-    }
-    
-    func saveDrink(oldDrink: Drink?, newDrink: Drink) {
         
-        guard let oldDrink = oldDrink else {
-            addDrink(drink: newDrink)
+        return drinks
+    }
+    
+    func saveNewDrink(imageId: String?, name: String, favorite: Bool, category: Int, alcoholVolume: Double) -> Drink {
+        let entity = NSEntityDescription.entity(forEntityName: drinkEntityName, in: managedContext)
+        let drinkEntity = NSManagedObject(entity: entity!, insertInto: managedContext) as! DrinkEntity
+        
+        drinkEntity.imageId = imageId
+        drinkEntity.name = name
+        drinkEntity.favorite = favorite
+        drinkEntity.category = Int16(category)
+        drinkEntity.alcoholVolume = alcoholVolume
+        
+        do {
+            try managedContext.save()
+        } catch let error as NSError {
+            print("Could not save: \(error)\n \(error.userInfo)")
+        }
+        
+        return Drink.init(drinkEntity: drinkEntity)
+    }
+    
+    func saveEdited(_ drink: Drink) {
+        guard drink.drinkId != nil else {
+            let _ = saveNewDrink(imageId: drink.imageId, name: drink.name, favorite: drink.favorite, category: drink.category, alcoholVolume: drink.alcoholVolume)
+            
             return
         }
         
-        let index = findDrinkLocally(drink: oldDrink)
-        let drinkManagedObject = findDrinkRemote(drink: oldDrink)
-        let imageId: String? = newDrink.imageId != nil ? newDrink.imageId! : oldDrink.imageId
+        let drinkEntity = managedContext.object(with: drink.drinkId!) as! DrinkEntity
         
-        drinks[index] = newDrink
-        
-        if let drinkManagedObject = drinkManagedObject {
-            print("Managed object exists")
-            
-            drinkManagedObject.setValuesForKeys([
-                modelKey.imageId.rawValue: imageId as Any,
-                modelKey.name.rawValue: newDrink.name,
-                modelKey.favorite.rawValue: newDrink.favorite,
-                modelKey.category.rawValue: newDrink.category,
-                modelKey.alcoholVolume.rawValue: newDrink.alcoholVolume
-            ])
-            
-            do {
-                try managedContext.save()
-            } catch let error as NSError {
-                print("Could not save: \(error)\n \(error.userInfo)")
+        if let savedImageId = drinkEntity.imageId {
+            if savedImageId != drink.imageId {
+                ImageController.shared.deleteImage(imageID: savedImageId)
             }
-        } else {
-            print("Managed object does not exist")
         }
         
-        guard newDrink.imageId != nil else { return }
-        
-        if let oldImageId = oldDrink.imageId {
-            ImageController.shared.deleteImage(imageID: oldImageId)
-        }
-    }
-    
-    func addDrink(drink: Drink) {
-        drinks.append(drink)
-        
-        let entity = NSEntityDescription.entity(forEntityName: "DrinkEntity", in: managedContext)
-        let drinkEntity = NSManagedObject(entity: entity!, insertInto: managedContext)
-        let imageId: String? = drink.imageId != nil ? drink.imageId! : nil
-        
-        drinkEntity.setValuesForKeys([
-            modelKey.imageId.rawValue: imageId as Any,
-            modelKey.name.rawValue: drink.name,
-            modelKey.favorite.rawValue: drink.favorite,
-            modelKey.category.rawValue: drink.category,
-            modelKey.alcoholVolume.rawValue: drink.alcoholVolume
-        ])
+        drinkEntity.imageId = drink.imageId
+        drinkEntity.name = drink.name
+        drinkEntity.favorite = drink.favorite
+        drinkEntity.category = Int16(drink.category)
+        drinkEntity.alcoholVolume = drink.alcoholVolume
         
         do {
             try managedContext.save()
@@ -107,62 +95,32 @@ class ModelController {
         }
     }
     
-    func deleteDrink(drink: Drink) {
-        let index = findDrinkLocally(drink: drink)
-        let drinkToDelete = findDrinkRemote(drink: drink)
+    func deleteDrink(_ index: Int, _ drinks: [Drink]) -> [Drink] {
+        var drinks = drinks
         
         // Delete Images From Documents Folder
-        if let imageID = drink.imageId {
+        if let imageID = drinks[index].imageId {
             ImageController.shared.deleteImage(imageID: imageID)
         }
         
-        // Delete Locally
-        drinks.remove(at: index)
-        
         // Delete In Database
         do {
-            if let drinkToDelete = drinkToDelete {
+            // Delete Drink From Coredata
+            if let drinkToDeleteId = drinks[index].drinkId {
+                let drinkToDelete = managedContext.object(with: drinkToDeleteId)
+                
                 managedContext.delete(drinkToDelete)
+                
                 try managedContext.save()
             }
+            
+            // Remove drink from list
+            drinks.remove(at: index)
         } catch let error as NSError {
             print("Could not delete: \(error)\n \(error.userInfo)")
         }
+        
+        return drinks
     }
-    
-    func findDrinkLocally(drink: Drink) -> Int {
-        if let index = drinks.firstIndex(where: {
-            $0.name == drink.name
-                &&
-                $0.category == drink.category
-                &&
-                $0.favorite == drink.favorite
-        }) {
-            return index
-        } else {
-            return drinks.count + 1
-        }
-    }
-    
-    func findDrinkRemote(drink: Drink) -> NSManagedObject? {
-        let drinkFetch = NSFetchRequest<NSManagedObject>(entityName: "DrinkEntity")
-        
-        let namePredicate = NSPredicate(format:"name = %@", drink.name)
-        let favoritePredicate = NSPredicate(format: "favorite = %@", NSNumber(value: drink.favorite))
-        let categoryPredicate = NSPredicate(format: "category = %i", drink.category)
-        let alcoholVolumePredicate = NSPredicate(format: "alcoholVolume = %e", drink.alcoholVolume)
-        
-        let filterDrinks = NSCompoundPredicate.init(andPredicateWithSubpredicates: [namePredicate, favoritePredicate, categoryPredicate, alcoholVolumePredicate])
-        
-        drinkFetch.predicate = filterDrinks
-        drinkFetch.fetchLimit = 1
-        
-        do {
-            let returnedDrinks: [NSManagedObject] = try managedContext.fetch(drinkFetch)
-            return returnedDrinks.first
-        } catch let error as NSError {
-            print("Could not return the drink: \(error)\n \(error.userInfo)")
-            return nil
-        }
-    }
+
 }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D10CC86F22AF36D20028ABAC /* ModelKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10CC86E22AF36D20028ABAC /* ModelKeys.swift */; };
+		D10CC87222B08CC20028ABAC /* EditActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10CC87122B08CC20028ABAC /* EditActions.swift */; };
 		D14A257320EEB1A40022D9F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14A257220EEB1A40022D9F7 /* AppDelegate.swift */; };
 		D14A257820EEB1A40022D9F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D14A257620EEB1A40022D9F7 /* Main.storyboard */; };
 		D14A257A20EEB1A50022D9F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D14A257920EEB1A50022D9F7 /* Assets.xcassets */; };
@@ -43,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		D10CC86E22AF36D20028ABAC /* ModelKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelKeys.swift; sourceTree = "<group>"; };
+		D10CC87122B08CC20028ABAC /* EditActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditActions.swift; sourceTree = "<group>"; };
 		D14A256F20EEB1A40022D9F7 /* Cellaret.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cellaret.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D14A257220EEB1A40022D9F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D14A257720EEB1A40022D9F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				D10CC86E22AF36D20028ABAC /* ModelKeys.swift */,
+				D10CC87122B08CC20028ABAC /* EditActions.swift */,
 			);
 			path = Enumerations;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 				D14A258F20EECA590022D9F7 /* MenuController.swift in Sources */,
 				D14A259320F19E8A0022D9F7 /* MenuSelectionDelegate.swift in Sources */,
 				D14A258C20EEBD420022D9F7 /* EditDrinkTableViewController.swift in Sources */,
+				D10CC87222B08CC20028ABAC /* EditActions.swift in Sources */,
 				D1565A1F2102D08C00A8E5C1 /* EditDrinkDelegate.swift in Sources */,
 				D14A259120F155CF0022D9F7 /* ModelController.swift in Sources */,
 				D1A31DC4210C123600A3B0E6 /* DrinkTableViewCell.swift in Sources */,

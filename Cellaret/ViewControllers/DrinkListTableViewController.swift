@@ -19,9 +19,12 @@ class DrinkListTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         menuSelection = UserPreferences.shared.getMenuSelection()
+        
         updateTitle()
-        selectedDrinks = ModelController.shared.filterDrinks(category: menuSelection)
+        
+        selectedDrinks = ModelController.shared.returnDrinksIn(category: menuSelection)
     }
 
     override func didReceiveMemoryWarning() {
@@ -74,7 +77,6 @@ extension DrinkListTableViewController {
 
 // MARK: - Navigation
 extension DrinkListTableViewController {
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
         case "MenuOptions":
@@ -100,39 +102,45 @@ extension DrinkListTableViewController {
 
 //MARK: - Delegates
 extension DrinkListTableViewController: MenuSelectionDelegate {
-    
     func menuSelectionMade(selection: Int) {
         guard menuSelection != selection else { return }
         
         UserPreferences.shared.updateMenuSelection(selection: selection)
+        
         self.menuSelection = selection
         
         updateTitle()
         
-        selectedDrinks = ModelController.shared.filterDrinks(category: menuSelection)
+        selectedDrinks = ModelController.shared.returnDrinksIn(category: menuSelection)
         
         tableView.reloadData()
-    }
-    
-    func updateTitle() {
-        self.navigationItem.title = Menu.shared.selectionName(selection: menuSelection)
     }
 }
 
 extension DrinkListTableViewController: EditDrinkDelegate {
-    
+    // Rethink this logic...
     func editDrink(drink: Drink, action: editAction) {
         switch action {
         case .save:
-            ModelController.shared.saveDrink(oldDrink: tappedDrink, newDrink: drink)
+            ModelController.shared.saveEdited(drink)
+            
             tappedDrink = drink
         case .delete:
-            ModelController.shared.deleteDrink(drink: drink)
+            //ModelController.shared.deleteDrink(, )
+            print("Need to work on this")
         }
         
         if drink.category == menuSelection || menuSelection == 0 {
-            selectedDrinks = ModelController.shared.filterDrinks(category: menuSelection)
+            selectedDrinks = ModelController.shared.returnDrinksIn(category: drink.category)
+            
             tableView.reloadData()
         }
+    }
+}
+
+//MARK: - Helper Methods
+extension DrinkListTableViewController {
+    func updateTitle() {
+        self.navigationItem.title = Menu.shared.selectionName(selection: menuSelection)
     }
 }

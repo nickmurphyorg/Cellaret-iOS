@@ -200,14 +200,8 @@ extension EditDrinkTableViewController {
     }
     
     func createDrink() -> Drink {
-        let newDrink = Drink(
-            imageId: imageID,
-            image: checkImage(drinkImage: drinkImageView.image!),
-            name: drinkNameField.text!,
-            favorite: favoriteSwitch.isOn,
-            category: categoryPickerView.selectedRow(inComponent: 0),
-            alcoholVolume: checkVolume()
-        )
+        let newDrink = ModelController.shared.saveNewDrink(imageId: imageID, name: drinkNameField.text ?? "", favorite: favoriteSwitch.isOn, category: categoryPickerView.selectedRow(inComponent: 0), alcoholVolume: checkVolume())
+
         return newDrink
     }
     

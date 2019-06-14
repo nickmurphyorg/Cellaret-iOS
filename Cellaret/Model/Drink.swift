@@ -13,6 +13,7 @@ import UIKit
 struct Drink: Equatable {
     typealias percent = Double
     
+    var drinkId: NSManagedObjectID?
     var imageId: String?
     var image: UIImage?
     var name: String
@@ -23,15 +24,17 @@ struct Drink: Equatable {
 
 extension Drink{
     init(drinkEntity: NSManagedObject) {
-        if let imageId = drinkEntity.value(forKey: modelKey.imageId.rawValue) {
-            self.image = ImageController.shared.fetchImage(imageID: imageId as! String)
-        } else {
-            self.image = nil
+        let drinkObject = drinkEntity as! DrinkEntity
+        
+        if let imageId = drinkObject.imageId {
+            self.image = ImageController.shared.fetchImage(imageID: imageId)
         }
-        self.imageId = drinkEntity.value(forKey: modelKey.imageId.rawValue) as? String
-        self.name = drinkEntity.value(forKey: modelKey.name.rawValue) as! String
-        self.favorite = drinkEntity.value(forKey: modelKey.favorite.rawValue) as! Bool
-        self.category = drinkEntity.value(forKey: modelKey.category.rawValue) as! Int
-        self.alcoholVolume = drinkEntity.value(forKey: modelKey.alcoholVolume.rawValue) as! Double
+        
+        self.drinkId = drinkObject.objectID
+        self.imageId = drinkObject.imageId
+        self.name = drinkObject.name ?? ""
+        self.favorite = drinkObject.favorite
+        self.category = Int(drinkObject.category)
+        self.alcoholVolume = drinkObject.alcoholVolume
     }
 }
