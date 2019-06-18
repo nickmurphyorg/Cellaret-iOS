@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gda-ri-jVj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gda-ri-jVj">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -74,9 +72,9 @@
                                                     </constraints>
                                                 </imageView>
                                                 <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lrt-Q4-6iy">
-                                                    <rect key="frame" x="0.0" y="181.66666666666666" width="374" height="46.333333333333343"/>
+                                                    <rect key="frame" x="0.0" y="182" width="374" height="46"/>
                                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="WL6-uh-gZy">
-                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="46.333333333333343"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="46"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="neq-RK-cYa">
@@ -141,7 +139,6 @@
                                     <outlet property="drinkImageView" destination="u5h-rY-6UM" id="k07-cT-ynO"/>
                                     <outlet property="drinkNameLabel" destination="neq-RK-cYa" id="amu-bb-XDe"/>
                                     <outlet property="favoriteImageView" destination="t6R-eS-BjQ" id="U0n-ez-AFJ"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="DrinkDetail" id="IN7-LD-qBh"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -162,6 +159,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="DrinkDetail" id="Fn6-Ns-c02"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z77-bj-3FQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -193,25 +193,25 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Umc-ed-bWI">
-                                        <rect key="frame" x="16" y="347.66666666666669" width="382" height="17"/>
+                                        <rect key="frame" x="16" y="348.33333333333331" width="382" height="17"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                         <color key="textColor" red="0.43088163860103623" green="0.43088163860103623" blue="0.43088163860103623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QOc-4n-CGY">
-                                        <rect key="frame" x="16" y="372.33333333333331" width="382" height="20.333333333333314"/>
+                                        <rect key="frame" x="16" y="373.33333333333331" width="382" height="20.333333333333314"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alcohol / Volume" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BIT-Q6-Uet">
-                                        <rect key="frame" x="16" y="412.66666666666669" width="382" height="17"/>
+                                        <rect key="frame" x="16" y="413.66666666666669" width="382" height="17"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                         <color key="textColor" red="0.43088163860103623" green="0.43088163860103623" blue="0.43088163860103623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PCY-O9-j3e">
-                                        <rect key="frame" x="16" y="437.66666666666669" width="382" height="20.666666666666686"/>
+                                        <rect key="frame" x="16" y="438.66666666666669" width="382" height="20.666666666666686"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -290,8 +290,12 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Add Image Placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="Bl6-xB-Ef3">
+                                                    <rect key="frame" x="20" y="11" width="374" height="228"/>
+                                                </imageView>
                                                 <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yp3-vM-aPX">
                                                     <rect key="frame" x="20" y="11" width="374" height="228"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <gestureRecognizers/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="228" id="xHK-rq-lsa"/>
@@ -305,7 +309,11 @@
                                                 <constraint firstItem="yp3-vM-aPX" firstAttribute="trailing" secondItem="zR6-3M-8Jx" secondAttribute="trailingMargin" id="53s-Fx-3ph"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="yp3-vM-aPX" secondAttribute="bottom" id="7Mw-U1-ta4"/>
                                                 <constraint firstItem="yp3-vM-aPX" firstAttribute="top" secondItem="zR6-3M-8Jx" secondAttribute="topMargin" id="DPi-nG-HgQ"/>
+                                                <constraint firstItem="Bl6-xB-Ef3" firstAttribute="leading" secondItem="zR6-3M-8Jx" secondAttribute="leadingMargin" id="LEL-pR-7WT"/>
+                                                <constraint firstItem="Bl6-xB-Ef3" firstAttribute="top" secondItem="zR6-3M-8Jx" secondAttribute="topMargin" id="NLf-7j-H9e"/>
+                                                <constraint firstItem="Bl6-xB-Ef3" firstAttribute="trailing" secondItem="zR6-3M-8Jx" secondAttribute="trailingMargin" id="V2D-8i-K9b"/>
                                                 <constraint firstItem="yp3-vM-aPX" firstAttribute="leading" secondItem="zR6-3M-8Jx" secondAttribute="leadingMargin" id="dJT-rf-Nsp"/>
+                                                <constraint firstItem="Bl6-xB-Ef3" firstAttribute="bottom" secondItem="zR6-3M-8Jx" secondAttribute="bottomMargin" id="jEI-IL-RG1"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -528,7 +536,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="4090" y="32"/>
+            <point key="canvasLocation" x="4089.8550724637685" y="31.793478260869566"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="78r-Vj-tMf">
@@ -585,7 +593,10 @@
             <point key="canvasLocation" x="2864.8000000000002" y="31.934032983508249"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Add Image Placeholder" width="600" height="400"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="5b9-Dy-qSo"/>
+        <segue reference="kIv-5x-jZy"/>
     </inferredMetricsTieBreakers>
 </document>

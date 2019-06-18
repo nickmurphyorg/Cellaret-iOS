@@ -39,10 +39,11 @@ class DrinkDetailViewController: UIViewController {
         super.viewDidLoad()
 
         let editDrinkButton = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(editDrink(_:)))
+        
         self.navigationItem.rightBarButtonItem = editDrinkButton
         
         if let drinkSelection = drinkSelection {
-            updateView(withDrink: drinkSelection)
+            updateViewWith(drinkSelection)
         }
     }
 
@@ -53,7 +54,6 @@ class DrinkDetailViewController: UIViewController {
 
 // MARK: - Navigation
 extension DrinkDetailViewController{
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "EditDrink" {
             let navigationController = segue.destination as? UINavigationController
@@ -67,7 +67,6 @@ extension DrinkDetailViewController{
 
 // MARK: - Actions
 extension DrinkDetailViewController {
-    
     @IBAction func editDrink(_ sender: UIBarButtonItem) {
         self.performSegue(withIdentifier: "EditDrink", sender: nil)
     }
@@ -77,32 +76,31 @@ extension DrinkDetailViewController {
     }
 }
 
+//MARK: - Protocols
 extension DrinkDetailViewController: DrinkViewDelegate {
-    
     func updateView(editedDrink: Drink) {
         drinkSelection = editedDrink
         
-        if let updatedDrink = drinkSelection {
-            updateView(withDrink: updatedDrink)
-        }
+        updateViewWith(editedDrink)
     }
-    
-    func updateView(withDrink: Drink) {
-        let drinkImage = withDrink.image
-        
-        if let drinkImage = drinkImage {
+}
+
+//MARK: - Helper Methods
+extension DrinkDetailViewController {
+    func updateViewWith(_ drink: Drink) {
+        if let drinkImage = drink.image {
             drinkImageView.image = drinkImage
         }
         
-        drinkNameLabel.text = withDrink.name
+        drinkNameLabel.text = drink.name
         
-        if withDrink.favorite == true {
+        if drink.favorite == true {
             favoriteImageView.image = favoriteStar
         } else {
             favoriteImageView.image = nil
         }
         
-        drinkCategoryLabel.text = Menu.shared.selectionName(selection: withDrink.category)
-        drinkVolumeLabel.text = String(withDrink.alcoholVolume) + "%"
+        drinkCategoryLabel.text = Menu.shared.selectionName(selection: drink.category)
+        drinkVolumeLabel.text = String(drink.alcoholVolume) + "%"
     }
 }

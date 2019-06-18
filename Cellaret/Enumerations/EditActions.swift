@@ -10,5 +10,6 @@ import Foundation
 
 enum editAction {
     case save
+    case create
     case delete
 }

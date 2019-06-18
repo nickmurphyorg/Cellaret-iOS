@@ -25,6 +25,7 @@
 		D17C7A6521250A4200986A52 /* ImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17C7A6421250A4200986A52 /* ImageController.swift */; };
 		D184CBBB2170372B00ADD1B1 /* CellaretTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D184CBBA2170372B00ADD1B1 /* CellaretTests.swift */; };
 		D184CBC32172AC5900ADD1B1 /* ModelControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D184CBC22172AC5900ADD1B1 /* ModelControllerTests.swift */; };
+		D19D97B022B58DC200FFA34F /* PickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19D97AF22B58DC200FFA34F /* PickerCell.swift */; };
 		D1A31DBF210570FB00A3B0E6 /* DrinkViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A31DBE210570FB00A3B0E6 /* DrinkViewDelegate.swift */; };
 		D1A31DC4210C123600A3B0E6 /* DrinkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A31DC3210C123600A3B0E6 /* DrinkTableViewCell.swift */; };
 		D1A31DF9210FEF7C00A3B0E6 /* UserPreferencesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A31DF8210FEF7C00A3B0E6 /* UserPreferencesController.swift */; };
@@ -65,6 +66,7 @@
 		D184CBBA2170372B00ADD1B1 /* CellaretTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellaretTests.swift; sourceTree = "<group>"; };
 		D184CBBC2170372B00ADD1B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D184CBC22172AC5900ADD1B1 /* ModelControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelControllerTests.swift; sourceTree = "<group>"; };
+		D19D97AF22B58DC200FFA34F /* PickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerCell.swift; sourceTree = "<group>"; };
 		D1A31DBE210570FB00A3B0E6 /* DrinkViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkViewDelegate.swift; sourceTree = "<group>"; };
 		D1A31DC3210C123600A3B0E6 /* DrinkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkTableViewCell.swift; sourceTree = "<group>"; };
 		D1A31DF8210FEF7C00A3B0E6 /* UserPreferencesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferencesController.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				D10CC86E22AF36D20028ABAC /* ModelKeys.swift */,
+				D19D97AF22B58DC200FFA34F /* PickerCell.swift */,
 				D10CC87122B08CC20028ABAC /* EditActions.swift */,
 			);
 			path = Enumerations;
@@ -124,12 +127,12 @@
 				D14A258D20EEBE0D0022D9F7 /* Model */,
 				D1A31DF7210FEF4600A3B0E6 /* Other Controllers */,
 				D14A25B620F286BA0022D9F7 /* Protocols */,
-				D14A257620EEB1A40022D9F7 /* Main.storyboard */,
 				D14A258A20EEBCFC0022D9F7 /* ViewControllers */,
 				D1A31DC0210C0FA500A3B0E6 /* Cells */,
 				D14A257920EEB1A50022D9F7 /* Assets.xcassets */,
 				D1F696E32114DDF50085266E /* Cellaret.xcdatamodeld */,
 				D14A257B20EEB1A50022D9F7 /* LaunchScreen.storyboard */,
+				D14A257620EEB1A40022D9F7 /* Main.storyboard */,
 				D14A257E20EEB1A50022D9F7 /* Info.plist */,
 				D10CC87022AF36DD0028ABAC /* Enumerations */,
 			);
@@ -307,6 +310,7 @@
 				D10CC86F22AF36D20028ABAC /* ModelKeys.swift in Sources */,
 				D1B44A2A2128CBDF00F00604 /* ImageObject.swift in Sources */,
 				D14A257320EEB1A40022D9F7 /* AppDelegate.swift in Sources */,
+				D19D97B022B58DC200FFA34F /* PickerCell.swift in Sources */,
 				D1A31DF9210FEF7C00A3B0E6 /* UserPreferencesController.swift in Sources */,
 				D14A258F20EECA590022D9F7 /* MenuController.swift in Sources */,
 				D14A259320F19E8A0022D9F7 /* MenuSelectionDelegate.swift in Sources */,

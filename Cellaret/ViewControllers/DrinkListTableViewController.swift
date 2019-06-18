@@ -11,10 +11,11 @@ import UIKit
 class DrinkListTableViewController: UITableViewController {
     
     var selectedDrinks = [Drink]()
-    var tappedDrink: Drink?
+    var selectedDrinkIndex: Int = -1
     var menuSelection: Int = 0
     
     let cellIdentifier = "drinkCell"
+    let drinkDetailSegue = "DrinkDetail"
     let favoriteStar = UIImage(named: "Star-White")
 
     override func viewDidLoad() {
@@ -34,7 +35,6 @@ class DrinkListTableViewController: UITableViewController {
 
 // MARK: - Table view data source
 extension DrinkListTableViewController {
-    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -70,7 +70,9 @@ extension DrinkListTableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        tappedDrink = selectedDrinks[indexPath.row]
+        selectedDrinkIndex = indexPath.row
+        
+        performSegue(withIdentifier: drinkDetailSegue, sender: nil)
     }
 
 }
@@ -84,16 +86,14 @@ extension DrinkListTableViewController {
             let destinationViewController = navigationController?.children.first as! MenuTableViewController
             destinationViewController.delegate = self
             destinationViewController.menuSelection = self.menuSelection
-        case "DrinkDetail":
+        case drinkDetailSegue:
             let destinationViewController = segue.destination as! DrinkDetailViewController
-            let indexPath = tableView.indexPathForSelectedRow!
-            destinationViewController.drinkSelection = selectedDrinks[indexPath.row]
+            destinationViewController.drinkSelection = selectedDrinkIndex != -1 ? selectedDrinks[selectedDrinkIndex] : nil
             destinationViewController.editDrinkDelegate = self
         case "AddNewDrink":
             let navigationController = segue.destination as? UINavigationController
             let destinationViewController = navigationController?.children.first as! EditDrinkTableViewController
             destinationViewController.editDrinkDelegate = self
-            tappedDrink = nil
         default:
             return
         }
@@ -118,23 +118,27 @@ extension DrinkListTableViewController: MenuSelectionDelegate {
 }
 
 extension DrinkListTableViewController: EditDrinkDelegate {
-    // Rethink this logic...
     func editDrink(drink: Drink, action: editAction) {
         switch action {
         case .save:
             ModelController.shared.saveEdited(drink)
             
-            tappedDrink = drink
+            selectedDrinks[selectedDrinkIndex] = drink
+            
+        case .create:
+            let savedDrink = ModelController.shared.saveNewDrink(drink)
+            
+            if savedDrink.category == menuSelection || menuSelection == 0 {
+                selectedDrinks.append(savedDrink)
+            }
+
         case .delete:
-            //ModelController.shared.deleteDrink(, )
-            print("Need to work on this")
+            selectedDrinks = ModelController.shared.deleteDrink(selectedDrinkIndex, selectedDrinks)
         }
         
-        if drink.category == menuSelection || menuSelection == 0 {
-            selectedDrinks = ModelController.shared.returnDrinksIn(category: drink.category)
-            
-            tableView.reloadData()
-        }
+        selectedDrinkIndex = -1
+        
+        tableView.reloadData()
     }
 }
 

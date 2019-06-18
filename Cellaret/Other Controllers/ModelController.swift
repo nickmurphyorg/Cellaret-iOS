@@ -48,15 +48,15 @@ class ModelController {
         return drinks
     }
     
-    func saveNewDrink(imageId: String?, name: String, favorite: Bool, category: Int, alcoholVolume: Double) -> Drink {
+    func saveNewDrink(_ drink: Drink) -> Drink {
         let entity = NSEntityDescription.entity(forEntityName: drinkEntityName, in: managedContext)
         let drinkEntity = NSManagedObject(entity: entity!, insertInto: managedContext) as! DrinkEntity
         
-        drinkEntity.imageId = imageId
-        drinkEntity.name = name
-        drinkEntity.favorite = favorite
-        drinkEntity.category = Int16(category)
-        drinkEntity.alcoholVolume = alcoholVolume
+        drinkEntity.imageId = drink.imageId
+        drinkEntity.name = drink.name
+        drinkEntity.favorite = drink.favorite
+        drinkEntity.category = Int16(drink.category)
+        drinkEntity.alcoholVolume = drink.alcoholVolume
         
         do {
             try managedContext.save()
@@ -69,7 +69,7 @@ class ModelController {
     
     func saveEdited(_ drink: Drink) {
         guard drink.drinkId != nil else {
-            let _ = saveNewDrink(imageId: drink.imageId, name: drink.name, favorite: drink.favorite, category: drink.category, alcoholVolume: drink.alcoholVolume)
+            let _ = saveNewDrink(drink)
             
             return
         }

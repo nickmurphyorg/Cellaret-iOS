@@ -19,11 +19,6 @@ class EditDrinkTableViewController: UITableViewController {
     @IBOutlet weak var deleteDrinkButton: UIButton!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
-    enum pickerCell {
-        case open
-        case closed
-    }
-    
     var pickerState = pickerCell.open
     var menuOptions = [String]()
     var editDrink: Drink?
@@ -31,9 +26,6 @@ class EditDrinkTableViewController: UITableViewController {
     var editDrinkDelegate: EditDrinkDelegate?
     var drinkViewDelegate: DrinkViewDelegate?
     
-    weak var vc: EditDrinkTableViewController!
-    
-    let addImagePlaceholder = UIImage(named: "Add Image Placeholder")
     let categoryToggleLabel = "Select"
     let uiPickerCell = IndexPath(row: 3, section: 0)
     let impact = UIImpactFeedbackGenerator()
@@ -49,28 +41,18 @@ class EditDrinkTableViewController: UITableViewController {
         deleteDrinkButton.layer.cornerRadius = 4.0
         
         if let editDrink = editDrink {
-            let drinkImage = editDrink.image
-            
-            if let drinkImage = drinkImage {
-                drinkImageView.image = drinkImage
-            } else {
-                drinkImageView.image = addImagePlaceholder
-            }
-            
+            drinkImageView.image = editDrink.image
             drinkNameField.text = editDrink.name
             categoryCell.detailTextLabel?.text = Menu.shared.selectionName(selection: editDrink.category)
             categoryPickerView.selectRow(editDrink.category, inComponent: 0, animated: false)
             favoriteSwitch.setOn(editDrink.favorite, animated: false)
             drinkVolumeField.text = String(editDrink.alcoholVolume)
-            
         } else {
-            
-            drinkImageView.image = addImagePlaceholder
+            drinkImageView.image = nil
             saveButton.isEnabled = false
             categoryCell.detailTextLabel?.text = categoryToggleLabel
             deleteDrinkButton.isHidden = true
         }
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -89,8 +71,27 @@ class EditDrinkTableViewController: UITableViewController {
 
 //MARK: - Actions
 extension EditDrinkTableViewController {
+    @IBAction func saveDrink(_ sender: UIBarButtonItem) {
+        let drinkIdentifier = editDrink != nil ? editDrink!.drinkId : nil
+        let imageIdentifier = imageID != nil ? imageID! : editDrink?.imageId
+        
+        let drinkData = Drink.init(drinkId: drinkIdentifier, imageId: imageIdentifier, image: drinkImageView.image, name: drinkNameField.text ?? "", favorite: favoriteSwitch.isOn, category: categoryPickerView.selectedRow(inComponent: 0), alcoholVolume: returnAlcoholVolume())
+        
+        if editDrink != nil {
+            editDrinkDelegate?.editDrink(drink: drinkData, action: editAction.save)
+            drinkViewDelegate?.updateView(editedDrink: drinkData)
+        } else {
+            editDrinkDelegate?.editDrink(drink: drinkData, action: editAction.create)
+        }
+        
+        editDrink = nil
+        imageID = nil
+        
+        dismiss(animated: true, completion: nil)
+    }
     
     @IBAction func dismissEditScreen(_ sender: UIBarButtonItem) {
+        // Delete the image if one was uploaded
         if let imageID = imageID {
             ImageController.shared.deleteImage(imageID: imageID)
         }
@@ -107,25 +108,27 @@ extension EditDrinkTableViewController {
     }
     
     @IBAction func deleteDrink(_ sender: UIButton) {
-        
         let alert = UIAlertController.init(title: nil, message: nil, preferredStyle: .actionSheet)
-        
         let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: (nil))
-        
         let delete = UIAlertAction(title: "Delete", style: .default, handler: { [weak self] action in
-            self?.editDrinkDelegate?.editDrink(drink: (self?.editDrink)!, action: editAction.delete)
+            guard let weakSelf = self else { return }
             
-            if let imageID = self?.imageID {
+            weakSelf.editDrinkDelegate?.editDrink(drink: weakSelf.editDrink!, action: editAction.delete)
+            
+            // Delete the image if one was uplaoded
+            if let imageID = weakSelf.imageID {
                 ImageController.shared.deleteImage(imageID: imageID)
             }
             
-            self?.performSegue(withIdentifier: "BackToDrinkList", sender: self)
+            weakSelf.editDrink = nil
+            weakSelf.performSegue(withIdentifier: "BackToDrinkList", sender: self)
         })
         
         alert.addAction(cancel)
         alert.addAction(delete)
         
         present(alert, animated: true, completion: nil)
+        
         impact.impactOccurred()
     }
 }
@@ -190,35 +193,6 @@ extension EditDrinkTableViewController: UIPickerViewDataSource, UIPickerViewDele
     }
 }
 
-//MARK: - Saving Drink
-extension EditDrinkTableViewController {
-    
-    @IBAction func saveDrink(_ sender: UIBarButtonItem) {
-        editDrinkDelegate?.editDrink(drink: createDrink(), action: editAction.save)
-        drinkViewDelegate?.updateView(editedDrink: createDrink())
-        dismiss(animated: true, completion: nil)
-    }
-    
-    func createDrink() -> Drink {
-        let newDrink = ModelController.shared.saveNewDrink(imageId: imageID, name: drinkNameField.text ?? "", favorite: favoriteSwitch.isOn, category: categoryPickerView.selectedRow(inComponent: 0), alcoholVolume: checkVolume())
-
-        return newDrink
-    }
-    
-    func checkImage(drinkImage: UIImage) -> UIImage? {
-        return drinkImage == addImagePlaceholder ? nil : drinkImageView.image
-    }
-
-    func checkVolume() -> Double {
-        if drinkVolumeField.hasText == true {
-            let volume = drinkVolumeField.text!
-            return Double(volume)!
-        } else {
-            return 0.0
-        }
-    }
-}
-
 //MARK: - Picture Selection
 extension EditDrinkTableViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -267,7 +241,19 @@ extension EditDrinkTableViewController: UIImagePickerControllerDelegate, UINavig
             dismiss(animated: true, completion: nil)
         }
     }
-    
+}
+
+//MARK: - Helper Methods
+extension EditDrinkTableViewController {    
+    func returnAlcoholVolume() -> Double {
+        if drinkVolumeField.hasText {
+            let volume = drinkVolumeField.text!
+            
+            return Double(volume)!
+        } else {
+            return 0.0
+        }
+    }
 }
 
 // Helper function inserted by Swift 4.2 migrator.
