@@ -10,6 +10,7 @@ import Foundation
 
 class UserPreferences {
     static let shared = UserPreferences()
+    
     let preferences = UserDefaults.standard
     let menuChoice = "menuChoice"
     

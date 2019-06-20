@@ -58,15 +58,6 @@ class EditDrinkTableViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
-    func updateSaveButton() {
-        if drinkNameField.hasText == true && categoryCell.detailTextLabel?.text != categoryToggleLabel {
-            saveButton.isEnabled = true
-        } else {
-            saveButton.isEnabled = false
-        }
-    }
-    
 }
 
 //MARK: - Actions
@@ -135,20 +126,7 @@ extension EditDrinkTableViewController {
 
 //MARK: - Tableview
 extension EditDrinkTableViewController {
-    
-    func togglePicker() -> CGFloat {
-        switch pickerState {
-        case .open:
-            pickerState = .closed
-            return 0.0
-        case .closed:
-            pickerState = .open
-            return 160.0
-        }
-    }
-    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
         switch (indexPath.section, indexPath.row) {
             case (uiPickerCell.section, uiPickerCell.row):
                 return togglePicker()
@@ -158,7 +136,6 @@ extension EditDrinkTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         switch indexPath {
             case [uiPickerCell.section, uiPickerCell.row - 1]:
                 tableView.deselectRow(at: indexPath, animated: true)
@@ -174,7 +151,6 @@ extension EditDrinkTableViewController {
 
 //MARK: - Category Picker
 extension EditDrinkTableViewController: UIPickerViewDataSource, UIPickerViewDelegate {
-    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -189,25 +165,26 @@ extension EditDrinkTableViewController: UIPickerViewDataSource, UIPickerViewDele
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         categoryCell.detailTextLabel?.text = menuOptions[row]
+        
         updateSaveButton()
     }
 }
 
 //MARK: - Picture Selection
 extension EditDrinkTableViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
     @IBAction func addImage(sender: UITapGestureRecognizer) {
-        
         let imagePicker = UIImagePickerController()
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         let cameraOption = UIAlertAction(title: "Camera", style: .default, handler: { [weak self] action in
             imagePicker.sourceType = .camera
+            
             self?.present(imagePicker, animated: true, completion: nil)
         })
         
         let photosOption = UIAlertAction(title: "Photos", style: .default, handler: { [weak self] action in
             imagePicker.sourceType = .photoLibrary
+            
             self?.present(imagePicker, animated: true, completion: nil)
         })
         
@@ -224,14 +201,12 @@ extension EditDrinkTableViewController: UIImagePickerControllerDelegate, UINavig
         
         imagePicker.delegate = self
         impact.impactOccurred()
+        
         present(alert, animated: true, completion: nil)
     }
     
     @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        // Local variable inserted by Swift 4.2 migrator.
-        let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
-
-        if let capturedImage = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.originalImage)] as? UIImage {
+        if let capturedImage = info[.originalImage] as? UIImage {
             let thumbnail = ImageController.shared.createThumbnail(originalImage: capturedImage)
             let createImageId = ImageController.shared.saveImage(drinkImage: capturedImage)
             
@@ -244,7 +219,26 @@ extension EditDrinkTableViewController: UIImagePickerControllerDelegate, UINavig
 }
 
 //MARK: - Helper Methods
-extension EditDrinkTableViewController {    
+extension EditDrinkTableViewController {
+    func updateSaveButton() {
+        if drinkNameField.hasText == true && categoryCell.detailTextLabel?.text != categoryToggleLabel {
+            saveButton.isEnabled = true
+        } else {
+            saveButton.isEnabled = false
+        }
+    }
+    
+    func togglePicker() -> CGFloat {
+        switch pickerState {
+        case .open:
+            pickerState = .closed
+            return 0.0
+        case .closed:
+            pickerState = .open
+            return 160.0
+        }
+    }
+    
     func returnAlcoholVolume() -> Double {
         if drinkVolumeField.hasText {
             let volume = drinkVolumeField.text!
@@ -254,14 +248,4 @@ extension EditDrinkTableViewController {
             return 0.0
         }
     }
-}
-
-// Helper function inserted by Swift 4.2 migrator.
-fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
-	return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
-}
-
-// Helper function inserted by Swift 4.2 migrator.
-fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
-	return input.rawValue
 }

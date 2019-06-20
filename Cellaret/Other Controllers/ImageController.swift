@@ -23,8 +23,10 @@ class ImageController {
         // For Debugging Purposes
 
         let documentPath = documentsPath.path
+        
         do {
             let files = try fileManager.contentsOfDirectory(atPath: "\(documentPath)")
+            
             print("Number of files in Documents: \(files.count)")
         } catch {
             print("Could not find Documents.")
@@ -37,13 +39,13 @@ class ImageController {
         let thumbnailImage = createThumbnail(originalImage: drinkImage)
         
         imageQueue.async { [weak self] in
-            
             guard let weakSelf = self else { return }
             
             var images = [ImageObject]()
             
             if let originalImageData = drinkImage.pngData() {
                 let originalImageObject = ImageObject(imageName: "\(imageID).png", imageData: originalImageData)
+                
                 images.append(originalImageObject)
             } else {
                 print("Could not create png from original image.")
@@ -51,6 +53,7 @@ class ImageController {
             
             if let thumbnailImageData = thumbnailImage.pngData() {
                 let thumbnailImageObject = ImageObject(imageName: "\(imageID)-small.png", imageData: thumbnailImageData)
+                
                 images.append(thumbnailImageObject)
             } else {
                 print("Could not create png from thumbnail image.")
@@ -77,6 +80,7 @@ class ImageController {
         
         guard fileManager.fileExists(atPath: path) else {
             print("Image does not exist at: \n\(path)")
+            
             return nil
         }
         
@@ -91,7 +95,6 @@ class ImageController {
         let images = ["\(imageID).png", "\(imageID)-small.png"]
         
         imageQueue.async { [weak self] in
-            
             guard let weakSelf = self else { return }
             
             do {

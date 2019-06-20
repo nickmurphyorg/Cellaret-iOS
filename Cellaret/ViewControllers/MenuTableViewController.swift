@@ -22,8 +22,10 @@ class MenuTableViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+}
 
-    // MARK: - Table view data source
+// MARK: - Table view data source
+extension MenuTableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -34,8 +36,8 @@ class MenuTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "menuCell", for: indexPath)
-
         cell.textLabel?.text = Menu.shared.menuOptions()[indexPath.row]
+        
         if indexPath.row == menuSelection {
             cell.accessoryType = .checkmark
         } else {
@@ -49,11 +51,17 @@ class MenuTableViewController: UITableViewController {
         impact.impactOccurred()
         
         tableView.deselectRow(at: indexPath, animated: true)
+        
         menuSelection = indexPath.row
+        
         delegate?.menuSelectionMade(selection: menuSelection)
+        
         tableView.reloadData()
     }
-    
+}
+
+// MARK: - Actions
+extension MenuTableViewController {
     @IBAction func closeMenu(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
