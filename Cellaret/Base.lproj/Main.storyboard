@@ -84,10 +84,10 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7oh-LG-z15">
-                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="46"/>
+                                                                <rect key="frame" x="-1" y="-5" width="374" height="51"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="Jgs-f2-uYb">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="46"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="51"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 </view>
                                                                 <vibrancyEffect>
@@ -178,12 +178,16 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Sj-I7-Eaa">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NZf-Ye-nPC">
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NZf-Ye-nPC">
                                         <rect key="frame" x="16" y="16" width="382" height="254"/>
                                         <color key="backgroundColor" red="0.93344534589999995" green="0.93344534589999995" blue="0.93344534589999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="NZf-Ye-nPC" secondAttribute="height" multiplier="343:228" id="sns-Xq-hdP"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="Jwh-pP-r2i" appends="YES" id="XwP-ef-yd1"/>
+                                        </connections>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6LW-Ae-xsN">
                                         <rect key="frame" x="359" y="290" width="39" height="39"/>
@@ -265,11 +269,58 @@
                         <outlet property="drinkVolumeLabel" destination="PCY-O9-j3e" id="o0l-dw-smG"/>
                         <outlet property="favoriteImageView" destination="6LW-Ae-xsN" id="6Zs-hl-Gws"/>
                         <segue destination="Liu-0K-a13" kind="presentation" identifier="EditDrink" id="5b9-Dy-qSo"/>
+                        <segue destination="Y6c-jb-mGb" kind="presentation" identifier="ShowDrinkImage" id="TRn-8f-Rxc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Jwh-pP-r2i">
+                    <connections>
+                        <action selector="showDrinkImage:" destination="BYZ-38-t0r" id="1T4-yU-BpK"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="972" y="399"/>
+        </scene>
+        <!--Image Zoom View Controller-->
+        <scene sceneID="Nic-nk-0le">
+            <objects>
+                <viewController id="ZbU-HO-7U9" customClass="ImageZoomViewController" customModule="Cellaret" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="g9f-29-Zp1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dKU-cm-DQz">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="delegate" destination="ZbU-HO-7U9" id="B9F-Lb-i26"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dKU-cm-DQz" firstAttribute="bottom" secondItem="g9f-29-Zp1" secondAttribute="bottom" id="5yi-vz-CKS"/>
+                            <constraint firstItem="dKU-cm-DQz" firstAttribute="leading" secondItem="g9f-29-Zp1" secondAttribute="leading" id="TBh-6u-MAP"/>
+                            <constraint firstItem="dKU-cm-DQz" firstAttribute="top" secondItem="g9f-29-Zp1" secondAttribute="top" id="YSi-MK-yCS"/>
+                            <constraint firstItem="dKU-cm-DQz" firstAttribute="trailing" secondItem="g9f-29-Zp1" secondAttribute="trailing" id="nHv-GR-ztk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="NA3-wF-C6w"/>
+                    </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="fmK-6I-nhb">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="UAt-av-nsZ">
+                            <connections>
+                                <segue destination="RhQ-4T-Vam" kind="unwind" unwindAction="unwindToDrinkListWithSegue:" id="Mbo-oO-15O"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="imageScrollView" destination="dKU-cm-DQz" id="3dm-bK-w3A"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MqD-An-mEF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="RhQ-4T-Vam" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2862.3188405797105" y="864.94565217391312"/>
         </scene>
         <!--Edit Drink Table View Controller-->
         <scene sceneID="Fms-oD-rDK">
@@ -592,11 +643,29 @@
             </objects>
             <point key="canvasLocation" x="2864.8000000000002" y="31.934032983508249"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="vvv-M2-Bdi">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Y6c-jb-mGb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8VX-Mu-ZGY">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ZbU-HO-7U9" kind="relationship" relationship="rootViewController" id="sfJ-qU-UwI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dTA-qK-33L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1910" y="865"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Add Image Placeholder" width="600" height="400"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="kIv-5x-jZy"/>
+        <segue reference="5b9-Dy-qSo"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -55,12 +55,19 @@ class DrinkDetailViewController: UIViewController {
 // MARK: - Navigation
 extension DrinkDetailViewController{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "EditDrink" {
+        switch segue.identifier {
+        case segueName.editDrink.rawValue:
             let navigationController = segue.destination as? UINavigationController
             let destinationViewController = navigationController?.children.first as! EditDrinkTableViewController
             destinationViewController.editDrink = drinkSelection
             destinationViewController.editDrinkDelegate = editDrinkDelegate
             destinationViewController.drinkViewDelegate = self
+        case segueName.showDrinkImage.rawValue:
+            let navigationController = segue.destination as? UINavigationController
+            let destinationViewController = navigationController?.children.first as! ImageZoomViewController
+            destinationViewController.drinkImage = drinkSelection?.image
+        default:
+            return
         }
     }
 }
@@ -68,11 +75,18 @@ extension DrinkDetailViewController{
 // MARK: - Actions
 extension DrinkDetailViewController {
     @IBAction func editDrink(_ sender: UIBarButtonItem) {
-        self.performSegue(withIdentifier: "EditDrink", sender: nil)
+        self.performSegue(withIdentifier: segueName.editDrink.rawValue, sender: nil)
     }
     
     @IBAction func unwindToDrinkList(segue: UIStoryboardSegue) {
-        unwind = true
+        // If the drink was deleted, pop this view off the stack without animation
+        unwind = segue.identifier == segueName.backToDrinkList.rawValue ? true : false
+    }
+    
+    @IBAction func showDrinkImage(_ sender: UITapGestureRecognizer) {
+        guard drinkSelection?.image != nil else { return }
+        
+        performSegue(withIdentifier: segueName.showDrinkImage.rawValue, sender: nil)
     }
 }
 

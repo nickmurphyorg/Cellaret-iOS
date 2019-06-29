@@ -112,7 +112,7 @@ extension EditDrinkTableViewController {
             }
             
             weakSelf.editDrink = nil
-            weakSelf.performSegue(withIdentifier: "BackToDrinkList", sender: self)
+            weakSelf.performSegue(withIdentifier: segueName.backToDrinkList.rawValue, sender: self)
         })
         
         alert.addAction(cancel)

@@ -15,7 +15,6 @@ class DrinkListTableViewController: UITableViewController {
     var menuSelection: Int = 0
     
     let cellIdentifier = "drinkCell"
-    let drinkDetailSegue = "DrinkDetail"
     let favoriteStar = UIImage(named: "Star-White")
 
     override func viewDidLoad() {
@@ -72,7 +71,7 @@ extension DrinkListTableViewController {
         
         selectedDrinkIndex = indexPath.row
         
-        performSegue(withIdentifier: drinkDetailSegue, sender: nil)
+        performSegue(withIdentifier: segueName.drinkDetails.rawValue, sender: nil)
     }
 
 }
@@ -81,16 +80,16 @@ extension DrinkListTableViewController {
 extension DrinkListTableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
-        case "MenuOptions":
+        case segueName.menuOptions.rawValue:
             let navigationController = segue.destination as? UINavigationController
             let destinationViewController = navigationController?.children.first as! MenuTableViewController
             destinationViewController.delegate = self
             destinationViewController.menuSelection = self.menuSelection
-        case drinkDetailSegue:
+        case segueName.drinkDetails.rawValue:
             let destinationViewController = segue.destination as! DrinkDetailViewController
             destinationViewController.drinkSelection = selectedDrinkIndex != -1 ? selectedDrinks[selectedDrinkIndex] : nil
             destinationViewController.editDrinkDelegate = self
-        case "AddNewDrink":
+        case segueName.addNewDrink.rawValue:
             let navigationController = segue.destination as? UINavigationController
             let destinationViewController = navigationController?.children.first as! EditDrinkTableViewController
             destinationViewController.editDrinkDelegate = self
