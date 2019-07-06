@@ -75,11 +75,18 @@ class ImageController {
         return imageID
     }
     
-    func fetchImage(imageID: String) -> UIImage? {
-        let path = documentsPath.appendingPathComponent("\(imageID)-small.png").path
+    func fetchImage(imageID: String, _ imageSize: imageSize) -> UIImage? {
+        let path: String!
+        
+        switch imageSize {
+        case .small:
+            path = documentsPath.appendingPathComponent("\(imageID)-small.png").path
+        case .original:
+            path = documentsPath.appendingPathComponent("\(imageID).png").path
+        }
         
         guard fileManager.fileExists(atPath: path) else {
-            print("Image does not exist at: \n\(path)")
+            print("Image does not exist at: \n\(path!)")
             
             return nil
         }

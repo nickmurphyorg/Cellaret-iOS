@@ -84,10 +84,10 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7oh-LG-z15">
-                                                                <rect key="frame" x="-1" y="-5" width="374" height="51"/>
+                                                                <rect key="frame" x="-1" y="-6" width="374" height="52"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="Jgs-f2-uYb">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="51"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="52"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 </view>
                                                                 <vibrancyEffect>
@@ -289,9 +289,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dKU-cm-DQz">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="dKU-cm-DQz">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vjz-71-BDs">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="Xhs-DP-f5F" appends="YES" id="oOV-CJ-AFT"/>
+                                        </connections>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="vjz-71-BDs" secondAttribute="bottom" id="eEg-Lo-ARD"/>
+                                    <constraint firstItem="vjz-71-BDs" firstAttribute="leading" secondItem="dKU-cm-DQz" secondAttribute="leading" id="hcl-2D-t0I"/>
+                                    <constraint firstAttribute="trailing" secondItem="vjz-71-BDs" secondAttribute="trailing" id="iGK-yr-gZn"/>
+                                    <constraint firstItem="vjz-71-BDs" firstAttribute="top" secondItem="dKU-cm-DQz" secondAttribute="top" id="zhs-XP-E8g"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="delegate" destination="ZbU-HO-7U9" id="B9F-Lb-i26"/>
                                 </connections>
@@ -308,6 +323,7 @@
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="fmK-6I-nhb">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="UAt-av-nsZ">
+                            <color key="tintColor" red="0.99996131658554077" green="0.82027333974838257" blue="0.099906511604785919" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="RhQ-4T-Vam" kind="unwind" unwindAction="unwindToDrinkListWithSegue:" id="Mbo-oO-15O"/>
                             </connections>
@@ -315,10 +331,16 @@
                     </navigationItem>
                     <connections>
                         <outlet property="imageScrollView" destination="dKU-cm-DQz" id="3dm-bK-w3A"/>
+                        <outlet property="imageView" destination="vjz-71-BDs" id="ecA-Dn-dod"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MqD-An-mEF" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="RhQ-4T-Vam" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="Xhs-DP-f5F">
+                    <connections>
+                        <action selector="doubleTapImage:" destination="ZbU-HO-7U9" id="fez-pG-9Yk"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2862.3188405797105" y="864.94565217391312"/>
         </scene>
@@ -648,7 +670,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Y6c-jb-mGb" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8VX-Mu-ZGY">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="8VX-Mu-ZGY">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

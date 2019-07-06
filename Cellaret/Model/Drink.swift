@@ -27,7 +27,7 @@ extension Drink{
         let drinkObject = drinkEntity as! DrinkEntity
         
         if let imageId = drinkObject.imageId {
-            self.image = ImageController.shared.fetchImage(imageID: imageId)
+            self.image = ImageController.shared.fetchImage(imageID: imageId, imageSize.small)
         }
         
         self.drinkId = drinkObject.objectID

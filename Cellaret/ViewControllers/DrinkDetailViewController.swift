@@ -63,9 +63,11 @@ extension DrinkDetailViewController{
             destinationViewController.editDrinkDelegate = editDrinkDelegate
             destinationViewController.drinkViewDelegate = self
         case segueName.showDrinkImage.rawValue:
+            guard drinkSelection?.imageId != nil else { return }
+            
             let navigationController = segue.destination as? UINavigationController
             let destinationViewController = navigationController?.children.first as! ImageZoomViewController
-            destinationViewController.drinkImage = drinkSelection?.image
+            destinationViewController.drinkImage = ImageController.shared.fetchImage(imageID: drinkSelection!.imageId!, imageSize.original)
         default:
             return
         }

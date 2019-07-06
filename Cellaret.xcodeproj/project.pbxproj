@@ -22,6 +22,7 @@
 		D14A259320F19E8A0022D9F7 /* MenuSelectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14A259220F19E8A0022D9F7 /* MenuSelectionDelegate.swift */; };
 		D14A25B820F2BA5F0022D9F7 /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14A25B720F2BA5F0022D9F7 /* Drink.swift */; };
 		D1565A1F2102D08C00A8E5C1 /* EditDrinkDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1565A1E2102D08C00A8E5C1 /* EditDrinkDelegate.swift */; };
+		D169F65822C8529400C71A48 /* ImageSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = D169F65722C8529400C71A48 /* ImageSize.swift */; };
 		D17C7A6521250A4200986A52 /* ImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17C7A6421250A4200986A52 /* ImageController.swift */; };
 		D184CBBB2170372B00ADD1B1 /* CellaretTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D184CBBA2170372B00ADD1B1 /* CellaretTests.swift */; };
 		D184CBC32172AC5900ADD1B1 /* ModelControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D184CBC22172AC5900ADD1B1 /* ModelControllerTests.swift */; };
@@ -63,6 +64,7 @@
 		D14A259220F19E8A0022D9F7 /* MenuSelectionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSelectionDelegate.swift; sourceTree = "<group>"; };
 		D14A25B720F2BA5F0022D9F7 /* Drink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drink.swift; sourceTree = "<group>"; };
 		D1565A1E2102D08C00A8E5C1 /* EditDrinkDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDrinkDelegate.swift; sourceTree = "<group>"; };
+		D169F65722C8529400C71A48 /* ImageSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSize.swift; sourceTree = "<group>"; };
 		D17C7A6421250A4200986A52 /* ImageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageController.swift; sourceTree = "<group>"; };
 		D184CBB82170372B00ADD1B1 /* CellaretTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CellaretTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D184CBBA2170372B00ADD1B1 /* CellaretTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellaretTests.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				D10CC86E22AF36D20028ABAC /* ModelKeys.swift */,
+				D169F65722C8529400C71A48 /* ImageSize.swift */,
 				D1FBE6F422BFC4C100BAD42F /* SegueNames.swift */,
 				D19D97AF22B58DC200FFA34F /* PickerCell.swift */,
 				D10CC87122B08CC20028ABAC /* EditActions.swift */,
@@ -323,6 +326,7 @@
 				D14A258F20EECA590022D9F7 /* MenuController.swift in Sources */,
 				D14A259320F19E8A0022D9F7 /* MenuSelectionDelegate.swift in Sources */,
 				D14A258C20EEBD420022D9F7 /* EditDrinkTableViewController.swift in Sources */,
+				D169F65822C8529400C71A48 /* ImageSize.swift in Sources */,
 				D10CC87222B08CC20028ABAC /* EditActions.swift in Sources */,
 				D1565A1F2102D08C00A8E5C1 /* EditDrinkDelegate.swift in Sources */,
 				D14A259120F155CF0022D9F7 /* ModelController.swift in Sources */,
