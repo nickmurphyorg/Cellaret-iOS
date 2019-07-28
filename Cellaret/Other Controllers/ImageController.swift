@@ -36,22 +36,23 @@ class ImageController {
     func saveImage(drinkImage: UIImage) -> String? {
         let date = String( Date.timeIntervalSinceReferenceDate )
         let imageID = date.replacingOccurrences(of: ".", with: "-")
-        let thumbnailImage = createThumbnail(originalImage: drinkImage)
+        let fullsizeImage = createImage(imageSize.original, for: drinkImage)
+        let thumbnailImage = createImage(imageSize.small, for: drinkImage)
         
         imageQueue.async { [weak self] in
             guard let weakSelf = self else { return }
             
             var images = [ImageObject]()
             
-            if let originalImageData = drinkImage.pngData() {
+            if let fullsizeImage = fullsizeImage, let originalImageData = fullsizeImage.pngData() {
                 let originalImageObject = ImageObject(imageName: "\(imageID).png", imageData: originalImageData)
                 
                 images.append(originalImageObject)
             } else {
-                print("Could not create png from original image.")
+                print("Could not create png from fullsize image.")
             }
             
-            if let thumbnailImageData = thumbnailImage.pngData() {
+            if let thumbnailImage = thumbnailImage, let thumbnailImageData = thumbnailImage.pngData() {
                 let thumbnailImageObject = ImageObject(imageName: "\(imageID)-small.png", imageData: thumbnailImageData)
                 
                 images.append(thumbnailImageObject)
@@ -116,26 +117,30 @@ class ImageController {
         }
     }
     
-    func createThumbnail(originalImage: UIImage) -> UIImage {
-        let imageWidth = originalImage.size.width
-        let imageHeight = originalImage.size.height
-        let scaleFactor = screenWidth / imageWidth
+    func createImage(_ size: imageSize, for image: UIImage) -> UIImage? {
+        let imageWidth = image.size.width
+        let imageHeight = image.size.height
         
-        if scaleFactor < 1 {
-            let newSize = CGSize(width: imageWidth * scaleFactor, height: imageHeight * scaleFactor)
-            let alpha = false
-            let canvas = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
-            
-            UIGraphicsBeginImageContextWithOptions(newSize, alpha, pixelScale)
-            originalImage.draw(in: canvas)
-            
-            let thumbnail = UIGraphicsGetImageFromCurrentImageContext()
-            UIGraphicsEndImageContext()
-            
-            return thumbnail!
-        } else {
-            return originalImage
+        var scaleFactor: CGFloat = 1.0
+        
+        // Set Scale Percentage For Small Image Size
+        if size == imageSize.small && (screenWidth / imageWidth) < 1.0 {
+            scaleFactor = screenWidth / imageWidth
         }
+        
+        let imageSize = CGSize(width: imageWidth * scaleFactor, height: imageHeight * scaleFactor)
+        let alpha = false
+        let canvas = CGRect(x: 0, y: 0, width: imageSize.width, height: imageSize.height)
+        
+        UIGraphicsBeginImageContextWithOptions(imageSize, alpha, pixelScale)
+        
+        image.draw(in: canvas)
+        
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        
+        UIGraphicsEndImageContext()
+        
+        return newImage
     }
     
 }

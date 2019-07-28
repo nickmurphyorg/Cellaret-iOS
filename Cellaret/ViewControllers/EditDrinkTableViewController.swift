@@ -207,7 +207,7 @@ extension EditDrinkTableViewController: UIImagePickerControllerDelegate, UINavig
     
     @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let capturedImage = info[.originalImage] as? UIImage {
-            let thumbnail = ImageController.shared.createThumbnail(originalImage: capturedImage)
+            let thumbnail = ImageController.shared.createImage(imageSize.small, for: capturedImage)
             let createImageId = ImageController.shared.saveImage(drinkImage: capturedImage)
             
             drinkImageView.image = thumbnail

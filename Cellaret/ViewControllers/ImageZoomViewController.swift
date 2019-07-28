@@ -71,16 +71,16 @@ extension ImageZoomViewController {
         centerImage()
     }
     
-    fileprivate func centerImage() {
+    private func centerImage() {
         let imageViewSize = imageView.frame.size
         let scrollViewSize = view.frame.size
         let verticalPadding = imageViewSize.height < scrollViewSize.height ? (scrollViewSize.height - imageViewSize.height) / 2 : 0
-        let horizontalPadding = imageViewSize.width < scrollViewSize.width ? (scrollViewSize.width - imageViewSize .width) / 2 : 0
+        let horizontalPadding = imageViewSize.width < scrollViewSize.width ? (scrollViewSize.width - imageViewSize.width) / 2 : 0
         
         imageScrollView.contentInset = UIEdgeInsets(top: verticalPadding, left: horizontalPadding, bottom: verticalPadding, right: horizontalPadding)
     }
     
-    fileprivate func zoomRectangle(scale: CGFloat, center: CGPoint) -> CGRect {
+    private func zoomRectangle(scale: CGFloat, center: CGPoint) -> CGRect {
         var zoomRect = CGRect.zero
         zoomRect.size.height = imageView.frame.size.height / scale
         zoomRect.size.width  = imageView.frame.size.width  / scale
