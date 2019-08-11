@@ -1,0 +1,864 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0A1908969828EF0B672312582540E304 /* Collection+OAuthSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C1D5366366341F68B976AD60C8BABB /* Collection+OAuthSwift.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0E4F15D102F0EC18846CF65246C47144 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+		0E8E16BFB2519FDDFC29EEACEBC25784 /* OAuth2Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197239EE8BF8542EF551EF4224F8DC62 /* OAuth2Swift.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		15C96676060BF2C17D270C3F029644B1 /* SHA1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4BE7A74CD87687655C80339D4F420B /* SHA1.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		1DED3FDEE669B446980A6E6F842F9549 /* String+OAuthSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = E446177786C2BA97FC8C3C1DB40B5283 /* String+OAuthSwift.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		289672C858405086E07398D2EAC5914E /* Pods-Cellaret-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D7641A7566C4AFF9BC9C8E3EAF78FE2 /* Pods-Cellaret-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2C0B55F2EFCFCE6A903D5F9C7F9E2FC7 /* OAuthSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8AF9AD92474AEBE29043D48700DFFA /* OAuthSwift.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		33288BB59843FAAD4A2330C75D48B80F /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD66EC4F38928F6D5385261F0E9FDBB /* Utils.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4337162E4FCBB327692532D2AADB24AB /* OAuthSwiftResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E87BCFBAF8235200AAE959D76BA795D /* OAuthSwiftResponse.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4AB80B7389BD442D00B71E80677383C5 /* Pods-Cellaret-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A9350187A0792DC09183BE62FED6481B /* Pods-Cellaret-dummy.m */; };
+		54143F95ED39F0BF32782D9D7F9AAFD3 /* UIApplication+OAuthSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECBFA8A09158C05C3748B94031DE4CD /* UIApplication+OAuthSwift.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		54EC154AEE5C8B1E2DE1D39EB0071F30 /* Int+OAuthSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB3C375B098EFCCECAE919AAEC51A70 /* Int+OAuthSwift.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		602C1949653A4615A5DD6AC91B824BBC /* OAuth1Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE44A36154A9348838A979058DC9B56 /* OAuth1Swift.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		615B4F07638913112ACF0FDFA305BB36 /* Data+OAuthSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0412DED2341E6D360D1C2E6BC446A1 /* Data+OAuthSwift.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		6A6B8055DEE857F21D04A3FF7485A44E /* OAuthSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AFC8E2AA9AB63A7BD48D658FBE8F653 /* OAuthSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6F78BFAAAD958F7B294EAD931C21C3C1 /* NotificationCenter+OAuthSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4445D8FA961FF953E6B6E7A00D958931 /* NotificationCenter+OAuthSwift.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7B17CD91C88596B5F2D19D16CB28A4FD /* Dictionary+OAuthSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = C641C03B4E30504AF64B8F7DCE9E6AF5 /* Dictionary+OAuthSwift.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		90A328B6D81FB6BA0683ABD0A59D73B4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+		9233126AB5F69C247A408E26A9B7942C /* Objc.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE07F465B57A06B63D8B1D00DA99E227 /* Objc.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		95A48A974C9115D1C848C6FAB5CE5FB8 /* OAuthSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E7B12E51ED9CCD51C15004A8931E9E3B /* OAuthSwift-dummy.m */; };
+		9842D46A74A89E0ED7809E92EC434290 /* OAuthSwiftURLHandlerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761C73861CFC028BF0E05FBC99F257A7 /* OAuthSwiftURLHandlerType.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9D2D4F83EB0072F2F9976666F90412D0 /* NSError+OAuthSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DC610D04990967E3D2D54CE935F112 /* NSError+OAuthSwift.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A7A4A80FE4D52D1492141FB82CED7679 /* HMAC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7428785B46BA8CDAB2FB6C4742B3F11 /* HMAC.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B79BE1F4BADB104866BB7829F473E02F /* URL+OAuthSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272F7B01CB8D4B1DEB8201FEE0C91668 /* URL+OAuthSwift.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		BEEB7138D830B9414158F024CF836B2E /* OAuthSwiftClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70340E6CD5033B44D922734250792B17 /* OAuthSwiftClient.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C417DA5E48DE74B3E2C6F38BD6E8AA82 /* OAuthSwiftHTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770AE4786D5B440F42D06AB405525BBE /* OAuthSwiftHTTPRequest.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C599CE94C59B4740EC39FD0115B3EC6E /* OAuthSwiftMultipartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC83E5FF20881C98153D3B9266BAA145 /* OAuthSwiftMultipartData.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C9B140FF25D857C77EFD353B4C0013F8 /* Pods-CellaretTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A96661207806B42A1AB2BC9351DBDC /* Pods-CellaretTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA69265D91583F5EEE1925B6D303E8B0 /* OAuthWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6F3FD6184628F42E72642EDDCF98EC /* OAuthWebViewController.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		D640EF5F80D46D58145341D4707E106E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+		ED9967754FA36BC9BE4F248E94F0134B /* OAuthSwiftError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7C7AD30163DA3580B4FDBFA5266EC6 /* OAuthSwiftError.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		F0E90BDEF941B43FBEB3469F9BD2056F /* OAuthSwiftCredential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48316E52269D1CC8C1520A3DBA3D364B /* OAuthSwiftCredential.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		F142BB08C2C07CC1B80879C8018E9B2C /* Pods-CellaretTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A197CF5574C1BFCEB1DB790503BD92E /* Pods-CellaretTests-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0B15BC6C44A4830DB190EE78F23BEF69 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EF83FCC10E7453ACCB801B656501E2F6;
+			remoteInfo = OAuthSwift;
+		};
+		5F0A3690B8A817954C85A88BE6CF7FF4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E15AC526F6A1FDA2913C58FE849C1E5D;
+			remoteInfo = "Pods-Cellaret";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		08809FCBA70BEADB9FDD20D5050EDFB4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A197CF5574C1BFCEB1DB790503BD92E /* Pods-CellaretTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CellaretTests-dummy.m"; sourceTree = "<group>"; };
+		0D4BE7A74CD87687655C80339D4F420B /* SHA1.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SHA1.swift; path = Sources/SHA1.swift; sourceTree = "<group>"; };
+		197239EE8BF8542EF551EF4224F8DC62 /* OAuth2Swift.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OAuth2Swift.swift; path = Sources/OAuth2Swift.swift; sourceTree = "<group>"; };
+		1F5D9916BC874B17246F4904C509154E /* Pods-Cellaret.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Cellaret.debug.xcconfig"; sourceTree = "<group>"; };
+		272F7B01CB8D4B1DEB8201FEE0C91668 /* URL+OAuthSwift.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URL+OAuthSwift.swift"; path = "Sources/URL+OAuthSwift.swift"; sourceTree = "<group>"; };
+		30DC610D04990967E3D2D54CE935F112 /* NSError+OAuthSwift.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSError+OAuthSwift.swift"; path = "Sources/NSError+OAuthSwift.swift"; sourceTree = "<group>"; };
+		310EDABC7D4EBA81508B01DF69E20A1D /* Pods_CellaretTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CellaretTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		36281A07525EA0D7F03139FC8B42453E /* OAuthSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = OAuthSwift.modulemap; sourceTree = "<group>"; };
+		3AFC8E2AA9AB63A7BD48D658FBE8F653 /* OAuthSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "OAuthSwift-umbrella.h"; sourceTree = "<group>"; };
+		406EBEF7287DAD2FAAB0F40BAF67CAC6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41158D201E0D42E91E06686A9E8FE4F0 /* Pods-Cellaret-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Cellaret-acknowledgements.plist"; sourceTree = "<group>"; };
+		43D0347DB1C4444151C944C04322B5AD /* Pods-Cellaret-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Cellaret-resources.sh"; sourceTree = "<group>"; };
+		4445D8FA961FF953E6B6E7A00D958931 /* NotificationCenter+OAuthSwift.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NotificationCenter+OAuthSwift.swift"; path = "Sources/NotificationCenter+OAuthSwift.swift"; sourceTree = "<group>"; };
+		48316E52269D1CC8C1520A3DBA3D364B /* OAuthSwiftCredential.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OAuthSwiftCredential.swift; path = Sources/OAuthSwiftCredential.swift; sourceTree = "<group>"; };
+		4C6F3FD6184628F42E72642EDDCF98EC /* OAuthWebViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OAuthWebViewController.swift; path = Sources/OAuthWebViewController.swift; sourceTree = "<group>"; };
+		4D7641A7566C4AFF9BC9C8E3EAF78FE2 /* Pods-Cellaret-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Cellaret-umbrella.h"; sourceTree = "<group>"; };
+		4E87BCFBAF8235200AAE959D76BA795D /* OAuthSwiftResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OAuthSwiftResponse.swift; path = Sources/OAuthSwiftResponse.swift; sourceTree = "<group>"; };
+		5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		5E7C7AD30163DA3580B4FDBFA5266EC6 /* OAuthSwiftError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OAuthSwiftError.swift; path = Sources/OAuthSwiftError.swift; sourceTree = "<group>"; };
+		61C3027AFE5B8EFCE5C4B71574722EB7 /* OAuthSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OAuthSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		62B0733616D24085DF6EB6AF91C91F59 /* Pods-CellaretTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CellaretTests.release.xcconfig"; sourceTree = "<group>"; };
+		62BE23E4E9673871CBFE8A07111E78BE /* Pods-CellaretTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CellaretTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		6B0412DED2341E6D360D1C2E6BC446A1 /* Data+OAuthSwift.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Data+OAuthSwift.swift"; path = "Sources/Data+OAuthSwift.swift"; sourceTree = "<group>"; };
+		70340E6CD5033B44D922734250792B17 /* OAuthSwiftClient.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OAuthSwiftClient.swift; path = Sources/OAuthSwiftClient.swift; sourceTree = "<group>"; };
+		75C119F9C28004F31610720A285348DA /* Pods-Cellaret.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Cellaret.modulemap"; sourceTree = "<group>"; };
+		761C73861CFC028BF0E05FBC99F257A7 /* OAuthSwiftURLHandlerType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OAuthSwiftURLHandlerType.swift; path = Sources/OAuthSwiftURLHandlerType.swift; sourceTree = "<group>"; };
+		770AE4786D5B440F42D06AB405525BBE /* OAuthSwiftHTTPRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OAuthSwiftHTTPRequest.swift; path = Sources/OAuthSwiftHTTPRequest.swift; sourceTree = "<group>"; };
+		7A8AF9AD92474AEBE29043D48700DFFA /* OAuthSwift.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OAuthSwift.swift; path = Sources/OAuthSwift.swift; sourceTree = "<group>"; };
+		8BC453FC8C9A0A4C1D85B8B614B3C7B0 /* Pods_Cellaret.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cellaret.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FD3B076C1814E6899652C061C3C9CFE /* Pods-CellaretTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CellaretTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9CABDB9633B668266FC264B4DA485C3D /* Pods-CellaretTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CellaretTests-resources.sh"; sourceTree = "<group>"; };
+		9E17178EC82013941946D9DADB2BF70F /* Pods-Cellaret-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Cellaret-frameworks.sh"; sourceTree = "<group>"; };
+		9EE44A36154A9348838A979058DC9B56 /* OAuth1Swift.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OAuth1Swift.swift; path = Sources/OAuth1Swift.swift; sourceTree = "<group>"; };
+		A30C664BE74CA7AC3E94BFB528575160 /* Pods-Cellaret.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Cellaret.release.xcconfig"; sourceTree = "<group>"; };
+		A8AFFAE8C13E21CE2862C4023E03F30A /* Pods-Cellaret-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Cellaret-acknowledgements.markdown"; sourceTree = "<group>"; };
+		A9350187A0792DC09183BE62FED6481B /* Pods-Cellaret-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Cellaret-dummy.m"; sourceTree = "<group>"; };
+		B14C77916FCD46780A0C2A402A6B9D20 /* Pods-CellaretTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CellaretTests.modulemap"; sourceTree = "<group>"; };
+		C641C03B4E30504AF64B8F7DCE9E6AF5 /* Dictionary+OAuthSwift.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Dictionary+OAuthSwift.swift"; path = "Sources/Dictionary+OAuthSwift.swift"; sourceTree = "<group>"; };
+		C7428785B46BA8CDAB2FB6C4742B3F11 /* HMAC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HMAC.swift; path = Sources/HMAC.swift; sourceTree = "<group>"; };
+		C8900DB1ABAB4BDC6B8DA720FD954755 /* OAuthSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "OAuthSwift-prefix.pch"; sourceTree = "<group>"; };
+		CCD66EC4F38928F6D5385261F0E9FDBB /* Utils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = Sources/Utils.swift; sourceTree = "<group>"; };
+		CECBFA8A09158C05C3748B94031DE4CD /* UIApplication+OAuthSwift.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIApplication+OAuthSwift.swift"; path = "Sources/UIApplication+OAuthSwift.swift"; sourceTree = "<group>"; };
+		D57D67E6B286E4BC93E69B34C590B42F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DAB3C375B098EFCCECAE919AAEC51A70 /* Int+OAuthSwift.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Int+OAuthSwift.swift"; path = "Sources/Int+OAuthSwift.swift"; sourceTree = "<group>"; };
+		DC83E5FF20881C98153D3B9266BAA145 /* OAuthSwiftMultipartData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OAuthSwiftMultipartData.swift; path = Sources/OAuthSwiftMultipartData.swift; sourceTree = "<group>"; };
+		E3C1D5366366341F68B976AD60C8BABB /* Collection+OAuthSwift.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Collection+OAuthSwift.swift"; path = "Sources/Collection+OAuthSwift.swift"; sourceTree = "<group>"; };
+		E446177786C2BA97FC8C3C1DB40B5283 /* String+OAuthSwift.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+OAuthSwift.swift"; path = "Sources/String+OAuthSwift.swift"; sourceTree = "<group>"; };
+		E7A96661207806B42A1AB2BC9351DBDC /* Pods-CellaretTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CellaretTests-umbrella.h"; sourceTree = "<group>"; };
+		E7B12E51ED9CCD51C15004A8931E9E3B /* OAuthSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "OAuthSwift-dummy.m"; sourceTree = "<group>"; };
+		E83D9CBE702078F399271E81650CA3C3 /* Pods-CellaretTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CellaretTests-frameworks.sh"; sourceTree = "<group>"; };
+		EBB49DFE4030F8234C31EEC0F22377EE /* Pods-CellaretTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CellaretTests.debug.xcconfig"; sourceTree = "<group>"; };
+		EE07F465B57A06B63D8B1D00DA99E227 /* Objc.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Objc.swift; path = Sources/Objc.swift; sourceTree = "<group>"; };
+		FF2B2957244B6552B71849D70B10959D /* OAuthSwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = OAuthSwift.xcconfig; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		42D01DDB4381E7CCAD56CF5BD22C1F35 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90A328B6D81FB6BA0683ABD0A59D73B4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0799AE08861B6DCABCF3C96C3CA473C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E4F15D102F0EC18846CF65246C47144 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E411FE86C35FE60BCDED88381E3A1DE4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D640EF5F80D46D58145341D4707E106E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		074B1129E41AB26DB30424970E8BD0B0 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				DF72D7256FC7F14CC3D2BA7364F997E2 /* Pods-Cellaret */,
+				736A02DAC9B0E4CA61899C4E9D5E5308 /* Pods-CellaretTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		1A990DCBA88E4D1EDE4BBA4CF10C3865 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				08809FCBA70BEADB9FDD20D5050EDFB4 /* Info.plist */,
+				36281A07525EA0D7F03139FC8B42453E /* OAuthSwift.modulemap */,
+				FF2B2957244B6552B71849D70B10959D /* OAuthSwift.xcconfig */,
+				E7B12E51ED9CCD51C15004A8931E9E3B /* OAuthSwift-dummy.m */,
+				C8900DB1ABAB4BDC6B8DA720FD954755 /* OAuthSwift-prefix.pch */,
+				3AFC8E2AA9AB63A7BD48D658FBE8F653 /* OAuthSwift-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/OAuthSwift";
+			sourceTree = "<group>";
+		};
+		5E0D919E635D23B70123790B8308F8EF /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		72747D7E1EEB7C6962545BFC86F70C42 /* OAuthSwift */ = {
+			isa = PBXGroup;
+			children = (
+				E3C1D5366366341F68B976AD60C8BABB /* Collection+OAuthSwift.swift */,
+				6B0412DED2341E6D360D1C2E6BC446A1 /* Data+OAuthSwift.swift */,
+				C641C03B4E30504AF64B8F7DCE9E6AF5 /* Dictionary+OAuthSwift.swift */,
+				C7428785B46BA8CDAB2FB6C4742B3F11 /* HMAC.swift */,
+				DAB3C375B098EFCCECAE919AAEC51A70 /* Int+OAuthSwift.swift */,
+				4445D8FA961FF953E6B6E7A00D958931 /* NotificationCenter+OAuthSwift.swift */,
+				30DC610D04990967E3D2D54CE935F112 /* NSError+OAuthSwift.swift */,
+				9EE44A36154A9348838A979058DC9B56 /* OAuth1Swift.swift */,
+				197239EE8BF8542EF551EF4224F8DC62 /* OAuth2Swift.swift */,
+				7A8AF9AD92474AEBE29043D48700DFFA /* OAuthSwift.swift */,
+				70340E6CD5033B44D922734250792B17 /* OAuthSwiftClient.swift */,
+				48316E52269D1CC8C1520A3DBA3D364B /* OAuthSwiftCredential.swift */,
+				5E7C7AD30163DA3580B4FDBFA5266EC6 /* OAuthSwiftError.swift */,
+				770AE4786D5B440F42D06AB405525BBE /* OAuthSwiftHTTPRequest.swift */,
+				DC83E5FF20881C98153D3B9266BAA145 /* OAuthSwiftMultipartData.swift */,
+				4E87BCFBAF8235200AAE959D76BA795D /* OAuthSwiftResponse.swift */,
+				761C73861CFC028BF0E05FBC99F257A7 /* OAuthSwiftURLHandlerType.swift */,
+				4C6F3FD6184628F42E72642EDDCF98EC /* OAuthWebViewController.swift */,
+				EE07F465B57A06B63D8B1D00DA99E227 /* Objc.swift */,
+				0D4BE7A74CD87687655C80339D4F420B /* SHA1.swift */,
+				E446177786C2BA97FC8C3C1DB40B5283 /* String+OAuthSwift.swift */,
+				CECBFA8A09158C05C3748B94031DE4CD /* UIApplication+OAuthSwift.swift */,
+				272F7B01CB8D4B1DEB8201FEE0C91668 /* URL+OAuthSwift.swift */,
+				CCD66EC4F38928F6D5385261F0E9FDBB /* Utils.swift */,
+				1A990DCBA88E4D1EDE4BBA4CF10C3865 /* Support Files */,
+			);
+			path = OAuthSwift;
+			sourceTree = "<group>";
+		};
+		736A02DAC9B0E4CA61899C4E9D5E5308 /* Pods-CellaretTests */ = {
+			isa = PBXGroup;
+			children = (
+				D57D67E6B286E4BC93E69B34C590B42F /* Info.plist */,
+				B14C77916FCD46780A0C2A402A6B9D20 /* Pods-CellaretTests.modulemap */,
+				62BE23E4E9673871CBFE8A07111E78BE /* Pods-CellaretTests-acknowledgements.markdown */,
+				8FD3B076C1814E6899652C061C3C9CFE /* Pods-CellaretTests-acknowledgements.plist */,
+				0A197CF5574C1BFCEB1DB790503BD92E /* Pods-CellaretTests-dummy.m */,
+				E83D9CBE702078F399271E81650CA3C3 /* Pods-CellaretTests-frameworks.sh */,
+				9CABDB9633B668266FC264B4DA485C3D /* Pods-CellaretTests-resources.sh */,
+				E7A96661207806B42A1AB2BC9351DBDC /* Pods-CellaretTests-umbrella.h */,
+				EBB49DFE4030F8234C31EEC0F22377EE /* Pods-CellaretTests.debug.xcconfig */,
+				62B0733616D24085DF6EB6AF91C91F59 /* Pods-CellaretTests.release.xcconfig */,
+			);
+			name = "Pods-CellaretTests";
+			path = "Target Support Files/Pods-CellaretTests";
+			sourceTree = "<group>";
+		};
+		7A30EA14D34B4BED74A7EDB1220CCE24 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				61C3027AFE5B8EFCE5C4B71574722EB7 /* OAuthSwift.framework */,
+				8BC453FC8C9A0A4C1D85B8B614B3C7B0 /* Pods_Cellaret.framework */,
+				310EDABC7D4EBA81508B01DF69E20A1D /* Pods_CellaretTests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				B918C9FBC3D445AAA5D966B9DCB2BA2D /* Pods */,
+				7A30EA14D34B4BED74A7EDB1220CCE24 /* Products */,
+				074B1129E41AB26DB30424970E8BD0B0 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		B918C9FBC3D445AAA5D966B9DCB2BA2D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				72747D7E1EEB7C6962545BFC86F70C42 /* OAuthSwift */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5E0D919E635D23B70123790B8308F8EF /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DF72D7256FC7F14CC3D2BA7364F997E2 /* Pods-Cellaret */ = {
+			isa = PBXGroup;
+			children = (
+				406EBEF7287DAD2FAAB0F40BAF67CAC6 /* Info.plist */,
+				75C119F9C28004F31610720A285348DA /* Pods-Cellaret.modulemap */,
+				A8AFFAE8C13E21CE2862C4023E03F30A /* Pods-Cellaret-acknowledgements.markdown */,
+				41158D201E0D42E91E06686A9E8FE4F0 /* Pods-Cellaret-acknowledgements.plist */,
+				A9350187A0792DC09183BE62FED6481B /* Pods-Cellaret-dummy.m */,
+				9E17178EC82013941946D9DADB2BF70F /* Pods-Cellaret-frameworks.sh */,
+				43D0347DB1C4444151C944C04322B5AD /* Pods-Cellaret-resources.sh */,
+				4D7641A7566C4AFF9BC9C8E3EAF78FE2 /* Pods-Cellaret-umbrella.h */,
+				1F5D9916BC874B17246F4904C509154E /* Pods-Cellaret.debug.xcconfig */,
+				A30C664BE74CA7AC3E94BFB528575160 /* Pods-Cellaret.release.xcconfig */,
+			);
+			name = "Pods-Cellaret";
+			path = "Target Support Files/Pods-Cellaret";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		3A408BDD394B6654614997E3F1265543 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9B140FF25D857C77EFD353B4C0013F8 /* Pods-CellaretTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		449B91827AB0541E726FA72E9B179E8E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A6B8055DEE857F21D04A3FF7485A44E /* OAuthSwift-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE58375BF3F7EBD039FF616888DAC30D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				289672C858405086E07398D2EAC5914E /* Pods-Cellaret-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		854C733B326CAF2CA456F3562DAEA598 /* Pods-CellaretTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52BE554D5E42F93CC75A3F621F9930E5 /* Build configuration list for PBXNativeTarget "Pods-CellaretTests" */;
+			buildPhases = (
+				3A408BDD394B6654614997E3F1265543 /* Headers */,
+				42A5962671D25963801F17FF09301F16 /* Sources */,
+				42D01DDB4381E7CCAD56CF5BD22C1F35 /* Frameworks */,
+				68CC1B211EB3E81D6ED13C9CD9D8BA01 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5DE513B513A7E2F30928EC0621350DBC /* PBXTargetDependency */,
+			);
+			name = "Pods-CellaretTests";
+			productName = "Pods-CellaretTests";
+			productReference = 310EDABC7D4EBA81508B01DF69E20A1D /* Pods_CellaretTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E15AC526F6A1FDA2913C58FE849C1E5D /* Pods-Cellaret */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D06241CA48BE49F44E26B5EA906FEB54 /* Build configuration list for PBXNativeTarget "Pods-Cellaret" */;
+			buildPhases = (
+				EE58375BF3F7EBD039FF616888DAC30D /* Headers */,
+				C66DA97F2F817A8DD335D575E9F8C4A8 /* Sources */,
+				B0799AE08861B6DCABCF3C96C3CA473C /* Frameworks */,
+				F325A1D0A247E385668B126A5536C040 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				15B70E2D97209062BFEB9DA5C78F13D6 /* PBXTargetDependency */,
+			);
+			name = "Pods-Cellaret";
+			productName = "Pods-Cellaret";
+			productReference = 8BC453FC8C9A0A4C1D85B8B614B3C7B0 /* Pods_Cellaret.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		EF83FCC10E7453ACCB801B656501E2F6 /* OAuthSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A0C06C9BF416D71CB5103EF8C8729E7A /* Build configuration list for PBXNativeTarget "OAuthSwift" */;
+			buildPhases = (
+				449B91827AB0541E726FA72E9B179E8E /* Headers */,
+				60A94A6F5C559908A77A309C98AC631A /* Sources */,
+				E411FE86C35FE60BCDED88381E3A1DE4 /* Frameworks */,
+				1839B9C4027C89A1120F8E2F6BB75A7D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OAuthSwift;
+			productName = OAuthSwift;
+			productReference = 61C3027AFE5B8EFCE5C4B71574722EB7 /* OAuthSwift.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 1020;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 7A30EA14D34B4BED74A7EDB1220CCE24 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EF83FCC10E7453ACCB801B656501E2F6 /* OAuthSwift */,
+				E15AC526F6A1FDA2913C58FE849C1E5D /* Pods-Cellaret */,
+				854C733B326CAF2CA456F3562DAEA598 /* Pods-CellaretTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1839B9C4027C89A1120F8E2F6BB75A7D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		68CC1B211EB3E81D6ED13C9CD9D8BA01 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F325A1D0A247E385668B126A5536C040 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		42A5962671D25963801F17FF09301F16 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F142BB08C2C07CC1B80879C8018E9B2C /* Pods-CellaretTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		60A94A6F5C559908A77A309C98AC631A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A1908969828EF0B672312582540E304 /* Collection+OAuthSwift.swift in Sources */,
+				615B4F07638913112ACF0FDFA305BB36 /* Data+OAuthSwift.swift in Sources */,
+				7B17CD91C88596B5F2D19D16CB28A4FD /* Dictionary+OAuthSwift.swift in Sources */,
+				A7A4A80FE4D52D1492141FB82CED7679 /* HMAC.swift in Sources */,
+				54EC154AEE5C8B1E2DE1D39EB0071F30 /* Int+OAuthSwift.swift in Sources */,
+				6F78BFAAAD958F7B294EAD931C21C3C1 /* NotificationCenter+OAuthSwift.swift in Sources */,
+				9D2D4F83EB0072F2F9976666F90412D0 /* NSError+OAuthSwift.swift in Sources */,
+				602C1949653A4615A5DD6AC91B824BBC /* OAuth1Swift.swift in Sources */,
+				0E8E16BFB2519FDDFC29EEACEBC25784 /* OAuth2Swift.swift in Sources */,
+				95A48A974C9115D1C848C6FAB5CE5FB8 /* OAuthSwift-dummy.m in Sources */,
+				2C0B55F2EFCFCE6A903D5F9C7F9E2FC7 /* OAuthSwift.swift in Sources */,
+				BEEB7138D830B9414158F024CF836B2E /* OAuthSwiftClient.swift in Sources */,
+				F0E90BDEF941B43FBEB3469F9BD2056F /* OAuthSwiftCredential.swift in Sources */,
+				ED9967754FA36BC9BE4F248E94F0134B /* OAuthSwiftError.swift in Sources */,
+				C417DA5E48DE74B3E2C6F38BD6E8AA82 /* OAuthSwiftHTTPRequest.swift in Sources */,
+				C599CE94C59B4740EC39FD0115B3EC6E /* OAuthSwiftMultipartData.swift in Sources */,
+				4337162E4FCBB327692532D2AADB24AB /* OAuthSwiftResponse.swift in Sources */,
+				9842D46A74A89E0ED7809E92EC434290 /* OAuthSwiftURLHandlerType.swift in Sources */,
+				CA69265D91583F5EEE1925B6D303E8B0 /* OAuthWebViewController.swift in Sources */,
+				9233126AB5F69C247A408E26A9B7942C /* Objc.swift in Sources */,
+				15C96676060BF2C17D270C3F029644B1 /* SHA1.swift in Sources */,
+				1DED3FDEE669B446980A6E6F842F9549 /* String+OAuthSwift.swift in Sources */,
+				54143F95ED39F0BF32782D9D7F9AAFD3 /* UIApplication+OAuthSwift.swift in Sources */,
+				B79BE1F4BADB104866BB7829F473E02F /* URL+OAuthSwift.swift in Sources */,
+				33288BB59843FAAD4A2330C75D48B80F /* Utils.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C66DA97F2F817A8DD335D575E9F8C4A8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4AB80B7389BD442D00B71E80677383C5 /* Pods-Cellaret-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		15B70E2D97209062BFEB9DA5C78F13D6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = OAuthSwift;
+			target = EF83FCC10E7453ACCB801B656501E2F6 /* OAuthSwift */;
+			targetProxy = 0B15BC6C44A4830DB190EE78F23BEF69 /* PBXContainerItemProxy */;
+		};
+		5DE513B513A7E2F30928EC0621350DBC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Cellaret";
+			target = E15AC526F6A1FDA2913C58FE849C1E5D /* Pods-Cellaret */;
+			targetProxy = 5F0A3690B8A817954C85A88BE6CF7FF4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		006BDAA0DAEC357E91774F5D2FCA2562 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		08CD7C58CD744000E04715D19D39975E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF2B2957244B6552B71849D70B10959D /* OAuthSwift.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/OAuthSwift/OAuthSwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/OAuthSwift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/OAuthSwift/OAuthSwift.modulemap";
+				PRODUCT_MODULE_NAME = OAuthSwift;
+				PRODUCT_NAME = OAuthSwift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		47E71CFF73B009947F165E218FDF5CEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF2B2957244B6552B71849D70B10959D /* OAuthSwift.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/OAuthSwift/OAuthSwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/OAuthSwift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/OAuthSwift/OAuthSwift.modulemap";
+				PRODUCT_MODULE_NAME = OAuthSwift;
+				PRODUCT_NAME = OAuthSwift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		5ED451E3C479A24DC9821D18323BEB45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 62B0733616D24085DF6EB6AF91C91F59 /* Pods-CellaretTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CellaretTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CellaretTests/Pods-CellaretTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8804B1169BEE8E4A7466DECE6FDB014A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A30C664BE74CA7AC3E94BFB528575160 /* Pods-Cellaret.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Cellaret/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Cellaret/Pods-Cellaret.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9C1691381854F5F86B24003BFFF6D9D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F5D9916BC874B17246F4904C509154E /* Pods-Cellaret.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Cellaret/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Cellaret/Pods-Cellaret.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CC6C33C3833ADC4268C21E6D0F1DD0DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		E5A455A62B88E2D69230E4378A65E06A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EBB49DFE4030F8234C31EEC0F22377EE /* Pods-CellaretTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CellaretTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CellaretTests/Pods-CellaretTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CC6C33C3833ADC4268C21E6D0F1DD0DC /* Debug */,
+				006BDAA0DAEC357E91774F5D2FCA2562 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52BE554D5E42F93CC75A3F621F9930E5 /* Build configuration list for PBXNativeTarget "Pods-CellaretTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E5A455A62B88E2D69230E4378A65E06A /* Debug */,
+				5ED451E3C479A24DC9821D18323BEB45 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A0C06C9BF416D71CB5103EF8C8729E7A /* Build configuration list for PBXNativeTarget "OAuthSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				47E71CFF73B009947F165E218FDF5CEC /* Debug */,
+				08CD7C58CD744000E04715D19D39975E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D06241CA48BE49F44E26B5EA906FEB54 /* Build configuration list for PBXNativeTarget "Pods-Cellaret" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C1691381854F5F86B24003BFFF6D9D1 /* Debug */,
+				8804B1169BEE8E4A7466DECE6FDB014A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

@@ -1,0 +1,6 @@
+framework module Pods_CellaretTests {
+  umbrella header "Pods-CellaretTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
