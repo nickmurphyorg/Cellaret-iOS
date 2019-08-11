@@ -1,6 +1,10 @@
 # Acknowledgements
 This application makes use of the following third party libraries:
 
+## Keys
+
+MIT LICENSE Found in the repo
+
 ## OAuthSwift
 
 Copyright (c) 2014 Dongri Jin <dongriat@gmail.com>

@@ -1,16 +1,23 @@
 PODS:
+  - Keys (1.0.1)
   - OAuthSwift (1.2.2)
 
 DEPENDENCIES:
+  - Keys (from `Pods/CocoaPodsKeys`)
   - OAuthSwift
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - OAuthSwift
 
+EXTERNAL SOURCES:
+  Keys:
+    :path: Pods/CocoaPodsKeys
+
 SPEC CHECKSUMS:
+  Keys: a576f4c9c1c641ca913a959a9c62ed3f215a8de9
   OAuthSwift: 27b34fe80b76b67cd8f45571e0be2432bc9f6de1
 
-PODFILE CHECKSUM: 493c3204b0f28d8e0e02672d3a0726a0392538b9
+PODFILE CHECKSUM: 00664685a493025f3fa1c68e07d7790950243d4a
 
 COCOAPODS: 1.5.3
