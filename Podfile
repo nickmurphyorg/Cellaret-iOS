@@ -5,15 +5,11 @@ target 'Cellaret' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for Cellaret
-  pod 'OAuthSwift'
-
   # Plugins
   plugin 'cocoapods-keys', {
   :project => "Cellaret",
   :keys => [
-    "Semantics3Key",
-    "Semantics3Secret"
+    "apiToken"
   ]}
 
   target 'CellaretTests' do

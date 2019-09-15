@@ -143,4 +143,24 @@ class ImageController {
         return newImage
     }
     
+    func downloadImage(_ url: String, completion: @escaping (UIImage?) -> Void) {
+        guard let imageURL = URL(string: url) else {
+            print("ImageController - Invalid image URL was passed.")
+            
+            completion(nil)
+            
+            return
+        }
+        
+        let task = URLSession.shared.dataTask(with: imageURL) { (data, response, error) in
+            if let data = data {
+                completion(UIImage(data: data))
+            } else {
+                print("ImageController - Could not download data for image. Error: \(error?.localizedDescription ?? "none")")
+            }
+        }
+        
+        task.resume()
+    }
+    
 }

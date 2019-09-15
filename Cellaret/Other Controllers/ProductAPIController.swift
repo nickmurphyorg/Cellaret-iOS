@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import OAuthSwift
 import Keys
 
 class ProductAPIController {
@@ -15,68 +14,34 @@ class ProductAPIController {
     
     let cellaretKeys = CellaretKeys()
     let baseURL = URL(string: "https://api.semantics3.com/v1/")!
-    let oauthCredentials: OAuth1Swift!
     let jsonDecoder = JSONDecoder()
     
-    private init() {
-        oauthCredentials = OAuth1Swift(consumerKey: cellaretKeys.semantics3Key, consumerSecret: cellaretKeys.semantics3Secret)
-    }
-    
-    func getProduct(upc: String) {
-        let productURL = baseURL.appendingPathComponent("products")
-        let productData = ["upc": upc]
-        
-        guard let serializedProductData = serializeJSON(object: productData) else {
-            print("ProductAPIController - Could not serialize product data.")
-            
-            return
-        }
-        
-        let queryString = "q=" + serializedProductData
+    func getProduct(UPC: String, completion: @escaping (DrinkData?) -> Void) {
+        let productURL = baseURL.appendingPathComponent("lookup")
+        let queryString = "token=\(cellaretKeys.apiToken)&upc=\(UPC)"
+        let jsonDecoder = JSONDecoder()
         
         var components = URLComponents(url: productURL, resolvingAgainstBaseURL: true)
         components?.query = queryString
         
         guard let requestURL = components?.url else {
             print("ProductAPIController - Request URL is nil.")
+            completion(nil)
             
             return
         }
         
-        let _ = oauthCredentials.client.get(requestURL.absoluteString, success: { [weak self] (response) in
-            guard let weakSelf = self else {
-                return
-            }
-            
-            if let responseData = try? weakSelf.jsonDecoder.decode([String: String].self, from: response.data) {
-                // TODO: - Initialize model to pass data back to caller.
+        let task = URLSession.shared.dataTask(with: requestURL) { (data, response, error) in
+            if let data = data,
+                let parsedData = try? jsonDecoder.decode(DrinkData.self, from: data) {
+                completion(parsedData)
                 
+            } else {
+                print("Either no data was returned, or data was not properly decoded.")
+                completion(nil)
             }
-        }, failure: { (error) in
-            print("ProductAPIController - \(error)")
-        })
-    }
-}
-
-// Mark: - Helper Methods
-extension ProductAPIController {
-    func serializeJSON(object: Any) -> String? {
-        var serializedString: String?
-        
-        guard JSONSerialization.isValidJSONObject(object) else {
-            print("ProductAPIController - Object is not a valid JSON object.")
-            
-            return nil
         }
         
-        do {
-            let serializedJSONData: Data = try JSONSerialization.data(withJSONObject: object, options: .sortedKeys)
-            
-            serializedString = String(data: serializedJSONData, encoding: .utf8)
-        } catch let error {
-            print("ProductAPIController - \(error)")
-        }
-        
-        return serializedString
+        task.resume()
     }
 }

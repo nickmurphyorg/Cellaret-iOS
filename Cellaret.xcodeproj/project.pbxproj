@@ -25,8 +25,10 @@
 		D14A25B820F2BA5F0022D9F7 /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14A25B720F2BA5F0022D9F7 /* Drink.swift */; };
 		D14F128B22FFBF4A009BC627 /* ProductAPIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14F128A22FFBF4A009BC627 /* ProductAPIController.swift */; };
 		D1565A1F2102D08C00A8E5C1 /* EditDrinkDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1565A1E2102D08C00A8E5C1 /* EditDrinkDelegate.swift */; };
+		D15F7218232E9DC500BFE123 /* DrinkData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15F7217232E9DC500BFE123 /* DrinkData.swift */; };
 		D169F65822C8529400C71A48 /* ImageSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = D169F65722C8529400C71A48 /* ImageSize.swift */; };
 		D17C7A6521250A4200986A52 /* ImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17C7A6421250A4200986A52 /* ImageController.swift */; };
+		D1818C86231DA3B500F7872F /* ImageControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1818C85231DA3B400F7872F /* ImageControllerTests.swift */; };
 		D184CBBB2170372B00ADD1B1 /* CellaretTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D184CBBA2170372B00ADD1B1 /* CellaretTests.swift */; };
 		D184CBC32172AC5900ADD1B1 /* ModelControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D184CBC22172AC5900ADD1B1 /* ModelControllerTests.swift */; };
 		D19C6031230A315C001A47F1 /* ProductAPIControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19C6030230A315C001A47F1 /* ProductAPIControllerTests.swift */; };
@@ -72,8 +74,10 @@
 		D14A25B720F2BA5F0022D9F7 /* Drink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drink.swift; sourceTree = "<group>"; };
 		D14F128A22FFBF4A009BC627 /* ProductAPIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductAPIController.swift; sourceTree = "<group>"; };
 		D1565A1E2102D08C00A8E5C1 /* EditDrinkDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDrinkDelegate.swift; sourceTree = "<group>"; };
+		D15F7217232E9DC500BFE123 /* DrinkData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkData.swift; sourceTree = "<group>"; };
 		D169F65722C8529400C71A48 /* ImageSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSize.swift; sourceTree = "<group>"; };
 		D17C7A6421250A4200986A52 /* ImageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageController.swift; sourceTree = "<group>"; };
+		D1818C85231DA3B400F7872F /* ImageControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageControllerTests.swift; sourceTree = "<group>"; };
 		D184CBB82170372B00ADD1B1 /* CellaretTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CellaretTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D184CBBA2170372B00ADD1B1 /* CellaretTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellaretTests.swift; sourceTree = "<group>"; };
 		D184CBBC2170372B00ADD1B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -200,6 +204,7 @@
 			children = (
 				D14A25B720F2BA5F0022D9F7 /* Drink.swift */,
 				D1B44A292128CBDF00F00604 /* ImageObject.swift */,
+				D15F7217232E9DC500BFE123 /* DrinkData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -221,6 +226,7 @@
 				D19C6030230A315C001A47F1 /* ProductAPIControllerTests.swift */,
 				D184CBBA2170372B00ADD1B1 /* CellaretTests.swift */,
 				D184CBBC2170372B00ADD1B1 /* Info.plist */,
+				D1818C85231DA3B400F7872F /* ImageControllerTests.swift */,
 			);
 			path = CellaretTests;
 			sourceTree = "<group>";
@@ -256,7 +262,7 @@
 				D14A256B20EEB1A40022D9F7 /* Sources */,
 				D14A256C20EEB1A40022D9F7 /* Frameworks */,
 				D14A256D20EEB1A40022D9F7 /* Resources */,
-				AA790E52D6716D658B675D88 /* [CP] Embed Pods Frameworks */,
+				D124D33FF175B9671A0CE6F7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -391,7 +397,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AA790E52D6716D658B675D88 /* [CP] Embed Pods Frameworks */ = {
+		D124D33FF175B9671A0CE6F7 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -401,14 +407,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Cellaret/Pods-Cellaret-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Keys/Keys.framework",
-				"${BUILT_PRODUCTS_DIR}/OAuthSwift/OAuthSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Keys.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OAuthSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -442,6 +446,7 @@
 				D10CC87222B08CC20028ABAC /* EditActions.swift in Sources */,
 				D14F128B22FFBF4A009BC627 /* ProductAPIController.swift in Sources */,
 				D1565A1F2102D08C00A8E5C1 /* EditDrinkDelegate.swift in Sources */,
+				D15F7218232E9DC500BFE123 /* DrinkData.swift in Sources */,
 				D14A259120F155CF0022D9F7 /* ModelController.swift in Sources */,
 				D1A31DC4210C123600A3B0E6 /* DrinkTableViewCell.swift in Sources */,
 				D14A258720EEBC6D0022D9F7 /* DrinkListTableViewController.swift in Sources */,
@@ -455,6 +460,7 @@
 				D184CBC32172AC5900ADD1B1 /* ModelControllerTests.swift in Sources */,
 				D19C6031230A315C001A47F1 /* ProductAPIControllerTests.swift in Sources */,
 				D184CBBB2170372B00ADD1B1 /* CellaretTests.swift in Sources */,
+				D1818C86231DA3B500F7872F /* ImageControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
