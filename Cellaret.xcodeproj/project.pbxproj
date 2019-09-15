@@ -37,6 +37,7 @@
 		D1A31DC4210C123600A3B0E6 /* DrinkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A31DC3210C123600A3B0E6 /* DrinkTableViewCell.swift */; };
 		D1A31DF9210FEF7C00A3B0E6 /* UserPreferencesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A31DF8210FEF7C00A3B0E6 /* UserPreferencesController.swift */; };
 		D1B44A2A2128CBDF00F00604 /* ImageObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B44A292128CBDF00F00604 /* ImageObject.swift */; };
+		D1D8C322232EB86F00D6DD1E /* BarcodeScanerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D8C321232EB86F00D6DD1E /* BarcodeScanerViewController.swift */; };
 		D1E55D9E22BB0FBF00957FC5 /* ImageZoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E55D9D22BB0FBF00957FC5 /* ImageZoomViewController.swift */; };
 		D1F696E52114DDF50085266E /* Cellaret.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D1F696E32114DDF50085266E /* Cellaret.xcdatamodeld */; };
 		D1FBE6F522BFC4C100BAD42F /* SegueNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FBE6F422BFC4C100BAD42F /* SegueNames.swift */; };
@@ -88,6 +89,7 @@
 		D1A31DC3210C123600A3B0E6 /* DrinkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkTableViewCell.swift; sourceTree = "<group>"; };
 		D1A31DF8210FEF7C00A3B0E6 /* UserPreferencesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferencesController.swift; sourceTree = "<group>"; };
 		D1B44A292128CBDF00F00604 /* ImageObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageObject.swift; sourceTree = "<group>"; };
+		D1D8C321232EB86F00D6DD1E /* BarcodeScanerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeScanerViewController.swift; sourceTree = "<group>"; };
 		D1E55D9D22BB0FBF00957FC5 /* ImageZoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageZoomViewController.swift; sourceTree = "<group>"; };
 		D1F696E42114DDF50085266E /* Cellaret.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Cellaret.xcdatamodel; sourceTree = "<group>"; };
 		D1FBE6F422BFC4C100BAD42F /* SegueNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueNames.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 				D14A258420EEBC130022D9F7 /* DrinkDetailViewController.swift */,
 				D14A258B20EEBD420022D9F7 /* EditDrinkTableViewController.swift */,
 				D1E55D9D22BB0FBF00957FC5 /* ImageZoomViewController.swift */,
+				D1D8C321232EB86F00D6DD1E /* BarcodeScanerViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -449,6 +452,7 @@
 				D15F7218232E9DC500BFE123 /* DrinkData.swift in Sources */,
 				D14A259120F155CF0022D9F7 /* ModelController.swift in Sources */,
 				D1A31DC4210C123600A3B0E6 /* DrinkTableViewCell.swift in Sources */,
+				D1D8C322232EB86F00D6DD1E /* BarcodeScanerViewController.swift in Sources */,
 				D14A258720EEBC6D0022D9F7 /* DrinkListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

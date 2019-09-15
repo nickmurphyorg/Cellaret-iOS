@@ -268,8 +268,8 @@
                         <outlet property="drinkNameLabel" destination="7RC-vJ-ext" id="T8N-Rf-MpO"/>
                         <outlet property="drinkVolumeLabel" destination="PCY-O9-j3e" id="o0l-dw-smG"/>
                         <outlet property="favoriteImageView" destination="6LW-Ae-xsN" id="6Zs-hl-Gws"/>
-                        <segue destination="Liu-0K-a13" kind="presentation" identifier="EditDrink" id="5b9-Dy-qSo"/>
                         <segue destination="Y6c-jb-mGb" kind="presentation" identifier="ShowDrinkImage" id="TRn-8f-Rxc"/>
+                        <segue destination="nv6-9Z-oMc" kind="presentation" identifier="EditDrink" id="tO5-KS-3NF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -279,7 +279,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="972" y="399"/>
+            <point key="canvasLocation" x="970" y="795"/>
         </scene>
         <!--Image Zoom View Controller-->
         <scene sceneID="Nic-nk-0le">
@@ -342,7 +342,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2862.3188405797105" y="864.94565217391312"/>
+            <point key="canvasLocation" x="1910" y="1693"/>
         </scene>
         <!--Edit Drink Table View Controller-->
         <scene sceneID="Fms-oD-rDK">
@@ -609,7 +609,23 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="4089.8550724637685" y="31.793478260869566"/>
+            <point key="canvasLocation" x="4704" y="399"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="VIC-ya-gaS">
+            <objects>
+                <navigationController id="nv6-9Z-oMc" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QrK-R4-5Wv">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="bT4-P6-IHM" kind="relationship" relationship="rootViewController" id="YHx-5u-WIp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tMm-nw-xyB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2864" y="795"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="78r-Vj-tMf">
@@ -658,12 +674,42 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="bT4-P6-IHM" kind="relationship" relationship="rootViewController" id="AYm-Uv-KVf"/>
+                        <segue destination="UkM-6q-fK6" kind="relationship" relationship="rootViewController" id="hz4-Dl-p0p"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OMR-9x-Tu2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2864.8000000000002" y="31.934032983508249"/>
+            <point key="canvasLocation" x="2864" y="32"/>
+        </scene>
+        <!--Barcode Scaner View Controller-->
+        <scene sceneID="rI4-g9-25x">
+            <objects>
+                <viewController id="UkM-6q-fK6" customClass="BarcodeScanerViewController" customModule="Cellaret" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xa3-V1-dx9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="pu7-EN-liR"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="WPD-k4-CaB">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="wmr-YG-c8J">
+                            <connections>
+                                <action selector="CancelButton:" destination="UkM-6q-fK6" id="uS9-2s-dcv"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="No Barcode" id="zJj-0s-UBg">
+                            <connections>
+                                <action selector="NoBarcode:" destination="UkM-6q-fK6" id="Dna-HB-aDj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="bT4-P6-IHM" kind="show" identifier="DrinkForm" id="2lf-8i-mv2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f6i-mB-uLj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3790" y="32"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vvv-M2-Bdi">
@@ -681,13 +727,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dTA-qK-33L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1910" y="865"/>
+            <point key="canvasLocation" x="970" y="1694"/>
         </scene>
     </scenes>
     <resources>
         <image name="Add Image Placeholder" width="600" height="400"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="5b9-Dy-qSo"/>
+        <segue reference="YHx-5u-WIp"/>
     </inferredMetricsTieBreakers>
 </document>

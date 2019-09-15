@@ -91,7 +91,7 @@ extension DrinkListTableViewController {
             destinationViewController.editDrinkDelegate = self
         case segueName.addNewDrink.rawValue:
             let navigationController = segue.destination as? UINavigationController
-            let destinationViewController = navigationController?.children.first as! EditDrinkTableViewController
+            let destinationViewController = navigationController?.children.first as! BarcodeScanerViewController
             destinationViewController.editDrinkDelegate = self
         default:
             return
