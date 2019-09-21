@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>NSCameraUsageDescription</key>
-	<string>Use previously taken photos in the app.</string>
+	<string>Use the camera to take a picture of your drink or scan the barcode.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>Use photos from your camera or photo library.</string>
+	<string>Add a picture from your cameraroll.</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>

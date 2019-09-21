@@ -72,9 +72,9 @@
                                                     </constraints>
                                                 </imageView>
                                                 <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lrt-Q4-6iy">
-                                                    <rect key="frame" x="0.0" y="182" width="374" height="46"/>
+                                                    <rect key="frame" x="0.0" y="181.33333333333334" width="374" height="46.666666666666657"/>
                                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="WL6-uh-gZy">
-                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="46"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="47"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="neq-RK-cYa">
@@ -84,10 +84,10 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7oh-LG-z15">
-                                                                <rect key="frame" x="-1" y="-6" width="374" height="52"/>
+                                                                <rect key="frame" x="-1" y="-8" width="374" height="55"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="Jgs-f2-uYb">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="52"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="55"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 </view>
                                                                 <vibrancyEffect>
@@ -668,7 +668,8 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Liu-0K-a13" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gYj-VF-0q4">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="gYj-VF-0q4">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -688,28 +689,45 @@
                     <view key="view" contentMode="scaleToFill" id="xa3-V1-dx9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gl0-2q-IaT">
+                                <rect key="frame" x="0.0" y="366" width="414" height="4"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="4" id="KCu-tp-YDy"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Gl0-2q-IaT" firstAttribute="leading" secondItem="pu7-EN-liR" secondAttribute="leading" id="APX-ho-qPr"/>
+                            <constraint firstItem="Gl0-2q-IaT" firstAttribute="trailing" secondItem="pu7-EN-liR" secondAttribute="trailing" id="Bgt-nr-kJq"/>
+                            <constraint firstItem="Gl0-2q-IaT" firstAttribute="centerY" secondItem="xa3-V1-dx9" secondAttribute="centerY" id="clg-Rj-SlV"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="pu7-EN-liR"/>
                     </view>
                     <navigationItem key="navigationItem" id="WPD-k4-CaB">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="wmr-YG-c8J">
+                            <color key="tintColor" red="0.99996131659999998" green="0.82027333970000005" blue="0.099906511599999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="CancelButton:" destination="UkM-6q-fK6" id="uS9-2s-dcv"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="No Barcode" id="zJj-0s-UBg">
+                            <color key="tintColor" red="0.99996131659999998" green="0.82027333970000005" blue="0.099906511599999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="NoBarcode:" destination="UkM-6q-fK6" id="Dna-HB-aDj"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="scannerLine" destination="Gl0-2q-IaT" id="Qn9-c8-eOV"/>
                         <segue destination="bT4-P6-IHM" kind="show" identifier="DrinkForm" id="2lf-8i-mv2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f6i-mB-uLj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3790" y="32"/>
+            <point key="canvasLocation" x="3789.8550724637685" y="31.793478260869566"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vvv-M2-Bdi">
@@ -734,6 +752,6 @@
         <image name="Add Image Placeholder" width="600" height="400"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="YHx-5u-WIp"/>
+        <segue reference="2lf-8i-mv2"/>
     </inferredMetricsTieBreakers>
 </document>
