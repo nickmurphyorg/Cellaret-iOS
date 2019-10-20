@@ -43,7 +43,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pAZ-u8-8wb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1911.2" y="-493.40329835082463"/>
+            <point key="canvasLocation" x="1909" y="-792"/>
         </scene>
         <!--Drink List Table View Controller-->
         <scene sceneID="gSH-RF-rGQ">
@@ -72,9 +72,9 @@
                                                     </constraints>
                                                 </imageView>
                                                 <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lrt-Q4-6iy">
-                                                    <rect key="frame" x="0.0" y="181.33333333333334" width="374" height="46.666666666666657"/>
+                                                    <rect key="frame" x="0.0" y="182" width="374" height="46"/>
                                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="WL6-uh-gZy">
-                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="47"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="46"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="neq-RK-cYa">
@@ -84,10 +84,10 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7oh-LG-z15">
-                                                                <rect key="frame" x="-1" y="-8" width="374" height="55"/>
+                                                                <rect key="frame" x="-1" y="-8" width="374" height="54"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="Jgs-f2-uYb">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="55"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="54"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 </view>
                                                                 <vibrancyEffect>
@@ -155,12 +155,14 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="xIX-tT-ZkT">
                             <connections>
-                                <segue destination="Liu-0K-a13" kind="presentation" identifier="AddNewDrink" id="kIv-5x-jZy"/>
+                                <action selector="AddNewDrink:" destination="qoN-45-Vew" id="vzd-c4-6nW"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="DrinkDetail" id="Fn6-Ns-c02"/>
+                        <segue destination="nv6-9Z-oMc" kind="presentation" identifier="AddNewDrinkForm" id="4Z7-jE-sTT"/>
+                        <segue destination="Liu-0K-a13" kind="presentation" identifier="AddNewDrink" id="EIz-Mj-Yb6"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z77-bj-3FQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -279,7 +281,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="970" y="795"/>
+            <point key="canvasLocation" x="32" y="923"/>
         </scene>
         <!--Image Zoom View Controller-->
         <scene sceneID="Nic-nk-0le">
@@ -342,7 +344,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1910" y="1693"/>
+            <point key="canvasLocation" x="970" y="1692"/>
         </scene>
         <!--Edit Drink Table View Controller-->
         <scene sceneID="Fms-oD-rDK">
@@ -497,6 +499,9 @@
                                                         </label>
                                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ave-Ph-JQz">
                                                             <rect key="frame" x="333" y="0.0" width="51" height="32"/>
+                                                            <connections>
+                                                                <action selector="toggleFavoriteSwitch:" destination="bT4-P6-IHM" eventType="primaryActionTriggered" id="76s-uf-bCe"/>
+                                                            </connections>
                                                         </switch>
                                                     </subviews>
                                                 </stackView>
@@ -524,6 +529,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
+                                                    <connections>
+                                                        <action selector="alcoholVolumeChanged:" destination="bT4-P6-IHM" eventType="editingChanged" id="hbV-Dp-Lyg"/>
+                                                    </connections>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alcohol / Volume" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xpx-rj-ZXl">
                                                     <rect key="frame" x="16" y="6" width="382" height="21"/>
@@ -609,7 +617,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="4704" y="399"/>
+            <point key="canvasLocation" x="3249" y="427"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VIC-ya-gaS">
@@ -625,7 +633,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tMm-nw-xyB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2864" y="795"/>
+            <point key="canvasLocation" x="970" y="923"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="78r-Vj-tMf">
@@ -661,7 +669,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sWa-r0-mxv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="972" y="-493.40329835082463"/>
+            <point key="canvasLocation" x="970" y="-792"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jui-QY-UFY">
@@ -680,7 +688,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OMR-9x-Tu2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2864" y="32"/>
+            <point key="canvasLocation" x="970" y="32"/>
         </scene>
         <!--Barcode Scaner View Controller-->
         <scene sceneID="rI4-g9-25x">
@@ -692,7 +700,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gl0-2q-IaT">
                                 <rect key="frame" x="0.0" y="366" width="414" height="4"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="4" id="KCu-tp-YDy"/>
                                 </constraints>
@@ -727,7 +735,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f6i-mB-uLj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3789.8550724637685" y="31.793478260869566"/>
+            <point key="canvasLocation" x="1909" y="32"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vvv-M2-Bdi">
@@ -745,13 +753,14 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dTA-qK-33L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="970" y="1694"/>
+            <point key="canvasLocation" x="32" y="1692"/>
         </scene>
     </scenes>
     <resources>
         <image name="Add Image Placeholder" width="600" height="400"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="4Z7-jE-sTT"/>
         <segue reference="2lf-8i-mv2"/>
     </inferredMetricsTieBreakers>
 </document>

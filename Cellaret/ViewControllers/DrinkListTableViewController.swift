@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class DrinkListTableViewController: UITableViewController {
     
@@ -76,6 +77,17 @@ extension DrinkListTableViewController {
 
 }
 
+//MARK: - Add New Drink
+extension DrinkListTableViewController {
+    @IBAction func AddNewDrink(_ sender: UIBarButtonItem) {
+        if AVCaptureDevice.authorizationStatus(for: .video) == AVAuthorizationStatus.denied {
+            performSegue(withIdentifier: segueName.addNewDrinkForm.rawValue, sender: nil)
+        } else {
+            performSegue(withIdentifier: segueName.addNewDrink.rawValue, sender: nil)
+        }
+    }
+}
+
 // MARK: - Navigation
 extension DrinkListTableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -93,13 +105,18 @@ extension DrinkListTableViewController {
             let navigationController = segue.destination as? UINavigationController
             let destinationViewController = navigationController?.children.first as! BarcodeScanerViewController
             destinationViewController.editDrinkDelegate = self
+        case segueName.addNewDrinkForm.rawValue:
+            let navigationController = segue.destination as? UINavigationController
+            let destinationViewController = navigationController?.children.first as! EditDrinkTableViewController
+            destinationViewController.editDrinkDelegate = self
+            destinationViewController.drinkData = Drink()
         default:
             return
         }
     }
 }
 
-//MARK: - Delegates
+//MARK: - Menu Selection Delegate
 extension DrinkListTableViewController: MenuSelectionDelegate {
     func menuSelectionMade(selection: Int) {
         guard menuSelection != selection else { return }
@@ -116,6 +133,7 @@ extension DrinkListTableViewController: MenuSelectionDelegate {
     }
 }
 
+//MARK: - Edit Drink Delegate
 extension DrinkListTableViewController: EditDrinkDelegate {
     func editDrink(drink: Drink, action: editAction) {
         switch action {
@@ -134,8 +152,6 @@ extension DrinkListTableViewController: EditDrinkDelegate {
         case .delete:
             selectedDrinks = ModelController.shared.deleteDrink(selectedDrinkIndex, selectedDrinks)
         }
-        
-        selectedDrinkIndex = -1
         
         tableView.reloadData()
     }

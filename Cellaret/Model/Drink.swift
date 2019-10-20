@@ -22,7 +22,21 @@ struct Drink: Equatable {
     var alcoholVolume: percent
 }
 
-extension Drink{
+// MARK: - Initialize Empty Drink
+extension Drink {
+    init() {
+        self.drinkId = nil
+        self.imageId = nil
+        self.image = nil
+        self.name = ""
+        self.favorite = false
+        self.category = 0
+        self.alcoholVolume = 0.0
+    }
+}
+
+// MARK: - Initialize From Core Data Object
+extension Drink {
     init(drinkEntity: NSManagedObject) {
         let drinkObject = drinkEntity as! DrinkEntity
         

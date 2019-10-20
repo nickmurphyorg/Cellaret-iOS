@@ -16,6 +16,7 @@ class BarcodeScanerViewController: UIViewController {
     var captureSession = AVCaptureSession()
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     var editDrinkDelegate: EditDrinkDelegate?
+    var downloadedDrink: Drink!
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .portrait
@@ -23,6 +24,8 @@ class BarcodeScanerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        downloadedDrink = Drink()
         
         setupBarcodeScanner()
     }
@@ -49,6 +52,7 @@ extension BarcodeScanerViewController {
     func setupBarcodeScanner() {
         guard let captureDevice = AVCaptureDevice.default(for: .video) else {
             print("BarcodeScanerViewController - AVFoundation failed to get camera device.")
+            setupBarcodeScannerFailed()
             
             return
         }
@@ -59,6 +63,7 @@ extension BarcodeScanerViewController {
             inputDevice = try AVCaptureDeviceInput(device: captureDevice)
         } catch let error as NSError {
             print("BarcodeScanerViewController - \(error)")
+            setupBarcodeScannerFailed()
             
             return
         }
@@ -67,6 +72,7 @@ extension BarcodeScanerViewController {
             captureSession.addInput(inputDevice)
         } else {
             print("BarcodeScanerViewController - Input device could not be added.")
+            setupBarcodeScannerFailed()
             
             return
         }
@@ -80,6 +86,7 @@ extension BarcodeScanerViewController {
             metadataOutput.metadataObjectTypes = [.ean8, .ean13, .pdf417]
         } else {
             print("BarcodeScanerViewController - Could not add metadata output.")
+            setupBarcodeScannerFailed()
             
             return
         }
@@ -91,6 +98,10 @@ extension BarcodeScanerViewController {
         view.bringSubviewToFront(scannerLine)
         
         captureSession.startRunning()
+    }
+    
+    func setupBarcodeScannerFailed() {
+        performSegue(withIdentifier: segueName.drinkForm.rawValue, sender: nil)
     }
 }
 
@@ -112,8 +123,32 @@ extension BarcodeScanerViewController: AVCaptureMetadataOutputObjectsDelegate {
             let barcodeStringIndex = barcodeString.index(barcodeString.startIndex, offsetBy: 1)
             barcodeString = String(barcodeString[barcodeStringIndex...])
         }
+        
+        downloadDrink(barcodeString)
+    }
+}
+
+// MARK: - Download Drink Data
+extension BarcodeScanerViewController {
+    func downloadDrink(_ upc: String) {
+        ProductAPIController.shared.getProduct(UPC: upc, completion: {[weak self] (drinkData) in
+            guard let drinkData = drinkData,
+                let weakSelf = self else { return }
+
+            weakSelf.downloadedDrink.name = drinkData.item_attributes.title
             
-        print(barcodeString)
+            // Download Drink Image If Available And Save It
+            ImageController.shared.downloadImage(drinkData.item_attributes.image, completion: {(drinkImage) in
+                if let drinkImage = drinkImage {
+                    weakSelf.downloadedDrink?.image = drinkImage
+                    weakSelf.downloadedDrink.imageId = ImageController.shared.saveImage(drinkImage: drinkImage)
+                }
+                
+                DispatchQueue.main.async {
+                    weakSelf.performSegue(withIdentifier: segueName.drinkForm.rawValue, sender: nil)
+                }
+            })
+        })
     }
 }
 
@@ -135,6 +170,7 @@ extension BarcodeScanerViewController {
         case segueName.drinkForm.rawValue:
             let destinationViewController = segue.destination as! EditDrinkTableViewController
             destinationViewController.editDrinkDelegate = editDrinkDelegate
+            destinationViewController.drinkData = downloadedDrink
         default:
             return
         }

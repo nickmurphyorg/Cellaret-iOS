@@ -13,7 +13,7 @@ class ProductAPIController {
     static let shared = ProductAPIController()
     
     let cellaretKeys = CellaretKeys()
-    let baseURL = URL(string: "https://api.semantics3.com/v1/")!
+    let baseURL = URL(string: "https://api.barcodespider.com/v1/")!
     let jsonDecoder = JSONDecoder()
     
     func getProduct(UPC: String, completion: @escaping (DrinkData?) -> Void) {

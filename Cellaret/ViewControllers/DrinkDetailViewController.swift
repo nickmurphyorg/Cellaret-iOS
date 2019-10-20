@@ -59,7 +59,7 @@ extension DrinkDetailViewController{
         case segueName.editDrink.rawValue:
             let navigationController = segue.destination as? UINavigationController
             let destinationViewController = navigationController?.children.first as! EditDrinkTableViewController
-            destinationViewController.editDrink = drinkSelection
+            destinationViewController.drinkData = drinkSelection
             destinationViewController.editDrinkDelegate = editDrinkDelegate
             destinationViewController.drinkViewDelegate = self
         case segueName.showDrinkImage.rawValue:
