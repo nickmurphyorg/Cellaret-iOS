@@ -20,6 +20,7 @@ struct Drink: Equatable {
     var favorite: Bool
     var category: Int
     var alcoholVolume: percent
+    var upc: String?
 }
 
 // MARK: - Initialize Empty Drink
@@ -50,5 +51,6 @@ extension Drink {
         self.favorite = drinkObject.favorite
         self.category = Int(drinkObject.category)
         self.alcoholVolume = drinkObject.alcoholVolume
+        self.upc = drinkObject.upc
     }
 }

@@ -136,6 +136,7 @@ extension BarcodeScanerViewController {
                 let weakSelf = self else { return }
 
             weakSelf.downloadedDrink.name = drinkData.item_attributes.title
+            weakSelf.downloadedDrink.upc = drinkData.item_attributes.upc
             
             // Download Drink Image If Available And Save It
             ImageController.shared.downloadImage(drinkData.item_attributes.image, completion: {(drinkImage) in
