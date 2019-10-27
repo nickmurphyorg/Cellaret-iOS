@@ -33,6 +33,7 @@ extension Drink {
         self.favorite = false
         self.category = 0
         self.alcoholVolume = 0.0
+        self.upc = nil
     }
 }
 

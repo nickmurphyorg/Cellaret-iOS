@@ -16,6 +16,7 @@ class EditDrinkTableViewController: UITableViewController {
     @IBOutlet weak var categoryPickerView: UIPickerView!
     @IBOutlet weak var favoriteSwitch: UISwitch!
     @IBOutlet weak var drinkVolumeField: UITextField!
+    @IBOutlet weak var drinkUPCField: UITextField!
     @IBOutlet weak var deleteDrinkButton: UIButton!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
@@ -48,6 +49,7 @@ class EditDrinkTableViewController: UITableViewController {
             categoryPickerView.selectRow(drinkData.category, inComponent: 0, animated: false)
             favoriteSwitch.setOn(drinkData.favorite, animated: false)
             drinkVolumeField.text = String(drinkData.alcoholVolume)
+            drinkUPCField.text = drinkData.upc ?? ""
             deleteDrinkButton.isHidden = drinkData.drinkId == nil
         }
         
@@ -226,6 +228,17 @@ extension EditDrinkTableViewController {
         }
         
         drinkData?.alcoholVolume = Double(alcoholVolume) ?? 0.0
+    }
+}
+
+//MARK: - UPC Field
+extension EditDrinkTableViewController {
+    @IBAction func drinkUPCFieldChanged(_ sender: UITextField) {
+        drinkData?.upc = sender.text ?? ""
+    }
+    
+    @IBAction func drinkUPCFieldReturned(_ sender: UITextField) {
+        sender.resignFirstResponder()
     }
 }
 

@@ -132,8 +132,19 @@ extension BarcodeScanerViewController: AVCaptureMetadataOutputObjectsDelegate {
 extension BarcodeScanerViewController {
     func downloadDrink(_ upc: String) {
         ProductAPIController.shared.getProduct(UPC: upc, completion: {[weak self] (drinkData) in
-            guard let drinkData = drinkData,
-                let weakSelf = self else { return }
+            guard let weakSelf = self else {
+                return
+            }
+            
+            guard let drinkData = drinkData else {
+                weakSelf.downloadedDrink.upc = upc
+                
+                DispatchQueue.main.async {
+                    weakSelf.performSegue(withIdentifier: segueName.drinkForm.rawValue, sender: nil)
+                }
+                    
+                return
+            }
 
             weakSelf.downloadedDrink.name = drinkData.item_attributes.title
             weakSelf.downloadedDrink.upc = drinkData.item_attributes.upc

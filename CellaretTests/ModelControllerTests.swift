@@ -17,7 +17,7 @@ class ModelControllerTests: XCTestCase {
     var testDrinks: [Drink]!
 
     override func setUp() {
-        let drink = Drink.init(drinkId: nil, imageId: nil, image: nil, name: testDrinkName, favorite: false, category: testDrinkCategory, alcoholVolume: 0.0)
+        let drink = Drink.init()
         
         testDrinks = ModelController.shared.returnDrinksIn(category: 0)
         testDrink = ModelController.shared.saveNewDrink(drink)
@@ -41,7 +41,7 @@ class ModelControllerTests: XCTestCase {
     }
 
     func testSaveNewDrink() {
-        let secondTestDrink = Drink.init(drinkId: nil, imageId: nil, image: nil, name: "Test 2", favorite: true, category: 2, alcoholVolume: 0.0)
+        let secondTestDrink = Drink.init(drinkId: nil, imageId: nil, image: nil, name: "Test 2", favorite: true, category: 2, alcoholVolume: 0.0, upc: nil)
         let savedDrink = ModelController.shared.saveNewDrink(secondTestDrink)
         
         testDrinks.append(savedDrink)
