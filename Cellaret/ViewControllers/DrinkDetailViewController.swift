@@ -15,6 +15,7 @@ class DrinkDetailViewController: UIViewController {
     @IBOutlet weak var favoriteImageView: UIImageView!
     @IBOutlet weak var drinkCategoryLabel: UILabel!
     @IBOutlet weak var drinkVolumeLabel: UILabel!
+    @IBOutlet weak var drinkUPCLabel: UILabel!
     
     var drinkSelection: Drink?
     var editDrinkDelegate: EditDrinkDelegate?
@@ -59,7 +60,7 @@ extension DrinkDetailViewController{
         case segueName.editDrink.rawValue:
             let navigationController = segue.destination as? UINavigationController
             let destinationViewController = navigationController?.children.first as! EditDrinkTableViewController
-            destinationViewController.editDrink = drinkSelection
+            destinationViewController.drinkData = drinkSelection
             destinationViewController.editDrinkDelegate = editDrinkDelegate
             destinationViewController.drinkViewDelegate = self
         case segueName.showDrinkImage.rawValue:
@@ -104,19 +105,11 @@ extension DrinkDetailViewController: DrinkViewDelegate {
 //MARK: - Helper Methods
 extension DrinkDetailViewController {
     func updateViewWith(_ drink: Drink) {
-        if let drinkImage = drink.image {
-            drinkImageView.image = drinkImage
-        }
-        
+        drinkImageView.image = drink.image
         drinkNameLabel.text = drink.name
-        
-        if drink.favorite == true {
-            favoriteImageView.image = favoriteStar
-        } else {
-            favoriteImageView.image = nil
-        }
-        
+        favoriteImageView.image = drink.favorite ? favoriteStar : nil
         drinkCategoryLabel.text = Menu.shared.selectionName(selection: drink.category)
         drinkVolumeLabel.text = String(drink.alcoholVolume) + "%"
+        drinkUPCLabel.text = drink.upc ?? ""
     }
 }

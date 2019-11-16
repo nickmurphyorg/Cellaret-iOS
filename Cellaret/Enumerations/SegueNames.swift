@@ -13,6 +13,8 @@ enum segueName: String {
     case drinkDetails = "DrinkDetail"
     case editDrink = "EditDrink"
     case addNewDrink = "AddNewDrink"
+    case addNewDrinkForm = "AddNewDrinkForm"
     case showDrinkImage = "ShowDrinkImage"
     case backToDrinkList = "BackToDrinkList"
+    case drinkForm = "DrinkForm"
 }

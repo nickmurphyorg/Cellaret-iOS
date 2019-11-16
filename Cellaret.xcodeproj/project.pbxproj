@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E221161F553FBB1F1D4CFCA /* Pods_Cellaret.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 593A2FCCACF3E277EB1A66BC /* Pods_Cellaret.framework */; };
+		722B4F97FA0D9AC73FB3D7DC /* Pods_CellaretTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE17B969D3748CDB9B7FE90C /* Pods_CellaretTests.framework */; };
 		D10CC86F22AF36D20028ABAC /* ModelKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10CC86E22AF36D20028ABAC /* ModelKeys.swift */; };
 		D10CC87222B08CC20028ABAC /* EditActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10CC87122B08CC20028ABAC /* EditActions.swift */; };
 		D14A257320EEB1A40022D9F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14A257220EEB1A40022D9F7 /* AppDelegate.swift */; };
@@ -21,16 +23,21 @@
 		D14A259120F155CF0022D9F7 /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14A259020F155CF0022D9F7 /* ModelController.swift */; };
 		D14A259320F19E8A0022D9F7 /* MenuSelectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14A259220F19E8A0022D9F7 /* MenuSelectionDelegate.swift */; };
 		D14A25B820F2BA5F0022D9F7 /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14A25B720F2BA5F0022D9F7 /* Drink.swift */; };
+		D14F128B22FFBF4A009BC627 /* ProductAPIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14F128A22FFBF4A009BC627 /* ProductAPIController.swift */; };
 		D1565A1F2102D08C00A8E5C1 /* EditDrinkDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1565A1E2102D08C00A8E5C1 /* EditDrinkDelegate.swift */; };
+		D15F7218232E9DC500BFE123 /* DrinkData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15F7217232E9DC500BFE123 /* DrinkData.swift */; };
 		D169F65822C8529400C71A48 /* ImageSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = D169F65722C8529400C71A48 /* ImageSize.swift */; };
 		D17C7A6521250A4200986A52 /* ImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17C7A6421250A4200986A52 /* ImageController.swift */; };
+		D1818C86231DA3B500F7872F /* ImageControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1818C85231DA3B400F7872F /* ImageControllerTests.swift */; };
 		D184CBBB2170372B00ADD1B1 /* CellaretTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D184CBBA2170372B00ADD1B1 /* CellaretTests.swift */; };
 		D184CBC32172AC5900ADD1B1 /* ModelControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D184CBC22172AC5900ADD1B1 /* ModelControllerTests.swift */; };
+		D19C6031230A315C001A47F1 /* ProductAPIControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19C6030230A315C001A47F1 /* ProductAPIControllerTests.swift */; };
 		D19D97B022B58DC200FFA34F /* PickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19D97AF22B58DC200FFA34F /* PickerCell.swift */; };
 		D1A31DBF210570FB00A3B0E6 /* DrinkViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A31DBE210570FB00A3B0E6 /* DrinkViewDelegate.swift */; };
 		D1A31DC4210C123600A3B0E6 /* DrinkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A31DC3210C123600A3B0E6 /* DrinkTableViewCell.swift */; };
 		D1A31DF9210FEF7C00A3B0E6 /* UserPreferencesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A31DF8210FEF7C00A3B0E6 /* UserPreferencesController.swift */; };
 		D1B44A2A2128CBDF00F00604 /* ImageObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B44A292128CBDF00F00604 /* ImageObject.swift */; };
+		D1D8C322232EB86F00D6DD1E /* BarcodeScanerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D8C321232EB86F00D6DD1E /* BarcodeScanerViewController.swift */; };
 		D1E55D9E22BB0FBF00957FC5 /* ImageZoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E55D9D22BB0FBF00957FC5 /* ImageZoomViewController.swift */; };
 		D1F696E52114DDF50085266E /* Cellaret.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D1F696E32114DDF50085266E /* Cellaret.xcdatamodeld */; };
 		D1FBE6F522BFC4C100BAD42F /* SegueNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FBE6F422BFC4C100BAD42F /* SegueNames.swift */; };
@@ -47,6 +54,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		20FB98706630807E3C46F415 /* Pods-CellaretTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CellaretTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CellaretTests/Pods-CellaretTests.release.xcconfig"; sourceTree = "<group>"; };
+		593A2FCCACF3E277EB1A66BC /* Pods_Cellaret.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cellaret.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E6B38A7303A60DF36A6CC1C /* Pods-CellaretTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CellaretTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CellaretTests/Pods-CellaretTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D10CC86E22AF36D20028ABAC /* ModelKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelKeys.swift; sourceTree = "<group>"; };
 		D10CC87122B08CC20028ABAC /* EditActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditActions.swift; sourceTree = "<group>"; };
 		D14A256F20EEB1A40022D9F7 /* Cellaret.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cellaret.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,21 +73,30 @@
 		D14A259020F155CF0022D9F7 /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
 		D14A259220F19E8A0022D9F7 /* MenuSelectionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSelectionDelegate.swift; sourceTree = "<group>"; };
 		D14A25B720F2BA5F0022D9F7 /* Drink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drink.swift; sourceTree = "<group>"; };
+		D14F128A22FFBF4A009BC627 /* ProductAPIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductAPIController.swift; sourceTree = "<group>"; };
 		D1565A1E2102D08C00A8E5C1 /* EditDrinkDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDrinkDelegate.swift; sourceTree = "<group>"; };
+		D15F7217232E9DC500BFE123 /* DrinkData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkData.swift; sourceTree = "<group>"; };
 		D169F65722C8529400C71A48 /* ImageSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSize.swift; sourceTree = "<group>"; };
 		D17C7A6421250A4200986A52 /* ImageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageController.swift; sourceTree = "<group>"; };
+		D1818C85231DA3B400F7872F /* ImageControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageControllerTests.swift; sourceTree = "<group>"; };
 		D184CBB82170372B00ADD1B1 /* CellaretTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CellaretTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D184CBBA2170372B00ADD1B1 /* CellaretTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellaretTests.swift; sourceTree = "<group>"; };
 		D184CBBC2170372B00ADD1B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D184CBC22172AC5900ADD1B1 /* ModelControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelControllerTests.swift; sourceTree = "<group>"; };
+		D19C6030230A315C001A47F1 /* ProductAPIControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductAPIControllerTests.swift; sourceTree = "<group>"; };
 		D19D97AF22B58DC200FFA34F /* PickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerCell.swift; sourceTree = "<group>"; };
 		D1A31DBE210570FB00A3B0E6 /* DrinkViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkViewDelegate.swift; sourceTree = "<group>"; };
 		D1A31DC3210C123600A3B0E6 /* DrinkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkTableViewCell.swift; sourceTree = "<group>"; };
 		D1A31DF8210FEF7C00A3B0E6 /* UserPreferencesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferencesController.swift; sourceTree = "<group>"; };
 		D1B44A292128CBDF00F00604 /* ImageObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageObject.swift; sourceTree = "<group>"; };
+		D1BF3398235D3DE900A8335B /* Cellaret V2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Cellaret V2.xcdatamodel"; sourceTree = "<group>"; };
+		D1D8C321232EB86F00D6DD1E /* BarcodeScanerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeScanerViewController.swift; sourceTree = "<group>"; };
 		D1E55D9D22BB0FBF00957FC5 /* ImageZoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageZoomViewController.swift; sourceTree = "<group>"; };
 		D1F696E42114DDF50085266E /* Cellaret.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Cellaret.xcdatamodel; sourceTree = "<group>"; };
 		D1FBE6F422BFC4C100BAD42F /* SegueNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueNames.swift; sourceTree = "<group>"; };
+		DE17B969D3748CDB9B7FE90C /* Pods_CellaretTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CellaretTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFA17A7C05BEDFECBDA56CF3 /* Pods-Cellaret.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cellaret.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cellaret/Pods-Cellaret.release.xcconfig"; sourceTree = "<group>"; };
+		F1CBA7CE2C1AFF0E23529AA1 /* Pods-Cellaret.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cellaret.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cellaret/Pods-Cellaret.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E221161F553FBB1F1D4CFCA /* Pods_Cellaret.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,12 +112,33 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				722B4F97FA0D9AC73FB3D7DC /* Pods_CellaretTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2877E128E7262553C13C6290 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F1CBA7CE2C1AFF0E23529AA1 /* Pods-Cellaret.debug.xcconfig */,
+				DFA17A7C05BEDFECBDA56CF3 /* Pods-Cellaret.release.xcconfig */,
+				9E6B38A7303A60DF36A6CC1C /* Pods-CellaretTests.debug.xcconfig */,
+				20FB98706630807E3C46F415 /* Pods-CellaretTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		69DE5D07568ED9BA7808F05D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				593A2FCCACF3E277EB1A66BC /* Pods_Cellaret.framework */,
+				DE17B969D3748CDB9B7FE90C /* Pods_CellaretTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D10CC87022AF36DD0028ABAC /* Enumerations */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +157,8 @@
 				D14A257120EEB1A40022D9F7 /* Cellaret */,
 				D184CBB92170372B00ADD1B1 /* CellaretTests */,
 				D14A257020EEB1A40022D9F7 /* Products */,
+				2877E128E7262553C13C6290 /* Pods */,
+				69DE5D07568ED9BA7808F05D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -155,6 +198,7 @@
 				D14A258420EEBC130022D9F7 /* DrinkDetailViewController.swift */,
 				D14A258B20EEBD420022D9F7 /* EditDrinkTableViewController.swift */,
 				D1E55D9D22BB0FBF00957FC5 /* ImageZoomViewController.swift */,
+				D1D8C321232EB86F00D6DD1E /* BarcodeScanerViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -164,6 +208,7 @@
 			children = (
 				D14A25B720F2BA5F0022D9F7 /* Drink.swift */,
 				D1B44A292128CBDF00F00604 /* ImageObject.swift */,
+				D15F7217232E9DC500BFE123 /* DrinkData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -182,8 +227,10 @@
 			isa = PBXGroup;
 			children = (
 				D184CBC22172AC5900ADD1B1 /* ModelControllerTests.swift */,
+				D19C6030230A315C001A47F1 /* ProductAPIControllerTests.swift */,
 				D184CBBA2170372B00ADD1B1 /* CellaretTests.swift */,
 				D184CBBC2170372B00ADD1B1 /* Info.plist */,
+				D1818C85231DA3B400F7872F /* ImageControllerTests.swift */,
 			);
 			path = CellaretTests;
 			sourceTree = "<group>";
@@ -203,6 +250,7 @@
 				D14A259020F155CF0022D9F7 /* ModelController.swift */,
 				D1A31DF8210FEF7C00A3B0E6 /* UserPreferencesController.swift */,
 				D17C7A6421250A4200986A52 /* ImageController.swift */,
+				D14F128A22FFBF4A009BC627 /* ProductAPIController.swift */,
 			);
 			path = "Other Controllers";
 			sourceTree = "<group>";
@@ -214,9 +262,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D14A258120EEB1A50022D9F7 /* Build configuration list for PBXNativeTarget "Cellaret" */;
 			buildPhases = (
+				8DCFBBA530F03998206387E5 /* [CP] Check Pods Manifest.lock */,
 				D14A256B20EEB1A40022D9F7 /* Sources */,
 				D14A256C20EEB1A40022D9F7 /* Frameworks */,
 				D14A256D20EEB1A40022D9F7 /* Resources */,
+				D124D33FF175B9671A0CE6F7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -231,6 +281,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D184CBBF2170372B00ADD1B1 /* Build configuration list for PBXNativeTarget "CellaretTests" */;
 			buildPhases = (
+				255A9CCE4702925D4E51A722 /* [CP] Check Pods Manifest.lock */,
 				D184CBB42170372B00ADD1B1 /* Sources */,
 				D184CBB52170372B00ADD1B1 /* Frameworks */,
 				D184CBB62170372B00ADD1B1 /* Resources */,
@@ -305,6 +356,75 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		255A9CCE4702925D4E51A722 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CellaretTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8DCFBBA530F03998206387E5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Cellaret-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D124D33FF175B9671A0CE6F7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Cellaret/Pods-Cellaret-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Keys/Keys.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Keys.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cellaret/Pods-Cellaret-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D14A256B20EEB1A40022D9F7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -328,9 +448,12 @@
 				D14A258C20EEBD420022D9F7 /* EditDrinkTableViewController.swift in Sources */,
 				D169F65822C8529400C71A48 /* ImageSize.swift in Sources */,
 				D10CC87222B08CC20028ABAC /* EditActions.swift in Sources */,
+				D14F128B22FFBF4A009BC627 /* ProductAPIController.swift in Sources */,
 				D1565A1F2102D08C00A8E5C1 /* EditDrinkDelegate.swift in Sources */,
+				D15F7218232E9DC500BFE123 /* DrinkData.swift in Sources */,
 				D14A259120F155CF0022D9F7 /* ModelController.swift in Sources */,
 				D1A31DC4210C123600A3B0E6 /* DrinkTableViewCell.swift in Sources */,
+				D1D8C322232EB86F00D6DD1E /* BarcodeScanerViewController.swift in Sources */,
 				D14A258720EEBC6D0022D9F7 /* DrinkListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -340,7 +463,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D184CBC32172AC5900ADD1B1 /* ModelControllerTests.swift in Sources */,
+				D19C6031230A315C001A47F1 /* ProductAPIControllerTests.swift in Sources */,
 				D184CBBB2170372B00ADD1B1 /* CellaretTests.swift in Sources */,
+				D1818C86231DA3B500F7872F /* ImageControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -490,6 +615,7 @@
 		};
 		D14A258220EEB1A50022D9F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F1CBA7CE2C1AFF0E23529AA1 /* Pods-Cellaret.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -509,6 +635,7 @@
 		};
 		D14A258320EEB1A50022D9F7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DFA17A7C05BEDFECBDA56CF3 /* Pods-Cellaret.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -528,9 +655,11 @@
 		};
 		D184CBC02170372B00ADD1B1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E6B38A7303A60DF36A6CC1C /* Pods-CellaretTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9XZS64KL8R;
 				INFOPLIST_FILE = CellaretTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -550,9 +679,11 @@
 		};
 		D184CBC12170372B00ADD1B1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 20FB98706630807E3C46F415 /* Pods-CellaretTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9XZS64KL8R;
 				INFOPLIST_FILE = CellaretTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -605,9 +736,10 @@
 		D1F696E32114DDF50085266E /* Cellaret.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				D1BF3398235D3DE900A8335B /* Cellaret V2.xcdatamodel */,
 				D1F696E42114DDF50085266E /* Cellaret.xcdatamodel */,
 			);
-			currentVersion = D1F696E42114DDF50085266E /* Cellaret.xcdatamodel */;
+			currentVersion = D1BF3398235D3DE900A8335B /* Cellaret V2.xcdatamodel */;
 			path = Cellaret.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

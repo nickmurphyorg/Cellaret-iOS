@@ -57,6 +57,7 @@ class ModelController {
         drinkEntity.favorite = drink.favorite
         drinkEntity.category = Int16(drink.category)
         drinkEntity.alcoholVolume = drink.alcoholVolume
+        drinkEntity.upc = drink.upc
         
         do {
             try managedContext.save()

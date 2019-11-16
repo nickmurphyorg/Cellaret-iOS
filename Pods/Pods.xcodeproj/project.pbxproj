@@ -1,0 +1,802 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		097E62D2ABE919D8435BA8A025F0BE5C /* Pods-Cellaret-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A9350187A0792DC09183BE62FED6481B /* Pods-Cellaret-dummy.m */; };
+		0A2DAF79403F500A0DE0CF550D8E3326 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+		20AE6C12BEEF63743AD68D44BBC2FEA9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+		74B0C8E977B4FB6E7D8F79B86B1FF8E9 /* Keys-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 46B200526B7BDB328E87B7B525447F6B /* Keys-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		90A328B6D81FB6BA0683ABD0A59D73B4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+		BAA0088321DB103DCF577C6067CC7C73 /* CellaretKeys.h in Headers */ = {isa = PBXBuildFile; fileRef = F7BF8C387C5ED26E77E5F405D077C928 /* CellaretKeys.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C9B140FF25D857C77EFD353B4C0013F8 /* Pods-CellaretTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A96661207806B42A1AB2BC9351DBDC /* Pods-CellaretTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D8362676EAE500025A1339C41D04A327 /* CellaretKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = F54DA0DFCBCB0A0F9F43F34CA2D3BD90 /* CellaretKeys.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		F142BB08C2C07CC1B80879C8018E9B2C /* Pods-CellaretTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A197CF5574C1BFCEB1DB790503BD92E /* Pods-CellaretTests-dummy.m */; };
+		F7CD023F20EC77148EF048941C83AC7F /* Pods-Cellaret-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D7641A7566C4AFF9BC9C8E3EAF78FE2 /* Pods-Cellaret-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F95AC81C892B89732FFD34B607A7F3CA /* Keys-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 15CA08DDF7CB16577931B703F8A26406 /* Keys-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5F0A3690B8A817954C85A88BE6CF7FF4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE7C1A113EE965B5ED1656801C8AD471;
+			remoteInfo = "Pods-Cellaret";
+		};
+		B2D977FE9A45068224BA5B9ECE52B20C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9C6DE99EB95EBFAD68E366BAA5815E17;
+			remoteInfo = Keys;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0A197CF5574C1BFCEB1DB790503BD92E /* Pods-CellaretTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CellaretTests-dummy.m"; sourceTree = "<group>"; };
+		14EE69ECC63523594A28AF04EEC648C2 /* Pods_CellaretTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_CellaretTests.framework; path = "Pods-CellaretTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		15CA08DDF7CB16577931B703F8A26406 /* Keys-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Keys-dummy.m"; sourceTree = "<group>"; };
+		1F5D9916BC874B17246F4904C509154E /* Pods-Cellaret.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Cellaret.debug.xcconfig"; sourceTree = "<group>"; };
+		406EBEF7287DAD2FAAB0F40BAF67CAC6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41158D201E0D42E91E06686A9E8FE4F0 /* Pods-Cellaret-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Cellaret-acknowledgements.plist"; sourceTree = "<group>"; };
+		43D0347DB1C4444151C944C04322B5AD /* Pods-Cellaret-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Cellaret-resources.sh"; sourceTree = "<group>"; };
+		46B200526B7BDB328E87B7B525447F6B /* Keys-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Keys-umbrella.h"; sourceTree = "<group>"; };
+		4D7641A7566C4AFF9BC9C8E3EAF78FE2 /* Pods-Cellaret-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Cellaret-umbrella.h"; sourceTree = "<group>"; };
+		4DCFCA724EF1737774383CBA4E26909D /* Keys.podspec.json */ = {isa = PBXFileReference; includeInIndex = 1; path = Keys.podspec.json; sourceTree = "<group>"; };
+		5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		62B0733616D24085DF6EB6AF91C91F59 /* Pods-CellaretTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CellaretTests.release.xcconfig"; sourceTree = "<group>"; };
+		62BE23E4E9673871CBFE8A07111E78BE /* Pods-CellaretTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CellaretTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		6528D8F398BE63649DA43A4E3D090A61 /* Keys.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Keys.framework; path = Keys.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		667404AD072952FBA678B671D2F920BF /* Pods_Cellaret.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Cellaret.framework; path = "Pods-Cellaret.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		75C119F9C28004F31610720A285348DA /* Pods-Cellaret.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Cellaret.modulemap"; sourceTree = "<group>"; };
+		7D8531A83817D792E22AED99F4F0A66D /* Keys-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Keys-prefix.pch"; sourceTree = "<group>"; };
+		8FD3B076C1814E6899652C061C3C9CFE /* Pods-CellaretTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CellaretTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		95D04B764E2AE3DCA86D1C475ECCD79F /* Keys.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Keys.xcconfig; sourceTree = "<group>"; };
+		97F2A3795C59D2D062E84EDB8CC9306F /* Keys.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Keys.modulemap; sourceTree = "<group>"; };
+		9CABDB9633B668266FC264B4DA485C3D /* Pods-CellaretTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CellaretTests-resources.sh"; sourceTree = "<group>"; };
+		9E17178EC82013941946D9DADB2BF70F /* Pods-Cellaret-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Cellaret-frameworks.sh"; sourceTree = "<group>"; };
+		A30C664BE74CA7AC3E94BFB528575160 /* Pods-Cellaret.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Cellaret.release.xcconfig"; sourceTree = "<group>"; };
+		A8AFFAE8C13E21CE2862C4023E03F30A /* Pods-Cellaret-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Cellaret-acknowledgements.markdown"; sourceTree = "<group>"; };
+		A9350187A0792DC09183BE62FED6481B /* Pods-Cellaret-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Cellaret-dummy.m"; sourceTree = "<group>"; };
+		B14C77916FCD46780A0C2A402A6B9D20 /* Pods-CellaretTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CellaretTests.modulemap"; sourceTree = "<group>"; };
+		D57D67E6B286E4BC93E69B34C590B42F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E602C85D74F1A356926EF15B874131A5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7A96661207806B42A1AB2BC9351DBDC /* Pods-CellaretTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CellaretTests-umbrella.h"; sourceTree = "<group>"; };
+		E83D9CBE702078F399271E81650CA3C3 /* Pods-CellaretTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CellaretTests-frameworks.sh"; sourceTree = "<group>"; };
+		EBB49DFE4030F8234C31EEC0F22377EE /* Pods-CellaretTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CellaretTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F54DA0DFCBCB0A0F9F43F34CA2D3BD90 /* CellaretKeys.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CellaretKeys.m; sourceTree = "<group>"; };
+		F7BF8C387C5ED26E77E5F405D077C928 /* CellaretKeys.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CellaretKeys.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		42D01DDB4381E7CCAD56CF5BD22C1F35 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90A328B6D81FB6BA0683ABD0A59D73B4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1014BF1FF3274E776586B0ABE79E08D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20AE6C12BEEF63743AD68D44BBC2FEA9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE2052F3AD1FEE9697CB94F16FA442FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A2DAF79403F500A0DE0CF550D8E3326 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		074B1129E41AB26DB30424970E8BD0B0 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				DF72D7256FC7F14CC3D2BA7364F997E2 /* Pods-Cellaret */,
+				736A02DAC9B0E4CA61899C4E9D5E5308 /* Pods-CellaretTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		37E083C367E9DF41479FC0652C7C7408 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6528D8F398BE63649DA43A4E3D090A61 /* Keys.framework */,
+				667404AD072952FBA678B671D2F920BF /* Pods_Cellaret.framework */,
+				14EE69ECC63523594A28AF04EEC648C2 /* Pods_CellaretTests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		46786D96D4662426A1A5F221377C8182 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				4DCFCA724EF1737774383CBA4E26909D /* Keys.podspec.json */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		5342BF3D282F514DD00B8F78D87B4059 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E602C85D74F1A356926EF15B874131A5 /* Info.plist */,
+				97F2A3795C59D2D062E84EDB8CC9306F /* Keys.modulemap */,
+				95D04B764E2AE3DCA86D1C475ECCD79F /* Keys.xcconfig */,
+				15CA08DDF7CB16577931B703F8A26406 /* Keys-dummy.m */,
+				7D8531A83817D792E22AED99F4F0A66D /* Keys-prefix.pch */,
+				46B200526B7BDB328E87B7B525447F6B /* Keys-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Keys";
+			sourceTree = "<group>";
+		};
+		5E0D919E635D23B70123790B8308F8EF /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		736A02DAC9B0E4CA61899C4E9D5E5308 /* Pods-CellaretTests */ = {
+			isa = PBXGroup;
+			children = (
+				D57D67E6B286E4BC93E69B34C590B42F /* Info.plist */,
+				B14C77916FCD46780A0C2A402A6B9D20 /* Pods-CellaretTests.modulemap */,
+				62BE23E4E9673871CBFE8A07111E78BE /* Pods-CellaretTests-acknowledgements.markdown */,
+				8FD3B076C1814E6899652C061C3C9CFE /* Pods-CellaretTests-acknowledgements.plist */,
+				0A197CF5574C1BFCEB1DB790503BD92E /* Pods-CellaretTests-dummy.m */,
+				E83D9CBE702078F399271E81650CA3C3 /* Pods-CellaretTests-frameworks.sh */,
+				9CABDB9633B668266FC264B4DA485C3D /* Pods-CellaretTests-resources.sh */,
+				E7A96661207806B42A1AB2BC9351DBDC /* Pods-CellaretTests-umbrella.h */,
+				EBB49DFE4030F8234C31EEC0F22377EE /* Pods-CellaretTests.debug.xcconfig */,
+				62B0733616D24085DF6EB6AF91C91F59 /* Pods-CellaretTests.release.xcconfig */,
+			);
+			name = "Pods-CellaretTests";
+			path = "Target Support Files/Pods-CellaretTests";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				B2B339A30C8C763415B7A0A37CC4EB5F /* Development Pods */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				37E083C367E9DF41479FC0652C7C7408 /* Products */,
+				074B1129E41AB26DB30424970E8BD0B0 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		B2B339A30C8C763415B7A0A37CC4EB5F /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BDA73754BEFE797A72277E2B8C67EBBA /* Keys */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5E0D919E635D23B70123790B8308F8EF /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BDA73754BEFE797A72277E2B8C67EBBA /* Keys */ = {
+			isa = PBXGroup;
+			children = (
+				F7BF8C387C5ED26E77E5F405D077C928 /* CellaretKeys.h */,
+				F54DA0DFCBCB0A0F9F43F34CA2D3BD90 /* CellaretKeys.m */,
+				46786D96D4662426A1A5F221377C8182 /* Pod */,
+				5342BF3D282F514DD00B8F78D87B4059 /* Support Files */,
+			);
+			name = Keys;
+			path = CocoaPodsKeys;
+			sourceTree = "<group>";
+		};
+		DF72D7256FC7F14CC3D2BA7364F997E2 /* Pods-Cellaret */ = {
+			isa = PBXGroup;
+			children = (
+				406EBEF7287DAD2FAAB0F40BAF67CAC6 /* Info.plist */,
+				75C119F9C28004F31610720A285348DA /* Pods-Cellaret.modulemap */,
+				A8AFFAE8C13E21CE2862C4023E03F30A /* Pods-Cellaret-acknowledgements.markdown */,
+				41158D201E0D42E91E06686A9E8FE4F0 /* Pods-Cellaret-acknowledgements.plist */,
+				A9350187A0792DC09183BE62FED6481B /* Pods-Cellaret-dummy.m */,
+				9E17178EC82013941946D9DADB2BF70F /* Pods-Cellaret-frameworks.sh */,
+				43D0347DB1C4444151C944C04322B5AD /* Pods-Cellaret-resources.sh */,
+				4D7641A7566C4AFF9BC9C8E3EAF78FE2 /* Pods-Cellaret-umbrella.h */,
+				1F5D9916BC874B17246F4904C509154E /* Pods-Cellaret.debug.xcconfig */,
+				A30C664BE74CA7AC3E94BFB528575160 /* Pods-Cellaret.release.xcconfig */,
+			);
+			name = "Pods-Cellaret";
+			path = "Target Support Files/Pods-Cellaret";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		04E2E614D0FF1FAC3C5A931030B18A5B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAA0088321DB103DCF577C6067CC7C73 /* CellaretKeys.h in Headers */,
+				74B0C8E977B4FB6E7D8F79B86B1FF8E9 /* Keys-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A408BDD394B6654614997E3F1265543 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9B140FF25D857C77EFD353B4C0013F8 /* Pods-CellaretTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95A396914F75969BDDBF6AE3B3C0FCE0 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7CD023F20EC77148EF048941C83AC7F /* Pods-Cellaret-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		854C733B326CAF2CA456F3562DAEA598 /* Pods-CellaretTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52BE554D5E42F93CC75A3F621F9930E5 /* Build configuration list for PBXNativeTarget "Pods-CellaretTests" */;
+			buildPhases = (
+				3A408BDD394B6654614997E3F1265543 /* Headers */,
+				42A5962671D25963801F17FF09301F16 /* Sources */,
+				42D01DDB4381E7CCAD56CF5BD22C1F35 /* Frameworks */,
+				68CC1B211EB3E81D6ED13C9CD9D8BA01 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5DE513B513A7E2F30928EC0621350DBC /* PBXTargetDependency */,
+			);
+			name = "Pods-CellaretTests";
+			productName = "Pods-CellaretTests";
+			productReference = 14EE69ECC63523594A28AF04EEC648C2 /* Pods_CellaretTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		9C6DE99EB95EBFAD68E366BAA5815E17 /* Keys */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2D077D1A58516744C002C61568B9F938 /* Build configuration list for PBXNativeTarget "Keys" */;
+			buildPhases = (
+				04E2E614D0FF1FAC3C5A931030B18A5B /* Headers */,
+				262B9A20994EC5330CF0F007F0B907B8 /* Sources */,
+				E1014BF1FF3274E776586B0ABE79E08D /* Frameworks */,
+				93D81D517C52215394B7A8554170E48B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Keys;
+			productName = Keys;
+			productReference = 6528D8F398BE63649DA43A4E3D090A61 /* Keys.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		CE7C1A113EE965B5ED1656801C8AD471 /* Pods-Cellaret */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D932155790B4BA08D53DC58B710D4D93 /* Build configuration list for PBXNativeTarget "Pods-Cellaret" */;
+			buildPhases = (
+				95A396914F75969BDDBF6AE3B3C0FCE0 /* Headers */,
+				1643344B8EE8C389A87EF98C96105995 /* Sources */,
+				FE2052F3AD1FEE9697CB94F16FA442FF /* Frameworks */,
+				730C1336A19CD539108AEA906E755542 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7731B91467E7DE26CA9563089277CE1B /* PBXTargetDependency */,
+			);
+			name = "Pods-Cellaret";
+			productName = "Pods-Cellaret";
+			productReference = 667404AD072952FBA678B671D2F920BF /* Pods_Cellaret.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 37E083C367E9DF41479FC0652C7C7408 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9C6DE99EB95EBFAD68E366BAA5815E17 /* Keys */,
+				CE7C1A113EE965B5ED1656801C8AD471 /* Pods-Cellaret */,
+				854C733B326CAF2CA456F3562DAEA598 /* Pods-CellaretTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		68CC1B211EB3E81D6ED13C9CD9D8BA01 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		730C1336A19CD539108AEA906E755542 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93D81D517C52215394B7A8554170E48B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1643344B8EE8C389A87EF98C96105995 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				097E62D2ABE919D8435BA8A025F0BE5C /* Pods-Cellaret-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		262B9A20994EC5330CF0F007F0B907B8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8362676EAE500025A1339C41D04A327 /* CellaretKeys.m in Sources */,
+				F95AC81C892B89732FFD34B607A7F3CA /* Keys-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42A5962671D25963801F17FF09301F16 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F142BB08C2C07CC1B80879C8018E9B2C /* Pods-CellaretTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5DE513B513A7E2F30928EC0621350DBC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Cellaret";
+			target = CE7C1A113EE965B5ED1656801C8AD471 /* Pods-Cellaret */;
+			targetProxy = 5F0A3690B8A817954C85A88BE6CF7FF4 /* PBXContainerItemProxy */;
+		};
+		7731B91467E7DE26CA9563089277CE1B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Keys;
+			target = 9C6DE99EB95EBFAD68E366BAA5815E17 /* Keys */;
+			targetProxy = B2D977FE9A45068224BA5B9ECE52B20C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		006BDAA0DAEC357E91774F5D2FCA2562 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		4271D34E523E5A43376BE1DAC710ED45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 95D04B764E2AE3DCA86D1C475ECCD79F /* Keys.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Keys/Keys-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Keys/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Keys/Keys.modulemap";
+				PRODUCT_MODULE_NAME = Keys;
+				PRODUCT_NAME = Keys;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		5ED451E3C479A24DC9821D18323BEB45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 62B0733616D24085DF6EB6AF91C91F59 /* Pods-CellaretTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CellaretTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CellaretTests/Pods-CellaretTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		847E3DD92E1FE12F1DC5BBE9241D3E0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 95D04B764E2AE3DCA86D1C475ECCD79F /* Keys.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Keys/Keys-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Keys/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Keys/Keys.modulemap";
+				PRODUCT_MODULE_NAME = Keys;
+				PRODUCT_NAME = Keys;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C1FC82AAAD423DDF5B0BD79EC63E6A62 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F5D9916BC874B17246F4904C509154E /* Pods-Cellaret.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Cellaret/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Cellaret/Pods-Cellaret.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CC6C33C3833ADC4268C21E6D0F1DD0DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		E1FFEB1727D187DDA95151D80D87D9B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A30C664BE74CA7AC3E94BFB528575160 /* Pods-Cellaret.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Cellaret/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Cellaret/Pods-Cellaret.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E5A455A62B88E2D69230E4378A65E06A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EBB49DFE4030F8234C31EEC0F22377EE /* Pods-CellaretTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CellaretTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CellaretTests/Pods-CellaretTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D077D1A58516744C002C61568B9F938 /* Build configuration list for PBXNativeTarget "Keys" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				847E3DD92E1FE12F1DC5BBE9241D3E0A /* Debug */,
+				4271D34E523E5A43376BE1DAC710ED45 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CC6C33C3833ADC4268C21E6D0F1DD0DC /* Debug */,
+				006BDAA0DAEC357E91774F5D2FCA2562 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52BE554D5E42F93CC75A3F621F9930E5 /* Build configuration list for PBXNativeTarget "Pods-CellaretTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E5A455A62B88E2D69230E4378A65E06A /* Debug */,
+				5ED451E3C479A24DC9821D18323BEB45 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D932155790B4BA08D53DC58B710D4D93 /* Build configuration list for PBXNativeTarget "Pods-Cellaret" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C1FC82AAAD423DDF5B0BD79EC63E6A62 /* Debug */,
+				E1FFEB1727D187DDA95151D80D87D9B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
