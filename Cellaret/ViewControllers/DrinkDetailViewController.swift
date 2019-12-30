@@ -109,7 +109,7 @@ extension DrinkDetailViewController {
         drinkNameLabel.text = drink.name
         favoriteImageView.image = drink.favorite ? favoriteStar : nil
         drinkCategoryLabel.text = Menu.shared.selectionName(selection: drink.category)
-        drinkVolumeLabel.text = String(drink.alcoholVolume) + "%"
+        drinkVolumeLabel.text = drink.alcoholVolume != nil ? drink.alcoholVolume.toString + "%" : ""
         drinkUPCLabel.text = drink.upc ?? ""
     }
 }

@@ -48,7 +48,7 @@ class EditDrinkTableViewController: UITableViewController {
             categoryCell.detailTextLabel?.text = drinkData.category == 0 ? categoryToggleLabel : Menu.shared.selectionName(selection: drinkData.category)
             categoryPickerView.selectRow(drinkData.category, inComponent: 0, animated: false)
             favoriteSwitch.setOn(drinkData.favorite, animated: false)
-            drinkVolumeField.text = String(drinkData.alcoholVolume)
+            drinkVolumeField.text = drinkData.alcoholVolume.toString
             drinkUPCField.text = drinkData.upc ?? ""
             deleteDrinkButton.isHidden = drinkData.drinkId == nil
         }

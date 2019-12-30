@@ -56,7 +56,7 @@ class ModelController {
         drinkEntity.name = drink.name
         drinkEntity.favorite = drink.favorite
         drinkEntity.category = Int16(drink.category)
-        drinkEntity.alcoholVolume = drink.alcoholVolume
+        drinkEntity.alcoholVolume = drink.alcoholVolume as NSNumber?
         drinkEntity.upc = drink.upc
         
         do {
@@ -87,7 +87,7 @@ class ModelController {
         drinkEntity.name = drink.name
         drinkEntity.favorite = drink.favorite
         drinkEntity.category = Int16(drink.category)
-        drinkEntity.alcoholVolume = drink.alcoholVolume
+        drinkEntity.alcoholVolume = drink.alcoholVolume as NSNumber?
         
         do {
             try managedContext.save()
