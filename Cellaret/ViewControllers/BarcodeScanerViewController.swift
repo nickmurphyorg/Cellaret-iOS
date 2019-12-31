@@ -152,8 +152,12 @@ extension BarcodeScanerViewController {
             // Download Drink Image If Available And Save It
             ImageController.shared.downloadImage(drinkData.item_attributes.image, completion: {(drinkImage) in
                 if let drinkImage = drinkImage {
-                    weakSelf.downloadedDrink?.image = drinkImage
-                    weakSelf.downloadedDrink.imageId = ImageController.shared.saveImage(drinkImage: drinkImage)
+                    DispatchQueue.main.async {
+                        let mattedImage = drinkImage.mat
+                        
+                        weakSelf.downloadedDrink.image = mattedImage
+                        weakSelf.downloadedDrink.imageId = ImageController.shared.saveImage(drinkImage: mattedImage)
+                    }
                 }
                 
                 DispatchQueue.main.async {
