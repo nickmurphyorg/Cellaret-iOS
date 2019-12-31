@@ -19,21 +19,12 @@ class DrinkDetailViewController: UIViewController {
     
     var drinkSelection: Drink?
     var editDrinkDelegate: EditDrinkDelegate?
-    var unwind = false
     
     let favoriteStar = UIImage(named: "Star-Black")
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         navigationItem.largeTitleDisplayMode = .never
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        if unwind {
-            self.navigationController?.popViewController(animated: false)
-        }
     }
     
     override func viewDidLoad() {
@@ -83,7 +74,9 @@ extension DrinkDetailViewController {
     
     @IBAction func unwindToDrinkList(segue: UIStoryboardSegue) {
         // If the drink was deleted, pop this view off the stack without animation
-        unwind = segue.identifier == segueName.backToDrinkList.rawValue ? true : false
+        if segue.identifier == segueName.backToDrinkList.rawValue {
+            self.navigationController?.popViewController(animated: false)
+        }
     }
     
     @IBAction func showDrinkImage(_ sender: UITapGestureRecognizer) {
