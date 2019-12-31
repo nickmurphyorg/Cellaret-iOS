@@ -145,8 +145,10 @@ extension BarcodeScanerViewController {
                     
                 return
             }
+            
+            let titleArray = drinkData.item_attributes.title.components(separatedBy: ", ")
 
-            weakSelf.downloadedDrink.name = drinkData.item_attributes.title
+            weakSelf.downloadedDrink.name = titleArray[0]
             weakSelf.downloadedDrink.upc = drinkData.item_attributes.upc
             
             // Download Drink Image If Available And Save It
