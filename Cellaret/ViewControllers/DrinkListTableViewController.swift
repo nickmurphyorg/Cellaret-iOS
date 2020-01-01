@@ -98,7 +98,7 @@ extension DrinkListTableViewController {
             destinationViewController.delegate = self
             destinationViewController.menuSelection = self.menuSelection
         case segueName.drinkDetails.rawValue:
-            let destinationViewController = segue.destination as! DrinkDetailViewController
+            let destinationViewController = segue.destination as! DrinkDetailTableViewController
             destinationViewController.drinkSelection = selectedDrinkIndex != -1 ? selectedDrinks[selectedDrinkIndex] : nil
             destinationViewController.editDrinkDelegate = self
         case segueName.addNewDrink.rawValue:

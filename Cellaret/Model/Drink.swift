@@ -55,3 +55,26 @@ extension Drink {
         self.upc = drinkObject.upc
     }
 }
+
+// MARK: - Convert To Content Array
+extension Drink {
+    func content() -> [DrinkContent] {
+        var data = [DrinkContent]()
+        
+        let category = Menu.shared.selectionName(selection: self.category)
+        
+        data.append(DrinkImage(self.image))
+        data.append(DrinkTitle(self.name, self.favorite))
+        data.append(DrinkDetail("Category", category))
+        
+        if let alcoholVolume = self.alcoholVolume {
+            data.append(DrinkDetail("Alcohol / Volume", String(alcoholVolume) + "%"))
+        }
+        
+        if let upc = self.upc {
+            data.append(DrinkDetail("UPC", upc))
+        }
+        
+        return data
+    }
+}
