@@ -72,7 +72,7 @@
                                                 <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lrt-Q4-6iy">
                                                     <rect key="frame" x="0.0" y="181.66666666666666" width="374" height="46.333333333333343"/>
                                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="WL6-uh-gZy">
-                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="46"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="46.333333333333343"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="neq-RK-cYa">
@@ -82,10 +82,10 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7oh-LG-z15">
-                                                                <rect key="frame" x="-1" y="-9" width="374" height="55"/>
+                                                                <rect key="frame" x="-1" y="-9" width="374" height="54"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="Jgs-f2-uYb">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="55"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="54"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 </view>
                                                                 <vibrancyEffect>
@@ -681,6 +681,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DrinkImage" id="wGb-td-8fS" customClass="DrinkImageTableViewCell" customModule="Cellaret" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="286"/>
@@ -696,9 +697,6 @@
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="QYd-1N-Le6" secondAttribute="height" multiplier="343:228" id="14o-hy-wOw"/>
                                             </constraints>
-                                            <connections>
-                                                <outletCollection property="gestureRecognizers" destination="quc-L2-Z0k" appends="YES" id="gLV-Ae-m8b"/>
-                                            </connections>
                                         </imageView>
                                     </subviews>
                                     <constraints>
@@ -809,12 +807,6 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vag-jM-Nhd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="XRR-et-ouZ" userLabel="Exit" sceneMemberID="exit"/>
-                <tapGestureRecognizer id="quc-L2-Z0k">
-                    <connections>
-                        <action selector="drinkImageTapped:" destination="XRR-et-ouZ" id="I5K-a1-aCz"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="31.884057971014496" y="922.82608695652186"/>
         </scene>

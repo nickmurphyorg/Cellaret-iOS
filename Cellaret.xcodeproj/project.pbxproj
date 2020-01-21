@@ -46,6 +46,7 @@
 		D1A31DBF210570FB00A3B0E6 /* DrinkViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A31DBE210570FB00A3B0E6 /* DrinkViewDelegate.swift */; };
 		D1A31DC4210C123600A3B0E6 /* DrinkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A31DC3210C123600A3B0E6 /* DrinkTableViewCell.swift */; };
 		D1A31DF9210FEF7C00A3B0E6 /* UserPreferencesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A31DF8210FEF7C00A3B0E6 /* UserPreferencesController.swift */; };
+		D1AD3DE923C27EFF00375B36 /* DrinkDetailViewTapGestureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1AD3DE823C27EFF00375B36 /* DrinkDetailViewTapGestureController.swift */; };
 		D1B327DE23BABF1900A38FAF /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B327DD23BABF1900A38FAF /* UIImageExtensions.swift */; };
 		D1B44A2A2128CBDF00F00604 /* ImageObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B44A292128CBDF00F00604 /* ImageObject.swift */; };
 		D1D8C322232EB86F00D6DD1E /* BarcodeScanerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D8C321232EB86F00D6DD1E /* BarcodeScanerViewController.swift */; };
@@ -110,6 +111,7 @@
 		D1A31DBE210570FB00A3B0E6 /* DrinkViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkViewDelegate.swift; sourceTree = "<group>"; };
 		D1A31DC3210C123600A3B0E6 /* DrinkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkTableViewCell.swift; sourceTree = "<group>"; };
 		D1A31DF8210FEF7C00A3B0E6 /* UserPreferencesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferencesController.swift; sourceTree = "<group>"; };
+		D1AD3DE823C27EFF00375B36 /* DrinkDetailViewTapGestureController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkDetailViewTapGestureController.swift; sourceTree = "<group>"; };
 		D1B327DD23BABF1900A38FAF /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		D1B44A292128CBDF00F00604 /* ImageObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageObject.swift; sourceTree = "<group>"; };
 		D1BF3398235D3DE900A8335B /* Cellaret V2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Cellaret V2.xcdatamodel"; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 		D14A257120EEB1A40022D9F7 /* Cellaret */ = {
 			isa = PBXGroup;
 			children = (
+				D1AD3DE723C27ED100375B36 /* Gesture Controllers */,
 				D14A257220EEB1A40022D9F7 /* AppDelegate.swift */,
 				D14A257920EEB1A50022D9F7 /* Assets.xcassets */,
 				D1F696E32114DDF50085266E /* Cellaret.xcdatamodeld */,
@@ -303,6 +306,14 @@
 				D14F128A22FFBF4A009BC627 /* ProductAPIController.swift */,
 			);
 			path = "Other Controllers";
+			sourceTree = "<group>";
+		};
+		D1AD3DE723C27ED100375B36 /* Gesture Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D1AD3DE823C27EFF00375B36 /* DrinkDetailViewTapGestureController.swift */,
+			);
+			path = "Gesture Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -491,6 +502,7 @@
 				D10CC86F22AF36D20028ABAC /* ModelKeys.swift in Sources */,
 				D1E55D9E22BB0FBF00957FC5 /* ImageZoomViewController.swift in Sources */,
 				D1B44A2A2128CBDF00F00604 /* ImageObject.swift in Sources */,
+				D1AD3DE923C27EFF00375B36 /* DrinkDetailViewTapGestureController.swift in Sources */,
 				D1201EF723BC044900E97A63 /* DrinkImageTableViewCell.swift in Sources */,
 				D14A257320EEB1A40022D9F7 /* AppDelegate.swift in Sources */,
 				D1201F0623BC5EE900E97A63 /* DrinkTitle.swift in Sources */,

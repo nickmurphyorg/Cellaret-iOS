@@ -11,7 +11,7 @@ import UIKit
 class DrinkImageTableViewCell: UITableViewCell {
     @IBOutlet weak var drinkImageView: UIImageView!
     
-    var drinkImageTap: DrinkImageTapDelegate?
+    weak var drinkImageTapDelegate: DrinkImageTapDelegate?
     var content: DrinkImage? {
         didSet {
             if let content = content {
@@ -22,10 +22,6 @@ class DrinkImageTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-    }
-
-    @IBAction func drinkImageTapped(_ sender: UITapGestureRecognizer) {
-        drinkImageTap?.enlargeDrinkImage()
     }
     
 }

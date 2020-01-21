@@ -12,6 +12,7 @@ class DrinkDetailTableViewController: UITableViewController {
 
     var drinkSelection: Drink?
     var drinkContent = [DrinkContent]()
+    var tapGestureController: DrinkDetailViewTapGestureController!
     var editDrinkDelegate: EditDrinkDelegate?
     
     required init?(coder aDecoder: NSCoder) {
@@ -25,6 +26,8 @@ class DrinkDetailTableViewController: UITableViewController {
         let editDrinkButton = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(editDrink(_:)))
         
         self.navigationItem.rightBarButtonItem = editDrinkButton
+        
+        tapGestureController = DrinkDetailViewTapGestureController(viewController: self, tableView: self.tableView)
         
         if let drinkSelection = drinkSelection {
             drinkContent = drinkSelection.content()
@@ -58,8 +61,8 @@ extension DrinkDetailTableViewController {
             }
         case .image:
             if let cell = tableView.dequeueReusableCell(withIdentifier: content.type.rawValue, for: indexPath) as? DrinkImageTableViewCell {
-                //TODO: Connect the delegate
                 cell.content = content as? DrinkImage
+                cell.drinkImageTapDelegate = self
                 
                 return cell
             }
@@ -108,6 +111,13 @@ extension DrinkDetailTableViewController {
         if segue.identifier == segueName.backToDrinkList.rawValue {
             self.navigationController?.popViewController(animated: false)
         }
+    }
+}
+
+//MARK: - Gesture Recognizer Delegate
+extension DrinkDetailTableViewController: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
     }
 }
 

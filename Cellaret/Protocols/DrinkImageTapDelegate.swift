@@ -7,7 +7,8 @@
 //
 
 import Foundation
+import UIKit
 
-protocol DrinkImageTapDelegate {
+protocol DrinkImageTapDelegate: UITableViewController {
     func enlargeDrinkImage()
 }
