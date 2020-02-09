@@ -12,7 +12,7 @@ class DrinkTitleTableViewCell: UITableViewCell {
     @IBOutlet weak var drinkNameLabel: UILabel!
     @IBOutlet weak var favoriteImageView: UIImageView!
     
-    let favoriteStar = UIImage(named: "Star-Black")
+    let favoriteStar = UIImage(named: "Star")
     
     var content: DrinkTitle? {
         didSet {
