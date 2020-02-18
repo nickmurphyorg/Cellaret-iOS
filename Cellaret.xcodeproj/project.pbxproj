@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0E221161F553FBB1F1D4CFCA /* Pods_Cellaret.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 593A2FCCACF3E277EB1A66BC /* Pods_Cellaret.framework */; };
-		722B4F97FA0D9AC73FB3D7DC /* Pods_CellaretTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE17B969D3748CDB9B7FE90C /* Pods_CellaretTests.framework */; };
+		30CFB56302BAAACDF8124184 /* libPods-CellaretTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A60E588FE24DA49434AD70A8 /* libPods-CellaretTests.a */; };
+		A0590274CF44902A450D2624 /* libPods-Cellaret.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FBACB37B6CC99BC893725E2 /* libPods-Cellaret.a */; };
 		D10CC86F22AF36D20028ABAC /* ModelKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10CC86E22AF36D20028ABAC /* ModelKeys.swift */; };
 		D10CC87222B08CC20028ABAC /* EditActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10CC87122B08CC20028ABAC /* EditActions.swift */; };
 		D1201EF723BC044900E97A63 /* DrinkImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1201EF623BC044900E97A63 /* DrinkImageTableViewCell.swift */; };
@@ -66,9 +66,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0FBACB37B6CC99BC893725E2 /* libPods-Cellaret.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Cellaret.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20FB98706630807E3C46F415 /* Pods-CellaretTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CellaretTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CellaretTests/Pods-CellaretTests.release.xcconfig"; sourceTree = "<group>"; };
-		593A2FCCACF3E277EB1A66BC /* Pods_Cellaret.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cellaret.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E6B38A7303A60DF36A6CC1C /* Pods-CellaretTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CellaretTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CellaretTests/Pods-CellaretTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A60E588FE24DA49434AD70A8 /* libPods-CellaretTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CellaretTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D10CC86E22AF36D20028ABAC /* ModelKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelKeys.swift; sourceTree = "<group>"; };
 		D10CC87122B08CC20028ABAC /* EditActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditActions.swift; sourceTree = "<group>"; };
 		D1201EF623BC044900E97A63 /* DrinkImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkImageTableViewCell.swift; sourceTree = "<group>"; };
@@ -119,7 +120,6 @@
 		D1E55D9D22BB0FBF00957FC5 /* ImageZoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageZoomViewController.swift; sourceTree = "<group>"; };
 		D1F696E42114DDF50085266E /* Cellaret.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Cellaret.xcdatamodel; sourceTree = "<group>"; };
 		D1FBE6F422BFC4C100BAD42F /* SegueNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueNames.swift; sourceTree = "<group>"; };
-		DE17B969D3748CDB9B7FE90C /* Pods_CellaretTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CellaretTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFA17A7C05BEDFECBDA56CF3 /* Pods-Cellaret.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cellaret.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cellaret/Pods-Cellaret.release.xcconfig"; sourceTree = "<group>"; };
 		F1CBA7CE2C1AFF0E23529AA1 /* Pods-Cellaret.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cellaret.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cellaret/Pods-Cellaret.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -129,7 +129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E221161F553FBB1F1D4CFCA /* Pods_Cellaret.framework in Frameworks */,
+				A0590274CF44902A450D2624 /* libPods-Cellaret.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,7 +137,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				722B4F97FA0D9AC73FB3D7DC /* Pods_CellaretTests.framework in Frameworks */,
+				30CFB56302BAAACDF8124184 /* libPods-CellaretTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,8 +158,8 @@
 		69DE5D07568ED9BA7808F05D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				593A2FCCACF3E277EB1A66BC /* Pods_Cellaret.framework */,
-				DE17B969D3748CDB9B7FE90C /* Pods_CellaretTests.framework */,
+				0FBACB37B6CC99BC893725E2 /* libPods-Cellaret.a */,
+				A60E588FE24DA49434AD70A8 /* libPods-CellaretTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -327,7 +327,6 @@
 				D14A256B20EEB1A40022D9F7 /* Sources */,
 				D14A256C20EEB1A40022D9F7 /* Frameworks */,
 				D14A256D20EEB1A40022D9F7 /* Resources */,
-				D124D33FF175B9671A0CE6F7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -460,28 +459,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D124D33FF175B9671A0CE6F7 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Cellaret/Pods-Cellaret-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Keys/Keys.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Keys.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cellaret/Pods-Cellaret-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -694,7 +671,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9XZS64KL8R;
 				INFOPLIST_FILE = Cellaret/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -714,7 +691,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9XZS64KL8R;
 				INFOPLIST_FILE = Cellaret/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
